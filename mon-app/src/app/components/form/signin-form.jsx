@@ -5,31 +5,43 @@ import { useState } from "react";
 
 function SigninForm() {
 
+
+
     const [credentials, setCredentials] = useState({
-        login: "",
+        email: "",
         password: ""
     });
 
-    const onChange = (e) => {
+    const handleChange = (e) => {
         setCredentials({
             ...credentials,
             [e.target.name]: e.target.value});
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(credentials);
+
+    }
+
 
     const margin= {margin: "20px auto"}
     const paperStyle = {padding: 20 , height: '60vh' , width: 280 , margin: "20px auto"}
-    const avatarStyle = {backgroundColor: '#FFD568'}
     return(
 <Grid>
     <Paper elevation={10 } style={paperStyle}>
         <Grid align="center">
-        <Avatar style={avatarStyle}><LockOutlinedIcon /></Avatar>
+        <Avatar sx={{
+            bgcolor: 'primary.main',
+        }}><LockOutlinedIcon /></Avatar>
         <h2>Sign in</h2>
         </Grid>
-        <TextField label="Email" placeholder="Rentrez votre Email" fullWidth required style={margin} value={credentials.login} onChange={onChange}/>
-        <TextField label="Mot de passe" placeholder="Rentrez votre Mot de passe" fullWidth required />
+        <form onSubmit={handleSubmit}>
+        <TextField label="Email" name="email"placeholder="Rentrez votre Email" fullWidth required style={margin} value={credentials.email} onChange={handleChange}/>
+        <TextField label="Mot de passe" name="password" placeholder="Rentrez votre Mot de passe" fullWidth required value={credentials.password} onChange={handleChange} />
         <Button type="submit" color="primary" variant="contained" fullWidth style={margin}>Se connecter</Button>
+        </form>
     </Paper>
 </Grid>
     )
