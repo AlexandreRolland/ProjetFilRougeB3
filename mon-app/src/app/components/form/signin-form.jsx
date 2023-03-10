@@ -28,7 +28,7 @@ function SigninForm() {
         <h2>Sign in</h2>
         </Grid>
         <TextField label="Email" placeholder="Rentrez votre Email" fullWidth required style={margin} value={credentials.login} onChange={onChange}/>
-        <TextField label="Mot de passe" placeholder="Rentrez votre Mot de passe" fullWidth required  value={credentials.password} onChange={onChange}/>
+        <TextField label="Mot de passe" placeholder="Rentrez votre Mot de passe" fullWidth required />
         <Button type="submit" color="primary" variant="contained" fullWidth style={margin}>Se connecter</Button>
     </Paper>
 </Grid>
