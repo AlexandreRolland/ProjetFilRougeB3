@@ -1,4 +1,6 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/common';
+import { UseGuards } from '@nestjs/common/decorators';
+import { JwtAuthGuard } from 'src/auth/guard/jwt-passport.guard';
 import { AnnonceService } from './annonce.service';
 import { CreateAnnonceDto } from './dto/create-annonce.dto';
 import { UpdateAnnonceDto } from './dto/update-annonce.dto';
@@ -7,6 +9,7 @@ import { UpdateAnnonceDto } from './dto/update-annonce.dto';
 export class AnnonceController {
   constructor(private readonly annonceService: AnnonceService) {}
 
+  @UseGuards(JwtAuthGuard)
   @Post()
   createAnnonce(@Body() createAnnonceDto: CreateAnnonceDto) {
     return this.annonceService.createAnnonce(createAnnonceDto);
@@ -22,11 +25,13 @@ export class AnnonceController {
     return this.annonceService.findOne(+id);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Put(':id')
   update(@Param('id') id: string, @Body() updateAnnonceDto: UpdateAnnonceDto) {
     return this.annonceService.update(+id, updateAnnonceDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Delete(':id')
   softDeleteAnnonce(@Param('id') id: string) {
     return this.annonceService.softDeleteAnnonce(+id);

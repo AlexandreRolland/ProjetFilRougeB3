@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { NotFoundException, UnauthorizedException } from '@nestjs/common/exceptions';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAnnonceDto } from './dto/create-annonce.dto';
@@ -19,7 +20,7 @@ export class AnnonceService {
       return annonce;
     }
     catch(error){
-      throw new Error('Error creating annonce' + error)
+      throw new UnauthorizedException('Error creating annonce' + error)
     }
   } 
 
@@ -28,7 +29,7 @@ export class AnnonceService {
       return await this.annonceRepository.find();
     }
     catch(error){
-      throw new Error('Error finding annonces')
+      throw new NotFoundException('Error finding annonce')
     }
   }
 
@@ -37,7 +38,7 @@ export class AnnonceService {
       return await this.annonceRepository.findOneBy({id});
     }
     catch(error){
-      throw new Error('Error finding annonce')
+      throw new NotFoundException('Error finding annonce')
     }
   }
 
@@ -50,7 +51,7 @@ export class AnnonceService {
       return annonceUpdate;
     }
     catch(error){
-      throw new Error('Error updating annonce')
+      throw new UnauthorizedException(error)
     }
   }
 
@@ -59,7 +60,7 @@ export class AnnonceService {
       return await this.annonceRepository.softDelete(id);
     }
     catch(error){
-      throw new Error('Error deleting annonce')
+      throw new UnauthorizedException(error)
     }
   }
 
