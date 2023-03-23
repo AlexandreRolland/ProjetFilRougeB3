@@ -1,9 +1,9 @@
 import { PrimaryGeneratedColumn, Entity, OneToOne, JoinColumn } from "typeorm";
 import { Column } from "typeorm/decorator/columns/Column";
-import { Timestamp } from "src/Generic/timestamp.entity";
-import { ProfileEntity } from "src/profile/entities/profile.entity";
-import { ClientEntity } from "src/client/entities/client.entity";
-import { DecorateurEntity } from "src/decorateur/entities/decorateur.entity";
+import { Timestamp } from "../../Generic/timestamp.entity";
+import { ProfileEntity } from "../../profile/entities/profile.entity";
+import { ClientEntity } from "../../client/entities/client.entity";
+import { DecorateurEntity } from "../../decorateur/entities/decorateur.entity";
 
 
 @Entity("user")

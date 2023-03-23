@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete, Put } from '@nestjs/common';
 import { UseGuards } from '@nestjs/common/decorators';
-import { JwtAuthGuard } from 'src/auth/guard/jwt-passport.guard';
+import { JwtAuthGuard } from '../auth/guard/jwt-passport.guard';
 import { AnnonceService } from './annonce.service';
 import { CreateAnnonceDto } from './dto/create-annonce.dto';
 import { UpdateAnnonceDto } from './dto/update-annonce.dto';

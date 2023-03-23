@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, JoinTable, OneToMany, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { Timestamp } from "src/Generic/timestamp.entity";
-import { AnnonceEntity } from "src/annonce/entities/annonce.entity";
-import { UserEntity } from "src/user/entities/user.entity";
+import { Timestamp } from "../../Generic/timestamp.entity";
+import { AnnonceEntity } from "../../annonce/entities/annonce.entity";
+import { UserEntity } from "../../user/entities/user.entity";
 
 @Entity("client")
 export class ClientEntity extends Timestamp {
