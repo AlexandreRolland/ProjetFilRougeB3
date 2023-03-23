@@ -19,8 +19,8 @@ const Header = () => {
                 <Tab label="Contact" />
             </Tabs>
             </Grid>
-            <Grid item xs={3} >
-            <Link to="/signin"><Button>Se connecter</Button></Link>
+            <Grid item xs={3}>
+            <Link to="/signin"><Button variant="contained"  >Se connecter</Button></Link>
             </Grid>
             <Grid item xs={1} sx={'textAlign:right;'} >
             <Link to="/signin"><Typography><AccountCircleOutlinedIcon/></Typography></Link>
