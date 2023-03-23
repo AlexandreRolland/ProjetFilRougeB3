@@ -20,10 +20,7 @@ export class DecorateurEntity {
     @Column()
     solde: number;
 
-    @CreateDateColumn({
-        type: 'timestamp',
-        default: () => 'NOW()',
-    })
+    @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()

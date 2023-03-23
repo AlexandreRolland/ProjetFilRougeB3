@@ -15,10 +15,7 @@ export class ClientEntity{
     @JoinColumn()
     annonces: AnnonceEntity[];
 
-    @CreateDateColumn({
-        type: 'timestamp',
-        default: () => 'NOW()',
-    })
+    @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()

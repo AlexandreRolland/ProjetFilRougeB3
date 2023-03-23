@@ -16,10 +16,7 @@ lastName: string;
 @JoinColumn()
 user: UserEntity;
 
-@CreateDateColumn({
-    type: 'timestamp',
-    default: () => 'NOW()',
-})
+@CreateDateColumn()
 createdAt: Date;
 
 @UpdateDateColumn()

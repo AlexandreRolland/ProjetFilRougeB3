@@ -31,10 +31,7 @@ export class UserEntity {
     })
     decorateur: DecorateurEntity;
 
-    @CreateDateColumn({
-        type: 'timestamp',
-        default: () => 'NOW()',
-    })
+    @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()

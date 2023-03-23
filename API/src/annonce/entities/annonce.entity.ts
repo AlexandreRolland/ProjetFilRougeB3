@@ -1,9 +1,8 @@
-import { Column, Entity, JoinTable, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn} from "typeorm";
-import { Timestamp } from "src/Generic/timestamp.entity";
-import { ClientEntity } from "src/client/entities/client.entity";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinTable, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import { ClientEntity } from "../../client/entities/client.entity";
 
 @Entity("annonce")
-export class AnnonceEntity extends Timestamp {
+export class AnnonceEntity{
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -27,4 +26,13 @@ export class AnnonceEntity extends Timestamp {
 
     @Column()
     prix: number;
+
+    @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @DeleteDateColumn()
+  deletedAt: Date;
 }
