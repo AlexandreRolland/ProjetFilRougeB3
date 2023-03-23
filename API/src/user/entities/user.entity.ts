@@ -1,13 +1,12 @@
-import { PrimaryGeneratedColumn, Entity, OneToOne, JoinColumn } from "typeorm";
+import { PrimaryGeneratedColumn, Entity, OneToOne, JoinColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn } from "typeorm";
 import { Column } from "typeorm/decorator/columns/Column";
-import { Timestamp } from "../../Generic/timestamp.entity";
 import { ProfileEntity } from "../../profile/entities/profile.entity";
 import { ClientEntity } from "../../client/entities/client.entity";
 import { DecorateurEntity } from "../../decorateur/entities/decorateur.entity";
 
 
 @Entity("user")
-export class UserEntity extends Timestamp {
+export class UserEntity {
     @PrimaryGeneratedColumn()
     id: number;
     
@@ -31,5 +30,17 @@ export class UserEntity extends Timestamp {
         cascade: true
     })
     decorateur: DecorateurEntity;
+
+    @CreateDateColumn({
+        type: 'timestamp',
+        default: () => 'NOW()',
+    })
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @DeleteDateColumn()
+  deletedAt: Date;
 
 }

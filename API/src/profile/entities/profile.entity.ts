@@ -1,9 +1,8 @@
-import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Timestamp } from "../../Generic/timestamp.entity";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { UserEntity } from "../../user/entities/user.entity";
 
 @Entity("profile")
-export class ProfileEntity extends Timestamp {
+export class ProfileEntity {
 @PrimaryGeneratedColumn()
 id: number;
 
@@ -16,4 +15,16 @@ lastName: string;
 @OneToOne(() => UserEntity, user => user.profile)
 @JoinColumn()
 user: UserEntity;
+
+@CreateDateColumn({
+    type: 'timestamp',
+    default: () => 'NOW()',
+})
+createdAt: Date;
+
+@UpdateDateColumn()
+updatedAt: Date;
+
+@DeleteDateColumn()
+deletedAt: Date;
 }

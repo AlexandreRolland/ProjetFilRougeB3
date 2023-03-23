@@ -1,10 +1,9 @@
-import { Column, Entity, JoinColumn, JoinTable, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { Timestamp } from "../../Generic/timestamp.entity";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, OneToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { UserEntity } from "../../user/entities/user.entity";
 
 
 @Entity("decorateur")
-export class DecorateurEntity extends Timestamp{
+export class DecorateurEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -20,5 +19,17 @@ export class DecorateurEntity extends Timestamp{
 
     @Column()
     solde: number;
+
+    @CreateDateColumn({
+        type: 'timestamp',
+        default: () => 'NOW()',
+    })
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @DeleteDateColumn()
+  deletedAt: Date;
 
 }

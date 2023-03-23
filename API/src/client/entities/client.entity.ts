@@ -1,10 +1,9 @@
-import { Column, Entity, JoinColumn, JoinTable, OneToMany, OneToOne, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
-import { Timestamp } from "../../Generic/timestamp.entity";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, OneToMany, OneToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { AnnonceEntity } from "../../annonce/entities/annonce.entity";
 import { UserEntity } from "../../user/entities/user.entity";
 
 @Entity("client")
-export class ClientEntity extends Timestamp {
+export class ClientEntity{
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -15,6 +14,18 @@ export class ClientEntity extends Timestamp {
     @OneToMany(() => AnnonceEntity, annonce => annonce.client)
     @JoinColumn()
     annonces: AnnonceEntity[];
+
+    @CreateDateColumn({
+        type: 'timestamp',
+        default: () => 'NOW()',
+    })
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @DeleteDateColumn()
+  deletedAt: Date;
 
 
 }
