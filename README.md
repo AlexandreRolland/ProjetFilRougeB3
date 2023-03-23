@@ -13,3 +13,9 @@
 # Maquette Figma
 
 https://www.figma.com/file/NI8mAiIUb30FmfZbHQWVLw/Fil-Rouge?node-id=0%3A1&t=C6nC9YkZNmGtuHYn-1
+
+# Deploiement
+
+- [API](https://projet-fil-rouge-b3-gxjmn8n86-alexandrerolland.vercel.app)
+
+- [FRONT](https://projet-fil-rouge-b3.vercel.app)
