@@ -1,5 +1,4 @@
 import * as dotenv from 'dotenv'
-dotenv.config()
 
 async function signIn (credentials) {
     const response = await fetch(`${process.env.API_URL}/auth/signin`, {
