@@ -1,6 +1,8 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
 
 async function signIn (credentials) {
-    const response = await fetch('http://localhost:8000/api/auth/signin', {
+    const response = await fetch(`${process.env.API_URL}/auth/signin`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
