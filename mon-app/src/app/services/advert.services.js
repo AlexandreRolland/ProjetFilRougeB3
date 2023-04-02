@@ -1,7 +1,7 @@
 import { TokenServices } from "./token.services";
 
 async function createAdvert(advert) {
-    return await fetch('http://localhost:8000/api/annonce', {
+    return await fetch(`${process.env.REACT_APP_API_URL}/annonce`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
