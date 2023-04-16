@@ -5,10 +5,12 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Router from  './setup/router/index.jsx';
 import Theme from './app/assets/theme.js';
+import { CssBaseline } from '@mui/material';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider theme={Theme}>
+    <CssBaseline/>
     <Router/>
   </ThemeProvider>
 );
