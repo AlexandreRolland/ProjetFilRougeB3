@@ -1,37 +1,32 @@
-import { Tabs, Typography, Tab, Button, AppBar, Toolbar, Container } from '@mui/material';
-import '../assets/global.css';
-import React from 'react';
+
+
 
 
 const Nav = () => {
-    const [value, setValue] = React.useState();
     return (
-        <AppBar sx={{ background: "white" }}>
-            <Container maxWidth="lg">
+        <nav>
+            <section className="container">
 
-                <Toolbar className="test" style={{padding: "0"}} >
-                    <Typography component="a" href="/" variant="h2" color="primary.dark">LOGO</Typography>
-                    <Tabs
+                <ul>
+                    <div>
+                        <li><a href="/">LOGO</a></li>
+                    </div>
+                    <div>
+                        <li>Home</li>
+                        <li>Se faire conseiller</li>
+                        <li>Discussions</li>
+                        <li>Blog</li>
 
-                        value={value}
-                        onChange={(e, value) => setValue(value)}
-                        indicatorColor="primary"
-                        display="flex"
-                        width="auto"
-                        variant="fullWidth"
-                        sx={{ flexGrow: 1, marginRight: 2, marginLeft: 2 }}
-                    >
-                        <Tab label="Home" href="/" />
-                        <Tab label="Se faire conseiller" />
-                        <Tab label="Discussions" />
-                        <Tab label="Blog" />
-                    </Tabs>
-                    <Button variant="contained" href="/signin" >Se connecter</Button>
-                    
+                    </div>
+                    <div>
+                        <li><a href="/signin" >Se connecter</a></li>
+                    </div>
 
-                </Toolbar>
-            </Container>
-        </AppBar>
+
+
+                </ul>
+            </section>
+        </nav>
     );
 };
 

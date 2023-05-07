@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+    background: radial-gradient(159.21% 377.09% at -20.15% 100%, #EAEDF8 0%, #F9F9F9 100%)
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 1520px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+ul{
+    display: flex;
+    justify-content: space-between;
+}
