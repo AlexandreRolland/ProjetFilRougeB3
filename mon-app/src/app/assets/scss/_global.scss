@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     margin: 0 auto;
     padding: 0 50px;
-    max-width: 1460px;
+    max-width: 1510px;
 
     @include respond-to(small) {
 
@@ -75,6 +75,12 @@ h1, h2, h3, h4, h5, h6 {
         
       }
 
+}
+
+.row{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .button{

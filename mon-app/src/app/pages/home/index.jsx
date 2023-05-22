@@ -17,7 +17,7 @@ function HomePage() {
             <h1>Une <span className="primary-color">décoration</span> sur mesure à <span className="primary-color">petit prix</span></h1>
             <p>IDECO est la seule plateforme qui vous permet de vous faire conseiller en décoration par des experts certifés et cela pour tout type de  budget.</p>
             <div className="">
-              <a href="#" className="button" >Contacter un expert</a>
+              <a href="/room_form" className="button" >Contacter un expert</a>
             </div>
           </div>
 
