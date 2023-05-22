@@ -1,0 +1,41 @@
+@mixin radial-gradient($position, $color-start, $color-end) {
+    background: radial-gradient($position, $color-start 0%, $color-end 100%);
+}
+
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@mixin typography($color, $font-family, $font-size , $font-weight) {
+    color: $color;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $font-weight;
+}
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == small {
+      @media (max-width: $breakpoint-small) {
+        @content;
+      }
+    }
+    @else if $breakpoint == medium {
+      @media (min-width: $breakpoint-small + 1) and (max-width: $breakpoint-medium) {
+        @content;
+      }
+    }
+    @else if $breakpoint == large {
+      @media (min-width: $breakpoint-medium + 1) and (max-width: $breakpoint-large) {
+        @content;
+      }
+    }
+    @else if $breakpoint == x-large {
+      @media (min-width: $breakpoint-large + 1) {
+        @content;
+      }
+    }
+  }

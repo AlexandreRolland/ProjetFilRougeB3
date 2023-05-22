@@ -1,0 +1,47 @@
+.footer-bg{
+    background-color: $white-color;
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+
+
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background-color: $white-color;
+
+    ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+
+        li{
+            a{
+                font-size: 20px;
+                font-weight: 400;
+                color: $grey-color;
+            }
+        
+            a:hover{
+                text-decoration: underline solid $primary-color 3px;
+                text-underline-offset: 8px;
+                color: $black-color;
+            }
+        }
+
+        p{
+            font-size: 20px;
+            font-weight: 300;
+            color: $grey-color;
+        }
+        
+    }
+
+
+}

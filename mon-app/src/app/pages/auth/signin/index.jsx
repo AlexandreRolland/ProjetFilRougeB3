@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SigninForm from "../../../components/form/signin-form.jsx";
-import Footer from "../../../layouts/footer";
-import Header from "../../../layouts/nav.jsx";
+import Footer from "../../../layouts/footer/footer";
+import Header from "../../../layouts/header/nav.jsx";
 
 
 const SigninPage = () => {

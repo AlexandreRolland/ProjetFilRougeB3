@@ -1,0 +1,35 @@
+.header-bg{
+    background-color: $white-color;
+    width: 100%;
+    height: auto;
+    position: sticky;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background-color: $white-color;
+
+
+    li{
+        a{
+            font-size: 20px;
+            font-weight: 600;
+        }
+    
+        a:hover{
+            text-decoration: underline solid $primary-color 3px;
+            text-underline-offset: 8px;
+            color: $black-color;
+        }
+    }
+    
+}
+
+.logo{
+    font-size: 48px;
+    font-weight: 700;
+}

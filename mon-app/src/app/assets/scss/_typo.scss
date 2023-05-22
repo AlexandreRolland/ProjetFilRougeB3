@@ -1,5 +1,31 @@
 h1{
-color: $primary-color;
-font-family: $primary-font;
+    @include typography($black-color, $primary-font, 64px, 500);
 }
 
+h2{
+    @include typography($black-color, $primary-font, 48px, 500);
+}
+
+p{
+    @include typography($black-color, $primary-font, 16px, 400);
+}
+
+
+
+a{
+    @include typography($black-color, $primary-font, 16px, 500);
+}
+a:hover{
+    color: $primary-color;
+}
+
+label{
+    @include typography($black-color, $primary-font, 16px, 400);
+}
+
+
+//classes
+
+.primary-color{
+    color: $primary-color;
+}

@@ -1,0 +1,22 @@
+.container-hp-left{
+    width: 50%;
+    height: auto;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    padding-right: 100px;
+
+    p{
+        margin-top: 20px;
+        margin-bottom: 50px;
+        font-size: 24px;
+        font-weight: 500;
+
+    }
+}
+
+.container-hp-right{
+    width: 50%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

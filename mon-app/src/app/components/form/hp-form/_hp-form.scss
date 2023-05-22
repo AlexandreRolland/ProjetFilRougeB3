@@ -1,0 +1,62 @@
+.hp-form{
+    max-width: 100%;
+    width: 100%;
+    height:130px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    padding: 20px 50px 20px 30px;
+
+    position: relative;
+    background-color: $white-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+
+    label{
+        font-weight: 600;
+font-size: 20px;
+margin-bottom: 20px;
+    }
+
+    button{
+        padding: 20px 30px;
+    }
+
+
+    input,select{
+
+        border-radius: 5px;
+border: 2px solid #CBCBCB;
+padding: 15px;
+    }
+
+    select{
+        width: 432px;
+    }
+
+    input{
+        width: 190px;
+        margin-right: 15px;
+    }
+
+    .select-room{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .select-dimensions{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .submit-btn{
+        display: flex;
+        height:100%;
+        align-items: flex-end;
+    }
+
+
+}
