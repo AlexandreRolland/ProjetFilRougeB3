@@ -33,9 +33,4 @@
         @content;
       }
     }
-    @else if $breakpoint == x-large {
-      @media (min-width: $breakpoint-large + 1) {
-        @content;
-      }
-    }
   }
