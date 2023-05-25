@@ -6,6 +6,10 @@ h2{
     @include typography($black-color, $primary-font, 48px, 500);
 }
 
+h3{
+    @include typography($black-color, $primary-font, 20px, 500);
+}
+
 p{
     @include typography($black-color, $primary-font, 16px, 400);
 }

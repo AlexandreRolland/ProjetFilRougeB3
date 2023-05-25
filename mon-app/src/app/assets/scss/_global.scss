@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -17,6 +21,10 @@ h1, h2, h3, h4, h5, h6 {
   a {
     text-decoration: none;
 
+  }
+
+  a:hover{
+    cursor: pointer;
   }
   
 
@@ -55,22 +63,26 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: 0 50px;
     max-width: 1510px;
 
     @include respond-to(small) {
+      padding: 0 30px;
 
       }
       
       @include respond-to(medium) {
-
+        padding: 0 50px;
+  
       }
       
       @include respond-to(large) {
+        padding: 0 70px;
   
      
       }
       @include respond-to(x-large) {
+        padding: 0 70px;
+  
      
         
       }
@@ -104,7 +116,15 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
 }
 
-*{
-  box-sizing: border-box;
+.center{
+@include center;
+flex-direction: column;
 }
 
+.fullPage{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

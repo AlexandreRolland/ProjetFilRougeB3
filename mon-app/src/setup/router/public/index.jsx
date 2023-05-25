@@ -1,6 +1,6 @@
 import {Routes , Route} from 'react-router-dom';
 import HomePage from '../../../app/pages/home/index.jsx';
-import SigninPage from '../../../app/pages/auth/signin/index.jsx'
+import SigninPage from '../../../app/pages/auth/signin/signinPage.jsx'
 import RoomFormPage from '../../../app/pages/room-form/room-form.jsx';
 
 
