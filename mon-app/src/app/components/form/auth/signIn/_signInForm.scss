@@ -10,6 +10,7 @@
         padding: 50px;
         padding-top: 40px;
         border-radius: 15px;
+        
     
         h2{
             margin-bottom: 30px
@@ -50,4 +51,29 @@
 
 }
 
+
+//responsive
+
+@include respond-to(small){
+    .signInPage{
+        margin-top: 50px;
+        .signInForm{
+            padding: 30px;
+            padding-top: 20px;
+            h2{
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+            form{
+                input{
+                    width: 250px;
+                    height: 40px;
+                }
+                button{
+                    width: 250px;
+                }
+            }
+        }
+    }
+}
 
