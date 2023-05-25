@@ -1,35 +1,84 @@
-h1{
+h1 {
     @include typography($black-color, $primary-font, 64px, 500);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 48px, 500);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 48px, 500);
+    }
 }
 
-h2{
+h2 {
     @include typography($black-color, $primary-font, 48px, 500);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 32px, 500);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 32px, 500);
+    }
 }
 
-h3{
+h3 {
     @include typography($black-color, $primary-font, 20px, 500);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 18px, 500);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 16px, 500);
+    }
 }
 
-p{
+p {
     @include typography($black-color, $primary-font, 16px, 400);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 14px, 400);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 14px, 400);
+    }
 }
 
 
 
-a{
+a {
     @include typography($black-color, $primary-font, 16px, 500);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 14px, 500);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 14px, 500);
+    }
 }
-a:hover{
+
+a:hover {
     color: $primary-color;
 }
 
-label{
+label {
     @include typography($black-color, $primary-font, 16px, 400);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 14px, 400);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 14px, 400);
+    }
 }
 
 
 //classes
 
-.primary-color{
+.primary-color {
     color: $primary-color;
 }

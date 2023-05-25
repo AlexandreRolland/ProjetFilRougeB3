@@ -8,10 +8,14 @@ body{
     @include radial-gradient(159.21% 377.09% at -20.15% 100%, #EAEDF8, #F9F9F9);
 }
 
+#root{
+  max-width: 100vw;
+  overflow: hidden;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
-    font-weight: normal;
   }
   p {
     margin: 0;
@@ -79,12 +83,6 @@ h1, h2, h3, h4, h5, h6 {
         padding: 0 70px;
   
      
-      }
-      @include respond-to(x-large) {
-        padding: 0 70px;
-  
-     
-        
       }
 
 }

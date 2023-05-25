@@ -1,20 +1,41 @@
-.banner-bg{
+.banner-bg {
     background-image: url("https://alexandre-rolland.fr/wp-content/uploads/2023/05/banner-deco-hp-scaled.jpg");
     width: 100%;
     height: 302px;
     box-shadow: inset 0px 0px 4px 2px rgba(34, 34, 34, 0.25);
     margin-bottom: 100px;
-    
+
 }
 
-.banner{
+.banner {
     width: 100%;
     height: 302px;
     @include center;
     flex-direction: column;
 
-    h2{
+    h2 {
         color: $white-color;
         margin-bottom: 40px;
+    }
+}
+
+//responsive
+
+@include respond-to(small) {
+    .banner-bg {
+        h2 {
+            text-align: center;
+        }
+
+        background-position-x: 80%;
+        background-size: cover;
+
+    }
+}
+
+@include respond-to(medium) {
+    .banner-bg {
+        background-position-x: 50%;
+        background-size: cover;
     }
 }

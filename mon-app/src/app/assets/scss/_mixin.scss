@@ -29,7 +29,7 @@
       }
     }
     @else if $breakpoint == large {
-      @media (min-width: $breakpoint-medium + 1) and (max-width: $breakpoint-large) {
+      @media (min-width: $breakpoint-medium + 1) {
         @content;
       }
     }

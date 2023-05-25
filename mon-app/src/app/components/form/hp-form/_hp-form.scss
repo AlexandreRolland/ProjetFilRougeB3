@@ -60,3 +60,17 @@ padding: 15px;
 
 
 }
+
+//responsive
+
+@include respond-to(small){
+    .hp-form{
+       display: none;
+    }
+}
+
+@include respond-to(medium){
+    .hp-form{
+        display: none;
+    }
+}

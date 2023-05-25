@@ -5,6 +5,8 @@
     display: flex;
     justify-content: center;
     padding-right: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 
     p{
         margin-top: 20px;
@@ -19,4 +21,47 @@
     width: 50%;
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+//responsive
+
+@include respond-to(small){
+    .container-hp-left{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-bottom: 75px;
+        margin-top: 50px;
+       
+
+        p{
+            margin-bottom: 50px;
+        }
+
+        a{
+            margin-top: 50px;
+        }
+    }
+
+    .container-hp-right{
+        display: none;
+    }
+}
+
+@include respond-to(medium){
+    .container-hp-left{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-bottom: 75px;
+        margin-top: 50px;
+
+        p{
+            margin-bottom: 30px;
+        }
+    }
+
+    .container-hp-right{
+        display: none;
+    }
 }
