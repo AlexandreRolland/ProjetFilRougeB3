@@ -15,6 +15,9 @@ export class UserEntity {
     
     @Column()
     password: string;
+
+    @Column({unique: true, nullable: true})
+    username: string;
     
     @OneToOne(() => ProfileEntity, profile => profile.user, {
         cascade: true
