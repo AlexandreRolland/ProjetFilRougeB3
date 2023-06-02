@@ -14,3 +14,23 @@
         margin-bottom: 30px;
     }
 }
+
+//responsive
+
+@include respond-to(small){
+    .form-container{
+        .row{
+            flex-direction: column;
+            margin: auto;
+        }
+    }
+}
+
+@include respond-to(medium){
+    .form-container{
+        .row{
+            flex-direction: column;
+            margin: auto;
+        }
+    }
+}

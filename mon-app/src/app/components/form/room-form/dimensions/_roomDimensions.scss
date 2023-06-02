@@ -14,3 +14,34 @@
     
     }
     
+    //responsive
+
+    @include respond-to(small){
+        .roomDimensions{
+            width: 100%;
+            padding-left: 0px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            h2{
+                text-align: center;
+            }
+            .dimensions-bg{
+                padding: 20px;
+            }
+        }
+    }
+
+    @include respond-to(medium){
+        .roomDimensions{
+            width: 100%;
+            padding-left: 0px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            h2{
+                text-align: center;
+            }
+            .dimensions-bg{
+                padding: 20px;
+            }
+        }
+    }

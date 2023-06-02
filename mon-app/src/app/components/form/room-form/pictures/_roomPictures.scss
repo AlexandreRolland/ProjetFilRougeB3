@@ -13,4 +13,36 @@
     }
     
     }
+
+    //responsive
+
+    @include respond-to(small){
+        .roomPictures{
+            width: 100%;
+            padding-right: 0px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            h2{
+                text-align: center;
+            }
+            .pictures-bg{
+                padding: 20px;
+            }
+        }
+    }
+
+    @include respond-to(medium){
+        .roomPictures{
+            width: 100%;
+            padding-right: 0px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            h2{
+                text-align: center;
+            }
+            .pictures-bg{
+                padding: 20px;
+            }
+        }
+    }
     

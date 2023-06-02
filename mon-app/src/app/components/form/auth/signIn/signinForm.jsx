@@ -35,10 +35,10 @@ function SigninForm() {
 
     return (
         <section className="container">
-            <div className="signInPage">
+            <div className="authPage">
 
             <div className="center">
-                <div className="signInForm">
+                <div className="authForm">
 
                     <h2>Connexion</h2>
 
@@ -47,10 +47,11 @@ function SigninForm() {
                         <input type="password" label="Mot de passe" name="password" placeholder="Votre Mot de passe" fullWidth required value={credentials.password} onChange={handleChange} />
                         <button type="submit" color="primary" variant="contained" fullWidth>Se connecter</button>
                         <a>Mot de passe oublié ?</a>
+                        <a href="/signup">S'inscrire</a>
                     </form>
                 </div>
                 <h3>Vous êtes un décorateur professionel ?</h3>
-                <a>inscrivez vous ici</a>
+                <a href="/signup-decorator">inscrivez vous ici</a>
             </div>
 
             </div>

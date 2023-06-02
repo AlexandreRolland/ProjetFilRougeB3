@@ -4,7 +4,7 @@ const Banner = () => {
             <section className="container">
                 <div className="banner">
                     <h2>Vous êtes un <span className="primary-color">décorateur</span> diplômé ?</h2>
-                    <a href="#" className="button">S’inscrire en tant que décorateur</a>
+                    <a href="/signup_decorator" className="button">S’inscrire en tant que décorateur</a>
                 </div>
 
 
