@@ -18,6 +18,9 @@ export class UserEntity {
 
     @Column({unique: true, nullable: true})
     username: string;
+
+    @Column({default: "false"})
+    professional: boolean;
     
     @OneToOne(() => ProfileEntity, profile => profile.user, {
         cascade: true
