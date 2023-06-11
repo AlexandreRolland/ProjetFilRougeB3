@@ -16,12 +16,23 @@ async function createAdvert(advert) {
         .catch(error => console.log(error));
 }
 
+async function getAdverts() {
+    return await fetch(`${process.env.REACT_APP_API_URL}/annonce`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Bearer ' + TokenServices.getToken()
+        },
+    })
+        .then(response => response.json())
+        .catch(error => console.log(error));
+        
+}
+
 
 export const AdvertService = {
     getAdverts,
-    getAdvert,
     createAdvert,
-    updateAdvert,
-    deleteAdvert,
 }
 

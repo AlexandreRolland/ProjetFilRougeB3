@@ -4,6 +4,7 @@ import SigninPage from '../../../app/pages/auth/signin/signinPage.jsx'
 import SignupPage from '../../../app/pages/auth/signup/signupPage.jsx';
 import SignupDecoratorPage from '../../../app/pages/auth/decorator/signupDecoratorPage.jsx';
 import RoomFormPage from '../../../app/pages/room-form/room-form.jsx';
+import AnnonceList from '../../../app/pages/annonce-list/annonceList.jsx';
 
 
 
@@ -15,6 +16,7 @@ export const PublicRoutes = () => {
             <Route path="/signup" element={<SignupPage/>} />
             <Route path="/room_form" element={<RoomFormPage />} />
             <Route path="/signup_decorator" element={<SignupDecoratorPage />} />
+            <Route path="/annonce_list" element={<AnnonceList />} />
         </Routes>
     );
 }
