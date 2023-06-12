@@ -10,6 +10,7 @@ import Router from  './setup/router/index.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    
     <Router/>
 );
 

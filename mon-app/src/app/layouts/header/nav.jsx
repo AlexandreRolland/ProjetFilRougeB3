@@ -1,9 +1,10 @@
 
-
+import {Link} from 'react-router-dom'
 
 
 const Nav = () => {
     return (
+      
         <nav className="header-bg">
             <section className="container">
 
@@ -19,7 +20,7 @@ const Nav = () => {
 
                    
                     <div>
-                        <a href="/signin" className="button" >Contacter un expert</a>
+                        <Link to='/signin'  className="button" >Contacter un expert</Link>
                         <a href="/signin" ></a>
                     </div>
 

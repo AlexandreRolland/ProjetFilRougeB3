@@ -1,13 +1,10 @@
-import { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'; // utilisez useHistory pour react-router-dom v5 ou inférieure
 import { AuthServices } from "../../../../services/auth.service";
 import { TokenServices } from "../../../../services/token.services";
-
-
+import UserContext from "../../../../../setup/contexts/UserContext";
 
 function SigninForm() {
-
-
-
     const [credentials, setCredentials] = useState({
         email: "",
         password: ""
@@ -20,42 +17,66 @@ function SigninForm() {
         });
     }
 
+    const { user, setUser } = useContext(UserContext);
+    const navigate = useNavigate(); // utilisez useHistory pour react-router-dom v5 ou inférieure
+
+    useEffect(() => {
+        console.log(user);
+    }, [user]);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const token = await AuthServices.signIn(credentials)
+        const { access_token, user: userData } = await AuthServices.signIn(credentials)
 
-        TokenServices.setToken(token.access_token);
-
-
-
-        console.log(credentials);
-
+        // Mettre à jour l'état global de l'utilisateur
+        setUser(userData);
+        
+        // Stocker le jeton
+        TokenServices.setToken(access_token);
+        
+        // Rediriger l'utilisateur vers la page d'accueil
+        navigate('/');
     }
 
-
-    return (
+    
+    return  (
         <section className="container">
             <div className="authPage">
-
-            <div className="center">
-                <div className="authForm">
-
-                    <h2>Connexion</h2>
-
-                    <form onSubmit={handleSubmit}>
-                        <input type="email" label="Email" name="email" placeholder="Votre Email" fullWidth required value={credentials.email} onChange={handleChange} />
-                        <input type="password" label="Mot de passe" name="password" placeholder="Votre Mot de passe" fullWidth required value={credentials.password} onChange={handleChange} />
-                        <button type="submit" color="primary" variant="contained" fullWidth>Se connecter</button>
-                        <a>Mot de passe oublié ?</a>
-                        <a href="/signup">S'inscrire</a>
-                    </form>
+                <div className="center">
+                    <div className="authForm">
+                        <h2>Connexion</h2>
+                        <form onSubmit={handleSubmit}>
+                            <label htmlFor="email">
+                                <input 
+                                    type="email" 
+                                    name="email" 
+                                    id="email"
+                                    placeholder="Votre Email" 
+                                    required 
+                                    value={credentials.email} 
+                                    onChange={handleChange} 
+                                />
+                            </label>
+                            <label htmlFor="password">
+                                <input 
+                                    type="password" 
+                                    name="password" 
+                                    id="password"
+                                    placeholder="Votre Mot de passe" 
+                                    required 
+                                    value={credentials.password} 
+                                    onChange={handleChange} 
+                                />
+                            </label>
+                            <button type="submit">Se connecter</button>
+                            <a href="/forgot-password">Mot de passe oublié ?</a>
+                            <a href="/signup">S'inscrire</a>
+                        </form>
+                    </div>
+                    <h3>Vous êtes un décorateur professionel ?</h3>
+                    <a href="/signup-decorator">inscrivez vous ici</a>
                 </div>
-                <h3>Vous êtes un décorateur professionel ?</h3>
-                <a href="/signup-decorator">inscrivez vous ici</a>
             </div>
-
-            </div>
-
         </section>
     )
 }
