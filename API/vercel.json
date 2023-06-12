@@ -1,16 +1,25 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "src/main.ts",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "src/main.ts",
-        "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-      }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/main.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "src/main.ts",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    }
+  ],
+  "env": {
+    "POSTGRES_HOST": "kandula.db.elephantsql.com",
+    "POSTGRES_USER": "ixnkbogs",
+    "POSTGRES_PASSWORD": "2LttG2Zs54UaH2juo3LEfoDekaRIMuND",
+    "POSTGRES_DB": "ixnkbogs",
+    "POSTGRES_PORT": "5432",
+    "JWT_SECRET": "secret",
+    "CLIENT_URL": "<https://projet-fil-rouge-b3.vercel.app>"
   }
+}

@@ -27,6 +27,12 @@ export class AuthService {
 
     return {
       access_token: this.generateJwtToken(payload),
+      user: {
+        id: user.id,
+        email: user.email,
+        professional: user.professional
+        // Vous pouvez ajouter d'autres informations utilisateur ici si nécessaire
+    }
     }
   }
 
