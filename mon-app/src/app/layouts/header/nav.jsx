@@ -13,15 +13,15 @@ const Nav = () => {
                         <Link to="/" className="primary-color logo">IDECO</Link>
                     </div>
                    
-                        <li><a href="/signin">Home</a></li>
-                        <li><a href="/signin">Se faire conseiller</a></li>
-                        <li><a href="/signup">Discussions</a></li>
-                        <li><a href="/signup">Blog</a></li>
+                        <li><Link to="/signin">Home</Link></li>
+                        <li><Link to="/signin">Se faire conseiller</Link></li>
+                        <li><Link to="/signup">Discussions</Link></li>
+                        <li><Link to="/signup">Blog</Link></li>
 
                    
                     <div>
                         <Link to='/signin'  className="button" >Contacter un expert</Link>
-                        <a href="/signin" ></a>
+                        <Link to="/signin" ></Link>
                     </div>
 
 
