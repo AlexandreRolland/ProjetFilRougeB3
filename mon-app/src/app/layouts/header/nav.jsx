@@ -10,7 +10,7 @@ const Nav = () => {
 
                 <div className="header">
                     <div>
-                        <a href="/" className="primary-color logo">IDECO</a>
+                        <Link href="/" className="primary-color logo">IDECO</Link>
                     </div>
                    
                         <li><a href="/signin">Home</a></li>
