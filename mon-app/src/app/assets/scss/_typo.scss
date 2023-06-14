@@ -76,6 +76,18 @@ label {
     }
 }
 
+input, textarea, select {
+    @include typography($black-color, $primary-font, 16px, 400);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 14px, 400);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 14px, 400);
+    }
+}
+
 
 //classes
 

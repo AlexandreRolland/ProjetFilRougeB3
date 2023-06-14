@@ -10,6 +10,64 @@
         background-color: $white-color;
         border-radius: 20px;
         padding: 30px;
+        height: 340px;
+        display: flex;
+        flex-direction: column;
+
+        .dimensions-surface{
+            display:flex;
+            align-items: center;
+
+            span{
+                @include typography($black-color, $primary-font, 28px, 600);
+                margin-left: 10px;
+            }
+
+
+        }
+
+        input{
+            min-width: 10%;
+            width: auto;
+            max-width: 15%;
+            height: 40px;
+            border-radius: 8px;
+            border: 2px solid $border-color;
+            padding: 10px;
+
+            &:focus{
+                outline: none;
+                border: 2px solid $primary-color;
+              }
+
+        }
+
+        p{
+            margin-top: 40px;
+            font-weight: 600;
+            font-size: 36px;
+          }
+
+          .dimensions-checkout{
+                display: flex;
+                align-items: center;
+
+                .dimensions-price{
+                    height: auto;
+                    width: auto;
+                    border-radius: 8px;
+                    border: 2px solid $primary-color;
+                    padding: 10px;
+                    @include center;
+                    font-size: 36px;
+                    @include typography($primary-color, $primary-font, 36px, 600);
+                }
+
+                button{
+                    margin-left: 30px;
+                    height: auto;
+                }
+          }
     }
     
     }

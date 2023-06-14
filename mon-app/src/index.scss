@@ -3,11 +3,19 @@
 @import '/src/app/assets/scss/_global.scss';
 @import '/src/app/assets/scss/_typo.scss';
 
+//pages
+
+@import '/src/app/pages/home/_home.scss';
+@import '/src/app/pages/room-form/_room-form.scss';
+@import '/src/app/pages/annonce-list/_annonceList.scss';
+
 
 //layout
 
 @import '/src/app/layouts/footer/_footer.scss';
 @import '/src/app/layouts/header/_nav.scss';
+
+
 
 //components
 
@@ -29,8 +37,3 @@
     @import '/src/app/components/form/room-form/pictures/_roomPictures.scss';
     @import '/src/app/components/form/room-form/dimensions/_roomDimensions.scss';
 
-//pages
-
-@import '/src/app/pages/home/_home.scss';
-@import '/src/app/pages/room-form/_room-form.scss';
-@import '/src/app/pages/annonce-list/_annonceList.scss';

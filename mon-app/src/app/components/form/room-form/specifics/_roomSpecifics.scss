@@ -1,6 +1,8 @@
 .roomSpecifics{
     width: 50%;
     padding-left: 30px;
+
+
     
     h2{
         margin-bottom: 30px;
@@ -10,6 +12,17 @@
         background-color: $white-color;
         border-radius: 20px;
         padding: 30px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+
+        textarea{
+            flex-grow: 1;
+        }
+        
+        label{
+            font-weight: 600;
+        }
     }
     
     }
