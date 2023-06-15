@@ -10,7 +10,7 @@ import * as bcrypt from 'bcrypt';
 export class UserService {
   constructor(
     @InjectRepository(UserEntity)
-    private readonly userRepository: Repository<UserEntity>
+    private  userRepository: Repository<UserEntity>
   ) {}
 
   async create(createUserDto: CreateUserDto) {
@@ -35,8 +35,19 @@ export class UserService {
     return await this.userRepository.findOneBy({ email })
   }
     
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, updateUserDto: UpdateUserDto) {
+
+    try{
+      const user = await this.userRepository.findOneBy({id});
+      const userUpdate = { ...user, ...updateUserDto };
+      await this.userRepository.save(userUpdate);
+      
+      return userUpdate;
+    }
+    catch(error){
+      throw new Error('Error while updating user');
+    }
+
   }
 
   sofDelete(id: number) {

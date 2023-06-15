@@ -12,7 +12,7 @@ export class AnnonceEntity{
     @Column()
     roomSurface: number;
 
-    @Column()
+    @Column( {nullable: true})
     photos: string;
 
     @Column()
@@ -25,14 +25,6 @@ export class AnnonceEntity{
     client: ClientEntity;
 
     @Column()
-    prix: number;
+    price: number;
 
-    @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
-
-  @DeleteDateColumn()
-  deletedAt: Date;
 }

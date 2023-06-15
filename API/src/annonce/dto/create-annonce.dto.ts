@@ -1,7 +1,7 @@
 export class CreateAnnonceDto {
     roomType: string;
     roomSurface: number;
-    photos: string;
+    photos?: string;
     description: string;
-    prix: number;
+    price: number;
 }

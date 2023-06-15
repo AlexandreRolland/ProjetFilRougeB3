@@ -19,7 +19,7 @@ export class UserEntity {
     @Column({unique: true, nullable: true})
     username: string;
 
-    @Column({default: "false"})
+    @Column({default: "true"})
     professional: boolean;
     
     @OneToOne(() => ProfileEntity, profile => profile.user, {

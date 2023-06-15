@@ -9,7 +9,6 @@ import { UpdateAnnonceDto } from './dto/update-annonce.dto';
 export class AnnonceController {
   constructor(private readonly annonceService: AnnonceService) {}
 
-  @UseGuards(JwtAuthGuard)
   @Post()
   createAnnonce(@Body() createAnnonceDto: CreateAnnonceDto) {
     return this.annonceService.createAnnonce(createAnnonceDto);
