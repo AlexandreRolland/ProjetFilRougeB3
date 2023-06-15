@@ -13,7 +13,7 @@ const AnnoncesComponent = ({ annonces }) => {
           <p>Description : {annonce.description}</p>
           </div>
           <div className='right'>
-          <p>Rémunération : {annonce.prix} €</p>
+          <p>Rémunération : {annonce.price} €</p>
             <button>Prendre en charge</button>
           </div>
         </div>

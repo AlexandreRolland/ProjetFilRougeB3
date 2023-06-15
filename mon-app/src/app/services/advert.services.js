@@ -6,9 +6,7 @@ async function createAdvert(advert) {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': 'Bearer ' + TokenServices.getToken()
-            
-        },
+            },
         body: JSON.stringify(advert)
     })
         .then(response => response.json())
