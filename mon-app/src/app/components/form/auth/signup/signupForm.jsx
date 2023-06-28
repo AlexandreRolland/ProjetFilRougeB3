@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AuthServices } from "../../../../services/auth.service";
+import { Link } from "react-router-dom";
 
 function SignupForm() {
 
@@ -40,7 +41,7 @@ function SignupForm() {
                             <div className="thanks-signup">
                                 <h2>Merci !</h2>
                                 <p>Connectez-vous pour continuer.</p>
-                                <a href="/signin" className="button">Se connecter</a>
+                                <Link to="/signin" className="button">Se connecter</Link>
                             </div>
                         ) : (
                             <>
@@ -50,13 +51,13 @@ function SignupForm() {
                                     <input type="email" label="Email" name="email" placeholder="Votre Email" required value={credentials.email} onChange={handleChange} />
                                     <input type="password" label="Mot de passe" name="password" placeholder="Votre Mot de passe" required value={credentials.password} onChange={handleChange}/>
                                     <button type="submit" color="primary" variant="contained" >S'inscrire</button>
-                                    <a href="/signin">Déjà un compte ?</a>
+                                    <Link to="/signin">Déjà un compte ?</Link>
                                 </form>
                             </>
                         )}
                     </div>
                     <h3>Vous êtes un décorateur professionnel ?</h3>
-                    <a>inscrivez vous ici</a>
+                    <Link>inscrivez vous ici</Link>
                 </div>
             </div>
         </section>

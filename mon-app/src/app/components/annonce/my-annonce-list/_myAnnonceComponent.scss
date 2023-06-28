@@ -1,0 +1,52 @@
+.my-annonce-component{
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  
+    p{
+      margin-top:15px;
+    }
+  
+    .left{
+      width:75%;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      .description {
+        display: flex;
+        align-items: center;
+  
+        span {
+          margin-right: 10px;
+        }
+  
+        form {
+          display: inline;
+  
+          input {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  
+    .right{
+      width:25%;
+      height: auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-end;
+  
+      p{
+        margin-bottom: 15px;
+      }
+  
+      button {
+        margin-top: 10px;
+      }
+    }
+  }
+  

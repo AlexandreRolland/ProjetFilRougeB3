@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useNavigate } from 'react-router-dom'; // utilisez useHistory pour react-router-dom v5 ou inférieure
+import { Link, useNavigate } from 'react-router-dom'; // utilisez useHistory pour react-router-dom v5 ou inférieure
 import { AuthServices } from "../../../../services/auth.service";
 import { TokenServices } from "../../../../services/token.services";
 import UserContext from "../../../../../setup/contexts/UserContext";
@@ -69,12 +69,12 @@ function SigninForm() {
                                 />
                             </label>
                             <button type="submit">Se connecter</button>
-                            <a href="/forgot-password">Mot de passe oublié ?</a>
-                            <a href="/signup">S'inscrire</a>
+                            <Link to="/forgot-password">Mot de passe oublié ?</Link>
+                            <Link to="/signup">S'inscrire</Link>
                         </form>
                     </div>
                     <h3>Vous êtes un décorateur professionel ?</h3>
-                    <a href="/signup-decorator">inscrivez vous ici</a>
+                    <Link to="/signup-decorator">inscrivez vous ici</Link>
                 </div>
             </div>
         </section>

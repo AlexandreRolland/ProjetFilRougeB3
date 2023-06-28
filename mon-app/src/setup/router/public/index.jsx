@@ -5,6 +5,7 @@ import SignupPage from '../../../app/pages/auth/signup/signupPage.jsx';
 import SignupDecoratorPage from '../../../app/pages/auth/decorator/signupDecoratorPage.jsx';
 import RoomFormPage from '../../../app/pages/room-form/room-form.jsx';
 import AnnonceList from '../../../app/pages/annonce-list/annonceList.jsx';
+import MyAnnonceList from '../../../app/pages/my-annonce-list/myAnnonceList.jsx';
 
 
 
@@ -17,6 +18,7 @@ export const PublicRoutes = () => {
             <Route path="/room_form" element={<RoomFormPage />} />
             <Route path="/signup_decorator" element={<SignupDecoratorPage />} />
             <Route path="/annonce_list" element={<AnnonceList />} />
+            <Route path="/my_annonces" element={<MyAnnonceList />} />
         </Routes>
     );
 }

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { AdvertService } from "../../services/advert.services"; // Remplacer par le chemin correct vers le service
+import React, { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom"; // Utilisez cet import à la place de useHistory
+import { AdvertService } from "../../services/advert.services";
 
 import Footer from "../../layouts/footer/footer";
 import Nav from "../../layouts/header/nav";
@@ -7,6 +8,7 @@ import RoomType from "../../components/form/room-form/type/room-type.jsx";
 import RoomSpecifics from "../../components/form/room-form/specifics/room-specifics.jsx";
 import RoomPictures from "../../components/form/room-form/pictures/roomPictures";
 import RoomDimensions from "../../components/form/room-form/dimensions/roomDimensions";
+import UserContext from "../../../setup/contexts/UserContext";
 
 const RoomFormPage = () => {
     const [roomSurface, setroomSurface] = useState(0);
@@ -14,6 +16,7 @@ const RoomFormPage = () => {
     const [roomType, setroomType] = useState(null);
     const [description, setDescription] = useState("");
     const [file, setFile] = useState(null);
+    const navigate = useNavigate(); // Nouveau hook pour la redirection
 
     useEffect(() => {
         setTotal(roomSurface * 1.5);
@@ -35,6 +38,8 @@ const RoomFormPage = () => {
         setroomSurface(event.target.value ? +event.target.value : '');
     }
 
+    const { user } = useContext(UserContext);
+
     const handleOnSubmit = async (event) => {
         event.preventDefault();
         const advert = {
@@ -42,31 +47,32 @@ const RoomFormPage = () => {
             price: total,
             roomType: roomType,
             description: description,
-            // Supposons que votre API supporte les envois de fichier.
-            // Vous pouvez avoir besoin de modifier cette partie pour correspondre à vos besoins
-            picture: file
+            picture: file,
+            user: user
         }
-        await AdvertService.createAdvert(advert);
+        
+        try {
+            await AdvertService.createAdvert(advert);
+            navigate('/my_annonces'); // Redirection en cas de succès
+        } catch (error) {
+            alert('Une erreur est survenue lors de la création de l\'annonce.'); // Message d'erreur en cas d'échec
+        }
     }
 
     return (
         <>
             <Nav />
             <section className="container">
-            <form action="" className="form-container" onSubmit={handleOnSubmit}>
-                <div className="row">
-                <RoomType roomType={roomType} onRoomChange={handleRoomChange} />
-                <RoomSpecifics description={description} onDescriptionChange={handleDescriptionChange} />
-                
-                </div>
-                <div className="row">
-                <RoomPictures file={file} onFileChange={handleFileChange} />
-                <RoomDimensions roomSurface={roomSurface} total={total} onroomSurfaceChange={handleroomSurfaceChange} />
-
-
-                </div>
-
-            </form>
+                <form action="" className="form-container" onSubmit={handleOnSubmit}>
+                    <div className="row">
+                        <RoomType roomType={roomType} onRoomChange={handleRoomChange} />
+                        <RoomSpecifics description={description} onDescriptionChange={handleDescriptionChange} />
+                    </div>
+                    <div className="row">
+                        <RoomPictures file={file} onFileChange={handleFileChange} />
+                        <RoomDimensions roomSurface={roomSurface} total={total} onroomSurfaceChange={handleroomSurfaceChange} />
+                    </div>
+                </form>
             </section>
             <Footer />
         </>

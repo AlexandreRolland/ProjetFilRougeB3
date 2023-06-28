@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Footer = () => {
 
@@ -8,14 +9,14 @@ const Footer = () => {
 
                 <div className="footer">
                     <div>
-                        <a href="/signin" className="primary-color logo">IDECO</a>
+                        <Link to="/signin" className="primary-color logo">IDECO</Link>
                     </div>
                     <ul>
 
-                        <li><a href="/signin">Accueil</a></li>
-                        <li><a href="/signin">Se faire conseiller</a></li>
-                        <li><a href="/signin">Discussions</a></li>
-                        <li><a href="/signin">Blog</a></li>
+                        <li><Link to="/signin">Accueil</Link></li>
+                        <li><Link to="/signin">Se faire conseiller</Link></li>
+                        <li><Link to="/signin">Discussions</Link></li>
+                        <li><Link to="/signin">Blog</Link></li>
                     </ul>
 
 

@@ -8,6 +8,7 @@
 @import '/src/app/pages/home/_home.scss';
 @import '/src/app/pages/room-form/_room-form.scss';
 @import '/src/app/pages/annonce-list/_annonceList.scss';
+@import '/src/app/pages/my-annonce-list/_myAnnonceList.scss';
 
 
 //layout
@@ -21,6 +22,7 @@
 
 
 @import '/src/app/components/annonce/annonce-list/_annonceComponent.scss';
+@import '/src/app/components/annonce/my-annonce-list/_myAnnonceComponent.scss';
 @import '/src/app/components/home/banner/_banner.scss';
 @import '/src/app/components/home/steps/_steps.scss';
 @import '/src/app/components/home/articles/_articles.scss';

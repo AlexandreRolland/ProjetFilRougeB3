@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Steps = () => {
     return (
         <section className="container">
@@ -27,7 +29,7 @@ const Steps = () => {
                     </div>    
                 </div>
 
-                <a href="" className="button">Contacter un expert</a>
+                <Link to="" className="button">Contacter un expert</Link>
             </div>
 
         </div>

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -18,11 +19,11 @@ function SignupDecoratorForm() {
                             <input type="password" label="Mot de passe" name="password" placeholder="Votre Mot de passe" fullWidth required />
                             <input type="file" label="Mot de passe" name="password" placeholder="Votre Mot de passe" fullWidth required />
                             <button type="submit" color="primary" variant="contained" fullWidth>S'inscrire</button>
-                            <p href="/signin">Après vérification, votre compte sera<br/>convertie en tant que Décorateur</p>
+                            <p>Après vérification, votre compte sera<br/>convertie en tant que Décorateur</p>
                         </form>
                     </div>
                     <h3>Déjà un compte ?</h3>
-                    <a href="/signin">Connectez vous ici</a>
+                    <Link to="/signin">Connectez vous ici</Link>
                 </div>
     
                 </div>
