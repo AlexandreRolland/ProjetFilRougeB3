@@ -9,6 +9,7 @@ import { UpdateAnnonceDto } from './dto/update-annonce.dto';
 export class AnnonceController {
   constructor(private readonly annonceService: AnnonceService) {}
 
+  
   @Post()
   createAnnonce(@Body() createAnnonceDto: CreateAnnonceDto) {
     return this.annonceService.createAnnonce(createAnnonceDto);
@@ -19,18 +20,22 @@ export class AnnonceController {
     return this.annonceService.findAll();
   }
 
+  @Get('user/:id')
+  findAllByUserId(@Param('id') id: string) {
+    return this.annonceService.findAllByUserId(+id);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.annonceService.findOne(+id);
   }
 
-  @UseGuards(JwtAuthGuard)
   @Put(':id')
   update(@Param('id') id: string, @Body() updateAnnonceDto: UpdateAnnonceDto) {
     return this.annonceService.update(+id, updateAnnonceDto);
   }
 
-  @UseGuards(JwtAuthGuard)
+
   @Delete(':id')
   softDeleteAnnonce(@Param('id') id: string) {
     return this.annonceService.softDeleteAnnonce(+id);

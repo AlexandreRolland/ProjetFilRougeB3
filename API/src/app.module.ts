@@ -9,6 +9,7 @@ import { DecorateurModule } from './decorateur/decorateur.module';
 import { ConfigModule } from '@nestjs/config';
 import { AnnonceModule } from './annonce/annonce.module';
 import { ProfileModule } from './profile/profile.module';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
@@ -29,7 +30,8 @@ import { ProfileModule } from './profile/profile.module';
     ClientModule,
     DecorateurModule,
     AnnonceModule,
-    ProfileModule],
+    ProfileModule,
+    ChatModule],
   controllers: [AppController],
   providers: [AppService],
 })

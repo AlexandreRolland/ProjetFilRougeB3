@@ -6,6 +6,6 @@ export class UpdateAnnonceDto extends PartialType(CreateAnnonceDto) {
     roomSurface?: number;
     photos?: string;
     descritpion?: string;
-    user?: number;
+    // user?: number;
     prix?: number;
 }

@@ -24,11 +24,16 @@ export class UserService {
   }
 
   async findAll() {
-    return await this.userRepository.find();
+    return await this.userRepository.createQueryBuilder('user')
+    .leftJoinAndSelect('user.annonces', 'annonces')
+    .getMany();
   }
 
   async findOne(id: number) {
-    return await this.userRepository.findOneBy({id});
+    return await this.userRepository.createQueryBuilder('user')
+    .leftJoinAndSelect('user.annonces', 'annonces')
+    .where('user.id = :id', { id })
+    .getOne();
   }
 
   async findOneByEmail(email: string) : Promise<UserEntity> {

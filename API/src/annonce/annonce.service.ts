@@ -26,10 +26,28 @@ export class AnnonceService {
 
   async findAll() {
     try{
-      return await this.annonceRepository.find();
+      return await this.annonceRepository.find({
+        relations: ['user'],
+        order: {
+          id: 'DESC', 
+        },
+      });
     }
     catch(error){
-      throw new NotFoundException('Error finding annonce')
+      throw new NotFoundException('Error finding annonce');
+    }
+  }
+
+  async findAllByUserId(id: number) {
+    try{
+      return await this.annonceRepository.createQueryBuilder('annonce')
+      .leftJoinAndSelect('annonce.user', 'user')
+      .where('user.id = :id', { id })
+      .orderBy('annonce.id', 'DESC') 
+      .getMany();
+    }
+    catch(error){
+      throw new NotFoundException('Error finding annonce');
     }
   }
 
@@ -44,11 +62,9 @@ export class AnnonceService {
 
   async update(id: number, updateAnnonceDto: UpdateAnnonceDto) {
     try{
+      await this.annonceRepository.update(id, updateAnnonceDto);
       const annonce = await this.annonceRepository.findOneBy({id});
-      const annonceUpdate = { ...annonce, ...updateAnnonceDto };
-      await this.annonceRepository.save(annonceUpdate);
-      
-      return annonceUpdate;
+      return annonce;
     }
     catch(error){
       throw new UnauthorizedException(error)
@@ -56,12 +72,14 @@ export class AnnonceService {
   }
 
   async softDeleteAnnonce(id: number) {
-    try{
-      return await this.annonceRepository.softDelete(id);
-    }
-    catch(error){
-      throw new UnauthorizedException(error)
+    try {
+      await this.annonceRepository.softDelete({ id });
+      return { deleted: true };
+    } catch (error) {
+      throw new UnauthorizedException(
+        `Error deleting annonce: ${error.message}`,
+        error.status,
+      );
     }
   }
-
 }

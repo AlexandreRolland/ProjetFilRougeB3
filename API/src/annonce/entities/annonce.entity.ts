@@ -1,8 +1,9 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinTable, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
-import { ClientEntity } from "../../client/entities/client.entity";
+import { Column, Entity, JoinTable, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
+import { UserEntity } from "src/user/entities/user.entity";
+import { TimeStamp } from "src/timestamp/timestamp.entity";
 
 @Entity("annonce")
-export class AnnonceEntity{
+export class AnnonceEntity extends TimeStamp{
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -18,11 +19,9 @@ export class AnnonceEntity{
     @Column()
     description: string;
 
-    @ManyToOne(() => ClientEntity, client => client.annonces, {
-        cascade: true
-        })
+    @ManyToOne(() => UserEntity, (user) => user.annonces)
     @JoinTable()
-    client: ClientEntity;
+    user: UserEntity;
 
     @Column()
     price: number;

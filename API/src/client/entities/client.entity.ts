@@ -11,10 +11,6 @@ export class ClientEntity{
     @JoinColumn()
     user: UserEntity;
 
-    @OneToMany(() => AnnonceEntity, annonce => annonce.client)
-    @JoinColumn()
-    annonces: AnnonceEntity[];
-
     @CreateDateColumn()
   createdAt: Date;
 
