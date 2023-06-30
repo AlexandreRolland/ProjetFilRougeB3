@@ -1,6 +1,6 @@
 import { Column, Entity, JoinTable, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn} from "typeorm";
-import { UserEntity } from "src/user/entities/user.entity";
-import { TimeStamp } from "src/timestamp/timestamp.entity";
+import { UserEntity } from "../../user/entities/user.entity";
+import { TimeStamp } from "../../timestamp/timestamp.entity";
 
 @Entity("annonce")
 export class AnnonceEntity extends TimeStamp{

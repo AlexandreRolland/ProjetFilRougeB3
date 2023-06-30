@@ -3,7 +3,7 @@ import { Column } from "typeorm/decorator/columns/Column";
 import { ProfileEntity } from "../../profile/entities/profile.entity";
 import { ClientEntity } from "../../client/entities/client.entity";
 import { DecorateurEntity } from "../../decorateur/entities/decorateur.entity";
-import { AnnonceEntity } from "src/annonce/entities/annonce.entity";
+import { AnnonceEntity } from "../../annonce/entities/annonce.entity";
 
 
 @Entity("user")
