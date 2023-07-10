@@ -8,7 +8,8 @@ function SignupForm() {
         username: "",
         email: "",
         password: "",
-        professional:"true",
+        professional:"false",
+        client: {}
     });
 
     const [isRegistered, setIsRegistered] = useState(false);
@@ -22,6 +23,7 @@ function SignupForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         await AuthServices.signUp(credentials);
         
         console.log(credentials);

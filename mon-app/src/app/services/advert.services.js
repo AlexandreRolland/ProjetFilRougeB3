@@ -44,25 +44,24 @@ async function getAdverts() {
   }
 }
 
-async function takeCharge(decorateurId, annonceId) {
+async function takeCharge(decorateurId, annonceId, clientId) {
   try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/chat`, {
-          method: 'POST',
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/annonce/${annonceId}`, {
+          method: 'PUT',
           headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json',
               'Authorization': 'Bearer ' + TokenServices.getToken(),
           },
           body: JSON.stringify({
-              decorateurId,
-              annonceId,
+              decorateur: decorateurId,
           }),
       });
 
       if (!response.ok) {
           throw new Error('Une erreur est survenue lors de la prise en charge de l\'annonce');
       }
-
+      console.log(response);
       return response.json();
   } catch (error) {
       console.error(error);

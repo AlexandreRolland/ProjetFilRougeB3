@@ -7,17 +7,26 @@ const AnnoncesComponent = ({ annonces }) => {
 
   const { user } = useContext(UserContext);
 
-  const handleTakeCharge = async (annonceId) => {
-    const data = await AdvertService.takeCharge(user.id, annonceId);
-    console.log(data);
+  const handleTakeCharge = async (annonceId, clientId) => {
+    console.log("Decorator ID: ", user.decorateur.id);
+    console.log("Advert ID: ", annonceId);
+    console.log("Client ID: ", clientId);
+
+    try {
+    const data = await AdvertService.takeCharge(user.decorateur.id, annonceId, clientId);
+    return data;
+    } catch (error) {
+      console.log(error);
+    }
   };
+  
 
 
   return (
     <div>
       {annonces.map((annonce) => (
-        <>
-          <div className="annonce-component" key={annonce.id}>
+        <React.Fragment key={annonce.id}>
+          <div className="annonce-component">
             <div className="left">
               <h3>{annonce.roomType}</h3>
               <p>Surface : {annonce.roomSurface} m²</p>
@@ -25,13 +34,13 @@ const AnnoncesComponent = ({ annonces }) => {
             </div>
             <div className="right">
               <p>Rémunération : {annonce.price} €</p>
-              <button onClick={() => handleTakeCharge(annonce.id, annonce.clientId)}>
+              <button onClick={() => handleTakeCharge(annonce.id, annonce.user.id)}>
                 Prendre en charge
               </button>
             </div>
           </div>
           <hr />
-        </>
+        </React.Fragment>
       ))}
     </div>
   );
