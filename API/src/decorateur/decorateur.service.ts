@@ -12,7 +12,7 @@ export class DecorateurService {
     private decorateurRepository: Repository<DecorateurEntity>,
   ) {}
 
-async createDecorateur(createDecorateurDto: CreateDecorateurDto) {
+  async createDecorateur(createDecorateurDto: CreateDecorateurDto) {
     try{
       const decorateur = await this.decorateurRepository.create(createDecorateurDto);
       await this.decorateurRepository.save(decorateur);
@@ -23,18 +23,20 @@ async createDecorateur(createDecorateurDto: CreateDecorateurDto) {
     }
   }
 
- async findAll() {
+  async findAll() {
     try{
-      return await this.decorateurRepository.find();
+      return await this.decorateurRepository.createQueryBuilder('decorateur')
+        .leftJoinAndSelect('decorateur.user', 'user')
+        .getMany();
     }
     catch(error){
       throw new Error('Error finding decorateurs')
     }
   }
 
- async findOne(id: number) {
+  async findOne(id: number) {
     try{
-    return await this.decorateurRepository.findOneBy({ id });
+      return await this.decorateurRepository.findOneBy({ id });
     }
     catch(error){
       throw new Error('Error finding decorateur')

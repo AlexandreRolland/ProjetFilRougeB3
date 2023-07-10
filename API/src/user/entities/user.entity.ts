@@ -1,13 +1,15 @@
-import { PrimaryGeneratedColumn, Entity, OneToOne, JoinColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, OneToMany } from "typeorm";
+import { PrimaryGeneratedColumn, Entity, OneToOne, JoinColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, OneToMany, ManyToOne } from "typeorm";
 import { Column } from "typeorm/decorator/columns/Column";
 import { ProfileEntity } from "../../profile/entities/profile.entity";
 import { ClientEntity } from "../../client/entities/client.entity";
 import { DecorateurEntity } from "../../decorateur/entities/decorateur.entity";
 import { AnnonceEntity } from "../../annonce/entities/annonce.entity";
+import { TimeStamp } from "src/timestamp/timestamp.entity";
+import { MessageEntity } from "src/message/entities/message.entity";
 
 
 @Entity("user")
-export class UserEntity {
+export class UserEntity extends TimeStamp{
     @PrimaryGeneratedColumn()
     id: number;
     
@@ -43,13 +45,7 @@ export class UserEntity {
     })
     annonces: AnnonceEntity[];
 
-    @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
-
-  @DeleteDateColumn()
-  deletedAt: Date;
+    @OneToMany(() => MessageEntity, message => message.sender)
+    messages: MessageEntity[];
 
 }

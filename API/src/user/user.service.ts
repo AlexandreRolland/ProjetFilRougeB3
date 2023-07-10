@@ -26,6 +26,8 @@ export class UserService {
   async findAll() {
     return await this.userRepository.createQueryBuilder('user')
     .leftJoinAndSelect('user.annonces', 'annonces')
+    .leftJoinAndSelect('user.client', 'client')
+    .leftJoinAndSelect('user.decorateur', 'decorateur')
     .getMany();
   }
 
@@ -37,8 +39,13 @@ export class UserService {
   }
 
   async findOneByEmail(email: string) : Promise<UserEntity> {
-    return await this.userRepository.findOneBy({ email })
+    return await this.userRepository.createQueryBuilder('user')
+    .where('user.email = :email', { email })
+    .leftJoinAndSelect('user.client', 'client')
+    .leftJoinAndSelect('user.decorateur', 'decorateur')
+    .getOne();
   }
+
     
   async update(id: number, updateUserDto: UpdateUserDto) {
 

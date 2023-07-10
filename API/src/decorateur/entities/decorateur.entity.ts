@@ -1,9 +1,11 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, OneToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, OneToMany, OneToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { UserEntity } from "../../user/entities/user.entity";
+import { TimeStamp } from "src/timestamp/timestamp.entity";
+import { AnnonceEntity } from "src/annonce/entities/annonce.entity";
 
 
 @Entity("decorateur")
-export class DecorateurEntity {
+export class DecorateurEntity extends TimeStamp{
     @PrimaryGeneratedColumn()
     id: number;
 
@@ -11,22 +13,17 @@ export class DecorateurEntity {
     @JoinColumn()
     user: UserEntity;
 
-    @Column()
+    @Column({nullable: true})
     diplome: string;
 
-    @Column()
+    @Column({nullable: true})
     experience: string;
 
-    @Column()
+    @Column({nullable: true})
     solde: number;
 
-    @CreateDateColumn()
-  createdAt: Date;
+    @OneToMany(() => AnnonceEntity, annonce => annonce.decorateur)
+    annonces: AnnonceEntity[];
 
-  @UpdateDateColumn()
-  updatedAt: Date;
-
-  @DeleteDateColumn()
-  deletedAt: Date;
 
 }

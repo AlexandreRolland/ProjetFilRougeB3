@@ -27,7 +27,7 @@ export class AnnonceService {
   async findAll() {
     try{
       return await this.annonceRepository.find({
-        relations: ['user'],
+        relations: ['user','decorateur'],
         order: {
           id: 'DESC', 
         },
@@ -53,7 +53,11 @@ export class AnnonceService {
 
   async findOne(id: number) {
     try{
-      return await this.annonceRepository.findOneBy({id});
+      return await this.annonceRepository.createQueryBuilder('annonce')
+      .leftJoinAndSelect('annonce.user', 'user')
+      .leftJoinAndSelect('annonce.decorateur', 'decorateur')
+      .where('annonce.id = :id', { id })
+      .getOne();
     }
     catch(error){
       throw new NotFoundException('Error finding annonce')
@@ -63,7 +67,7 @@ export class AnnonceService {
   async update(id: number, updateAnnonceDto: UpdateAnnonceDto) {
     try{
       await this.annonceRepository.update(id, updateAnnonceDto);
-      const annonce = await this.annonceRepository.findOneBy({id});
+      const annonce = await this.findOne(id);
       return annonce;
     }
     catch(error){

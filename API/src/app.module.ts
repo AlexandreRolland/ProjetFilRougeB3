@@ -9,7 +9,8 @@ import { DecorateurModule } from './decorateur/decorateur.module';
 import { ConfigModule } from '@nestjs/config';
 import { AnnonceModule } from './annonce/annonce.module';
 import { ProfileModule } from './profile/profile.module';
-import { ChatModule } from './chat/chat.module';
+import { MessageModule } from './message/message.module';
+import { MessageEntity } from './message/entities/message.entity';
 
 @Module({
   imports: [
@@ -21,9 +22,9 @@ import { ChatModule } from './chat/chat.module';
       username: process.env.POSTGRES_USER,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [__dirname + '/**/*.entity.{ts,js}', MessageEntity],
       synchronize: true,
-      autoLoadEntities: true,
+      autoLoadEntities: true
     }),
     UserModule,
     AuthModule,
@@ -31,8 +32,8 @@ import { ChatModule } from './chat/chat.module';
     DecorateurModule,
     AnnonceModule,
     ProfileModule,
-    ChatModule],
+    MessageModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService]
 })
 export class AppModule {}

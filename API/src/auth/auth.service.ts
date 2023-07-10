@@ -23,6 +23,8 @@ export class AuthService {
       email: user.email,
       professional: user.professional,
       id: user.id,
+      client: user.client,
+      decorateur: user.decorateur
     };
 
     return {
@@ -30,7 +32,9 @@ export class AuthService {
       user: {
         id: user.id,
         email: user.email,
-        professional: user.professional
+        professional: user.professional,
+        client: user.client,
+        decorateur: user.decorateur
         // Vous pouvez ajouter d'autres informations utilisateur ici si nécessaire
     }
     }
