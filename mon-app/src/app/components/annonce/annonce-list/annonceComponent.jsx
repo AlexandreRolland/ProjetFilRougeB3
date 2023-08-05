@@ -8,10 +8,6 @@ const AnnoncesComponent = ({ annonces }) => {
   const { user } = useContext(UserContext);
 
   const handleTakeCharge = async (annonceId, clientId) => {
-    console.log("Decorator ID: ", user.decorateur.id);
-    console.log("Advert ID: ", annonceId);
-    console.log("Client ID: ", clientId);
-
     try {
     const data = await AdvertService.takeCharge(user.decorateur.id, annonceId, clientId);
     return data;

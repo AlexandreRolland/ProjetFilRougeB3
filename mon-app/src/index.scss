@@ -9,6 +9,7 @@
 @import '/src/app/pages/room-form/_room-form.scss';
 @import '/src/app/pages/annonce-list/_annonceList.scss';
 @import '/src/app/pages/my-annonce-list/_myAnnonceList.scss';
+@import '/src/app/pages/annonce-chat/_annonceChat.scss';
 
 
 //layout
@@ -26,6 +27,8 @@
 @import '/src/app/components/home/banner/_banner.scss';
 @import '/src/app/components/home/steps/_steps.scss';
 @import '/src/app/components/home/articles/_articles.scss';
+@import '/src/app/components/annonce/annonce-chat/annonce-component/_annonceChatComponent.scss';
+@import '/src/app/components/annonce/annonce-chat/message-component/_annonceMessagesComponent.scss';
 
 
     //form

@@ -9,7 +9,8 @@ export class MessageEntity extends TimeStamp {
     id: number;
 
     @ManyToOne(() => UserEntity, user => user.messages)
-    sender: UserEntity;
+    @JoinTable()
+    senderId: UserEntity;
 
     @ManyToOne(() => AnnonceEntity, annonce => annonce.messages)
     annonce: AnnonceEntity;

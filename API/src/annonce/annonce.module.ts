@@ -7,6 +7,7 @@ import { AnnonceEntity } from './entities/annonce.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([AnnonceEntity])],
   controllers: [AnnonceController],
-  providers: [AnnonceService]
+  providers: [AnnonceService],
+  exports: [AnnonceService]
 })
 export class AnnonceModule {}

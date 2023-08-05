@@ -1,0 +1,93 @@
+.annonce-messages-component{
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+
+
+    .topbar-annonce{
+        height: 75px;
+        width: 100%;
+    }
+
+    form{
+      
+
+        height: 50px;
+        width: 75%;
+        background-color: $white-color;
+    }
+
+    .messages-box{
+
+        box-sizing: border-box;
+        overflow-y: scroll;
+        max-height: 475px;
+        height: auto;
+        padding: 20px;
+
+        .message{
+
+            width: 100%;
+        
+
+            .message-date{
+                @include typography($border-color, $primary-font, 14px, 400);
+                text-align: center;
+                margin-bottom: 15px;
+                margin-top: 30px;
+            }
+
+
+
+
+
+            .box-user{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+
+                .message-username-user{
+                    text-align: right;
+                    margin-bottom: 20px;
+                }
+
+                .message-user{
+                    text-align: right;
+                    padding: 15px;
+                    background-color:#F2F2F2;
+                    width: fit-content;
+                    border-radius: 3px 3px 3px 20px;
+                    margin-left: 15%;
+                }
+            }
+        
+
+            .box-other{
+
+                .message-username-other{
+                    text-align: left;
+                    margin-bottom: 20px;
+                }
+
+                .message-other{
+                    text-align: left;
+                    background-color:#F2F2F2;
+                    width: fit-content;
+                    border-radius: 3px 3px 20px 3px;
+                    padding: 15px;
+                    margin-right: 15%;
+                }
+            }
+    
+        }
+
+        .spacer{
+            height: 100px;
+        }
+
+    }
+
+    
+
+
+}

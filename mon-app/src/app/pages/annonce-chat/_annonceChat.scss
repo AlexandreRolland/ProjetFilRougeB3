@@ -1,0 +1,26 @@
+.annonce-chat{
+    background-color: $white-color;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    height: 600px;
+
+    .left{
+        width: 25%;
+        
+    }
+    .right{
+        width: 75%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 3px solid $border-color;
+        
+
+        span{
+            @include typography($black-color, $primary-font, 3em, 400);
+
+        }
+    }
+}
+

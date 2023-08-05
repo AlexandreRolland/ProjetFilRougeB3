@@ -29,7 +29,6 @@ async function getAdverts() {
           headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json',
-              'Authorization': 'Bearer ' + TokenServices.getToken()
           },
       });
 
@@ -91,6 +90,28 @@ async function getAdvertsByUserId(userId) {
   }
 }
 
+async function getAdvertsByDecoratorId(decoratorId) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/annonce/decorateur/${decoratorId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + TokenServices.getToken()
+            },
+        });
+  
+        if (!response.ok) {
+            throw new Error('Une erreur est survenue lors de la récupération des annonces du décorateur');
+        }
+  
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+  }
+
 async function deleteAdvert(advertId) {
   try {
       const response = await fetch(`${process.env.REACT_APP_API_URL}/annonce/${advertId}`, {
@@ -136,6 +157,55 @@ async function updateAdvert(advertId, updatedAdvert) {
   }
 }
 
+async function getMessagesByAdvertId(advertId) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/annonce/${advertId}/messages`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + TokenServices.getToken()
+            },
+        });
+  
+        if (!response.ok) {
+            throw new Error('Une erreur est survenue lors de la récupération des messages');
+        }
+  
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+  }
+
+  async function postMessage(annonceId, messageContent, senderId) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/message/${annonceId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + TokenServices.getToken(),
+            },
+            body: JSON.stringify({
+                content: messageContent,
+                senderId: senderId
+            }),
+        });
+
+        if (!response.ok) {
+            throw response;
+        }
+
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+  
+
 
 export const AdvertService = {
   getAdverts,
@@ -144,4 +214,7 @@ export const AdvertService = {
   getAdvertsByUserId,
   deleteAdvert,
   updateAdvert,
+  getMessagesByAdvertId,
+  getAdvertsByDecoratorId,
+  postMessage
 };

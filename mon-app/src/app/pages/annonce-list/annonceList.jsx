@@ -26,7 +26,8 @@ const AnnonceList = () => {
   useEffect(() => {
     AdvertService.getAdverts()
       .then(response => {
-        setAdverts(response);
+        const advertsWithDecorator = response.filter(advert => advert.decorateur === null || advert.decorateur === undefined);
+        setAdverts(advertsWithDecorator);
       })
       .catch(error => {
         console.error(error);

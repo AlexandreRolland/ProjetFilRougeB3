@@ -21,6 +21,7 @@ export const PublicRoutes = () => {
             <Route path="/annonce_list" element={<AnnonceList />} />
             <Route path="/my_annonces" element={<MyAnnonceList />} />
             <Route path="/annonce_chat" element={<AnnonceChat />} />
+            <Route path="/annonce_chat/:id" element={<AnnonceChat />} />
         </Routes>
     );
 }

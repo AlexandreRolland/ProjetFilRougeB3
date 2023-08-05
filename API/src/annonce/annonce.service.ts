@@ -27,7 +27,7 @@ export class AnnonceService {
   async findAll() {
     try{
       return await this.annonceRepository.find({
-        relations: ['user','decorateur'],
+        relations: ['user','decorateur', 'messages'],
         order: {
           id: 'DESC', 
         },
@@ -42,6 +42,7 @@ export class AnnonceService {
     try{
       return await this.annonceRepository.createQueryBuilder('annonce')
       .leftJoinAndSelect('annonce.user', 'user')
+      .leftJoinAndSelect('annonce.decorateur', 'decorateur')
       .where('user.id = :id', { id })
       .orderBy('annonce.id', 'DESC') 
       .getMany();
@@ -50,6 +51,20 @@ export class AnnonceService {
       throw new NotFoundException('Error finding annonce');
     }
   }
+
+  async findAllByDecoratorId(id: number) {
+    try {
+        return await this.annonceRepository.createQueryBuilder('annonce')
+            .leftJoinAndSelect('annonce.decorateur', 'decorateur')
+            .leftJoinAndSelect('annonce.user', 'user')
+            .where('decorateur.id = :id', { id })
+            .orderBy('annonce.id', 'DESC') 
+            .getMany();
+    }
+    catch(error) {
+        throw new NotFoundException('Error finding annonce');
+    }
+}
 
   async findOne(id: number) {
     try{
@@ -84,6 +99,31 @@ export class AnnonceService {
         `Error deleting annonce: ${error.message}`,
         error.status,
       );
+    }
+  }
+  
+  async findMessages(id: number) {
+    try{
+      const annonce = await this.annonceRepository.createQueryBuilder('annonce')
+      .leftJoinAndSelect('annonce.messages', 'messages')
+      // Affiche également le user qui a posté le message
+      .leftJoinAndSelect('messages.senderId', 'user')
+      .leftJoinAndSelect('user.client', 'client')
+      .leftJoinAndSelect('user.decorateur', 'decorateur')
+      .where('annonce.id = :id', { id })
+      .getOne();
+
+
+
+
+      if (!annonce) {
+        throw new NotFoundException('Annonce not found');
+      }
+
+      return annonce.messages;
+    }
+    catch(error){
+      throw new NotFoundException('Error finding messages for annonce')
     }
   }
 }

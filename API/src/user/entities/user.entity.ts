@@ -45,7 +45,7 @@ export class UserEntity extends TimeStamp{
     })
     annonces: AnnonceEntity[];
 
-    @OneToMany(() => MessageEntity, message => message.sender)
+    @OneToMany(() => MessageEntity, message => message.senderId)
     messages: MessageEntity[];
 
 }
