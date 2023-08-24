@@ -7,8 +7,7 @@ import { MessageEntity } from "../../message/entities/message.entity";
 export enum AnnonceStatus {
     ON_HOLD = 'En Attente',
     EN_COURS = 'En Cours',
-    ON_HOLDD = 'En Attente',
-    IN_PROGRESS = 'En Cours',
+    IN_PROGRES = 'En Cours',
     FINISHED = 'Terminé'
   }
 
