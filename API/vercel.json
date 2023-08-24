@@ -14,10 +14,10 @@
     }
   ],
   "env": {
-    "POSTGRES_HOST": "kandula.db.elephantsql.com",
-    "POSTGRES_USER": "ixnkbogs",
-    "POSTGRES_PASSWORD": "2LttG2Zs54UaH2juo3LEfoDekaRIMuND",
-    "POSTGRES_DB": "ixnkbogs",
+    "POSTGRES_HOST": "trumpet.db.elephantsql.com",
+    "POSTGRES_USER": "sezmoztl",
+    "POSTGRES_PASSWORD": "4UwbJnAl8VoIcuRW32KgMWDYmcL-T7w_",
+    "POSTGRES_DB": "sezmoztl",
     "POSTGRES_PORT": "5432",
     "JWT_SECRET": "secret",
     "CLIENT_URL": "https://projet-fil-rouge-b3.vercel.app"
