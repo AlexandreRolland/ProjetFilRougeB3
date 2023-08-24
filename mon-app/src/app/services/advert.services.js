@@ -43,29 +43,26 @@ async function getAdverts() {
   }
 }
 
-async function takeCharge(decorateurId, annonceId, clientId) {
-  try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/annonce/${annonceId}`, {
-          method: 'PUT',
-          headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json',
-              'Authorization': 'Bearer ' + TokenServices.getToken(),
-          },
-          body: JSON.stringify({
-              decorateur: decorateurId,
-          }),
-      });
+async function getAdvertById(advertId) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/annonce/${advertId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + TokenServices.getToken(),
+            },
+        });
 
-      if (!response.ok) {
-          throw new Error('Une erreur est survenue lors de la prise en charge de l\'annonce');
-      }
-      console.log(response);
-      return response.json();
-  } catch (error) {
-      console.error(error);
-      throw error;
-  }
+        if (!response.ok) {
+            throw new Error('Une erreur est survenue lors de la récupération des détails de l\'annonce');
+        }
+
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
 }
 
 async function getAdvertsByUserId(userId) {
@@ -204,6 +201,34 @@ async function getMessagesByAdvertId(advertId) {
         throw error;
     }
 }
+
+async function takeCharge(decorateurId, annonceId, clientId) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/annonce/${annonceId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + TokenServices.getToken(),
+            },
+            body: JSON.stringify({
+                decorateur: decorateurId,
+            }),
+        });
+  
+        if (!response.ok) {
+            throw new Error('Une erreur est survenue lors de la prise en charge de l\'annonce');
+        }
+  
+        // Utilisation de la méthode updateAdvert pour mettre à jour le statut de l'annonce
+        await updateAdvert(annonceId, { status: 'En Cours' });
+  
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+  }
   
 
 
@@ -216,5 +241,6 @@ export const AdvertService = {
   updateAdvert,
   getMessagesByAdvertId,
   getAdvertsByDecoratorId,
-  postMessage
+  postMessage,
+    getAdvertById
 };

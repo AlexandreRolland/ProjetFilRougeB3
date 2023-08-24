@@ -25,6 +25,7 @@ import { MessageEntity } from './message/entities/message.entity';
       entities: [__dirname + '/**/*.entity.{ts,js}', MessageEntity],
       synchronize: true,
       autoLoadEntities: true
+      
     }),
     UserModule,
     AuthModule,

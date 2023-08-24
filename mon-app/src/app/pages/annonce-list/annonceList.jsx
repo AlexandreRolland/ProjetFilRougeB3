@@ -26,7 +26,7 @@ const AnnonceList = () => {
   useEffect(() => {
     AdvertService.getAdverts()
       .then(response => {
-        const advertsWithDecorator = response.filter(advert => advert.decorateur === null || advert.decorateur === undefined);
+        const advertsWithDecorator = response.filter(advert => advert.status === "En Attente");
         setAdverts(advertsWithDecorator);
       })
       .catch(error => {

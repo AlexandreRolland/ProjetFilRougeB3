@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { CreateAnnonceDto } from './dto/create-annonce.dto';
 import { UpdateAnnonceDto } from './dto/update-annonce.dto';
-import { AnnonceEntity } from './entities/annonce.entity';
+import { AnnonceEntity, AnnonceStatus } from './entities/annonce.entity';
 
 @Injectable()
 export class AnnonceService {
@@ -16,6 +16,9 @@ export class AnnonceService {
   async createAnnonce(createAnnonceDto: CreateAnnonceDto) {
     try{
       const annonce = await this.annonceRepository.create(createAnnonceDto);
+
+      annonce.status = AnnonceStatus.ON_HOLD;
+
       await this.annonceRepository.save(annonce);
       return annonce;
     }

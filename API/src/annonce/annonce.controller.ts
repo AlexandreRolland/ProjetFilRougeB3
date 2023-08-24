@@ -41,7 +41,6 @@ export class AnnonceController {
     return this.annonceService.update(+id, updateAnnonceDto);
   }
 
-
   @Delete(':id')
   softDeleteAnnonce(@Param('id') id: string) {
     return this.annonceService.softDeleteAnnonce(+id);

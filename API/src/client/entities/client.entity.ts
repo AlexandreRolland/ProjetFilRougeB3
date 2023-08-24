@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, OneToMany, OneToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 import { AnnonceEntity } from "../../annonce/entities/annonce.entity";
 import { UserEntity } from "../../user/entities/user.entity";
-import { TimeStamp } from "src/timestamp/timestamp.entity";
+import { TimeStamp } from "../../timestamp/timestamp.entity";
 
 
 @Entity("client")

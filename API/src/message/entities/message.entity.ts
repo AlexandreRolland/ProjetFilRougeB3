@@ -1,6 +1,6 @@
-import { AnnonceEntity } from "src/annonce/entities/annonce.entity";
-import { TimeStamp } from "src/timestamp/timestamp.entity";
-import { UserEntity } from "src/user/entities/user.entity";
+import { AnnonceEntity } from "../../annonce/entities/annonce.entity";
+import { TimeStamp } from "../../timestamp/timestamp.entity";
+import { UserEntity } from "../../user/entities/user.entity";
 import { Column, Entity, JoinTable, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("message")

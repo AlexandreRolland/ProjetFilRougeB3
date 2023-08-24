@@ -21,6 +21,7 @@ export class AuthService {
 
     const payload = {
       email: user.email,
+      username: user.username,
       professional: user.professional,
       id: user.id,
       client: user.client,
@@ -31,6 +32,7 @@ export class AuthService {
       access_token: this.generateJwtToken(payload),
       user: {
         id: user.id,
+        username: user.username,
         email: user.email,
         professional: user.professional,
         client: user.client,

@@ -4,25 +4,61 @@
     max-height: 600px;
 
 
+
     .topbar-annonce{
         height: 75px;
         width: 100%;
+        border-bottom: solid 1px $border-color;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px 0 20px;
+
+        .topbar-btns{
+            button{
+                margin-left: 10px;
+                @include typography($white-color, $primary-font, 16px, 500);
+            }
+        }
     }
 
     form{
-      
-
         height: 50px;
-        width: 75%;
+        width: 100%;
         background-color: $white-color;
+
+        .form-group{
+            width: 100%;
+            border: solid 1px $border-color;
+
+            input{
+                width: 85%;
+                height: 50px;
+                border: none;
+                padding: 10px;
+                outline: none;
+            }
+
+            button{
+                height: 50px;
+                width: 15%;
+                border: none;
+                border-radius: 0;
+                outline: none;
+                cursor: pointer;
+                padding: 0 10px 0 10px;
+                @include typography($black-color, $primary-font, 16px, 500);
+            }
+            
+        }
     }
 
     .messages-box{
 
         box-sizing: border-box;
-        overflow-y: scroll;
+        overflow-y: auto;
         max-height: 475px;
-        height: auto;
+        height: 475px;
         padding: 20px;
 
         .message{
@@ -33,7 +69,7 @@
             .message-date{
                 @include typography($border-color, $primary-font, 14px, 400);
                 text-align: center;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
                 margin-top: 30px;
             }
 
@@ -48,15 +84,17 @@
 
                 .message-username-user{
                     text-align: right;
-                    margin-bottom: 20px;
+                    margin-bottom: 5px;
+                    @include typography($black-color, $primary-font, 16px, 500);
+                    text-transform: capitalize;
                 }
 
                 .message-user{
                     text-align: right;
-                    padding: 15px;
+                    padding: 15px 10px 15px 10px;
                     background-color:#F2F2F2;
                     width: fit-content;
-                    border-radius: 3px 3px 3px 20px;
+                    border-radius: 20px 20px 10px 20px;
                     margin-left: 15%;
                 }
             }
@@ -66,14 +104,16 @@
 
                 .message-username-other{
                     text-align: left;
-                    margin-bottom: 20px;
+                    margin-bottom: 5px;
+                    @include typography($black-color, $primary-font, 16px, 500);
+                    text-transform: capitalize;
                 }
 
                 .message-other{
                     text-align: left;
                     background-color:#F2F2F2;
                     width: fit-content;
-                    border-radius: 3px 3px 20px 3px;
+                    border-radius: 10px 20px 20px 20px;
                     padding: 15px;
                     margin-right: 15%;
                 }
@@ -85,6 +125,22 @@
             height: 100px;
         }
 
+    }
+
+    .ad-info-content{
+        padding: 20px;
+        height: 525px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        h3{
+            margin-bottom:20px;
+        }
+
+        p{
+            margin-bottom: 5px;
+        }
     }
 
     

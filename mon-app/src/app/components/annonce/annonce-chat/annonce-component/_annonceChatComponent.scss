@@ -1,5 +1,69 @@
-.annonce-chat-component{
-    width: auto;
+.annonce-chat-component {
+    width: 100%;
     padding: 20px;
     border-bottom: 2px solid $border-color;
+    display: flex;
+
+    .status-in-progress span {
+        background-color: rgb(18, 115, 206);
+    }
+    
+    .status-finished span {
+        background-color: green; 
+    }
+    
+    .status-on-hold span {
+        background-color: rgb(255, 145, 0); 
+    }
+
+    .left-component {
+        width: 50%;
+
+        h3{
+            text-transform: capitalize;
+        }
+
+        p {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+    }
+
+    .right-component {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        .status {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+
+            p{
+                @include typography($grey-color, $primary-font, 0.8em, 400);
+            }
+
+            span {
+                height: 10px;
+                width: 10px;
+                border-radius: 120px;
+            }
+
+        }
+
+    }
+
+}
+
+.annonce-chat-component.active {
+    background-color: $secondary-color;
+
+    &:first-child {
+        border-radius: 20px 0 0 0;
+    }
 }

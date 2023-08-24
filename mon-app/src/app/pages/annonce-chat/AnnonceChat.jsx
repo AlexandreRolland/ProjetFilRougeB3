@@ -10,6 +10,8 @@ import AnnonceMessagesComponent from "../../components/annonce/annonce-chat/mess
 const AnnonceChat = () => {
     const { user } = useContext(UserContext);
     const [myAdverts, setMyAdverts] = useState([]);
+    const [selectedAnnonceId, setSelectedAnnonceId] = useState(null);
+    const [reloadKey, setReloadKey] = useState(0);
 
     useEffect(() => {
         if (user.decorateur) {
@@ -31,23 +33,31 @@ const AnnonceChat = () => {
                     console.error(error);
                 });
         }
-    }, [user.id, user.decorateur]);
+    }, [user.id, user.decorateur, user.client]);
 
     const { id } = useParams();
 
+    const forceComponentReload = () => {
+        setReloadKey(prevKey => prevKey + 1);
+    };
+
     return (
         <>
-            <div className="fullPage">
+            <div className="fullPage" key={reloadKey}>
                 <Nav />
                 <div className="container">
                     <h1>Chat</h1>
                     <div className="annonce-chat">
                         <div className="left">
                             <AnnonceChatComponent
-                                annonces={myAdverts} />
+                                annonces={myAdverts}
+                                selectedAnnonceId={selectedAnnonceId}
+                                onSelectAnnonce={setSelectedAnnonceId}
+                                onAnnonceClick={forceComponentReload}
+                            />
                         </div>
                         <div className="right">
-                        {id ? <AnnonceMessagesComponent annonceId={id} /> : <span>Aucune annonce sélectionnée</span>}
+                            {id ? <AnnonceMessagesComponent annonceId={id} /> : <span>Aucune annonce sélectionnée</span>}
                         </div>
                     </div>
                 </div>
