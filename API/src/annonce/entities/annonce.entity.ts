@@ -4,7 +4,7 @@ import { TimeStamp } from "../../timestamp/timestamp.entity";
 import { DecorateurEntity } from "../../decorateur/entities/decorateur.entity";
 import { MessageEntity } from "../../message/entities/message.entity";
 
-enum AnnonceStatus {
+export enum AnnonceStatus {
     ON_HOLD = 'En Attente',
     IN_PROGRESS = 'En Cours',
     FINISHED = 'Terminé'
