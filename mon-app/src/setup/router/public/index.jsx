@@ -17,12 +17,12 @@ export const AppRoutes = () => {
         <Routes>
             {/* test */}
             <Route path="/" element={<HomePage />} />
-            <Route path="/signin" element={<SigninPage/>} />
+            <Route path="/signin" element={!user ? <SigninPage/> : <Navigate to="/" />} />
             <Route path="/signup" element={<SignupPage/>} />
             <Route path="/signup_decorator" element={<SignupDecoratorPage />} />
 
             <Route path="/room_form" element={user ? <RoomFormPage /> : <Navigate to="/signin" />} />
-      <Route path="/annonce_list" element={user.decorateur ? <AnnonceList /> : <Navigate to="/signin" />} />
+      <Route path="/annonce_list" element={user ? <AnnonceList /> : <Navigate to="/signin" />} />
       <Route path="/my_annonces" element={user ? <MyAnnonceList /> : <Navigate to="/signin" />} />
       <Route path="/annonce_chat" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
       <Route path="/annonce_chat/:id" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
