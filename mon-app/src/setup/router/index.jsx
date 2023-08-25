@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { PublicRoutes } from "./public";
+import { AppRoutes } from "./public";
 import UserContext from "../contexts/UserContext";
 import { useState, useEffect } from "react";
 import { TokenServices } from "../../app/services/token.services";
@@ -30,7 +30,7 @@ const Router = () => {
         <UserContext.Provider value={{ user, setUser }}>
             {isTokenLoaded && (  // Seulement afficher les routes si le token est chargé
                 <BrowserRouter>
-                    <PublicRoutes />
+                    <AppRoutes />
                 </BrowserRouter>
             )}
         </UserContext.Provider>
