@@ -36,7 +36,7 @@ import {Link} from 'react-router-dom'
 
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { ReactComponent as Hamburger } from '../../assets/icons/hamburger.svg'
+// import { ReactComponent as Hamburger } from '../../assets/icons/hamburger.svg'
 
 const Nav = () => {
   const [showNavbar, setShowNavbar] = useState(false)
@@ -52,7 +52,8 @@ const Nav = () => {
         <Link to="/" className="primary-color logo">IDECO</Link>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>
-          <Hamburger />
+          {/* <Hamburger /> */}
+          <div className="square"></div>
         </div>
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
