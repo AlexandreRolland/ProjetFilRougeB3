@@ -19,7 +19,7 @@ export const PublicRoutes = () => {
     return (
         <Routes>
 
-            {/* Publiques */}
+            {/* Publiquess */}
 
             <Route path="/" element={<HomePage />} />
             <Route path="/signin" element={<SigninPage />} />
