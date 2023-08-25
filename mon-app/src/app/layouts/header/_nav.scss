@@ -44,6 +44,15 @@
         position: sticky;
     }
 
+    .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background-color: $white-color;
+    }
+
     .logo {
         font-size: 48px;
         font-weight: 700;
