@@ -17,17 +17,21 @@
 //     padding-bottom: 30px;
 //     padding-top: 30px;
 //     background-color: $white-color;
+
+
 //     li{
 //         a{
 //             font-size: 20px;
 //             font-weight: 600;
 //         }
+
 //         a:hover{
 //             text-decoration: underline solid $primary-color 3px;
 //             text-underline-offset: 8px;
 //             color: $black-color;
 //         }
 //     }
+
 // }
 
 .logo {
@@ -47,12 +51,11 @@
         position: sticky;
     }
 
-    .header{
+    .header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-bottom: 30px;
-        padding-top: 30px;
+        padding: 30px 0;
         background-color: $white-color;
     }
 
@@ -70,25 +73,26 @@
                 &:not(:last-child) {
                     margin-right: 60px;
                 }
-                &:hover{
-                    color: $primary-color;
-                }
-            }
-
-            a {
-                font-size: 20px;
-                font-weight: 400;
-                color: $grey-color;
-                text-decoration: none;
-
-                &.active {
-                    color: $primary-color;
-                    font-weight: 500;
-                    position: relative;
-                }
 
                 &:hover {
                     color: $primary-color;
+                }
+
+                a {
+                    font-size: 20px;
+                    font-weight: 400;
+                    color: $grey-color;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+
+                    &.active {
+                        font-weight: 500;
+                        position: relative;
+                        color: $primary-color;
+                    }
                 }
             }
         }
@@ -105,7 +109,7 @@
             right: 0;
             top: 100px;
             background-color: $white-color;
-            width: 0px;
+            width: 0;
             height: calc(100vh - 60px);
             transition: all 0.3s ease-in;
             overflow: hidden;
@@ -115,13 +119,11 @@
             }
 
             ul {
-                display: flex;
                 flex-direction: column;
-                padding: 0px 0 0px 15px;
+                padding-left: 15px;
 
                 li {
-                    margin-right: unset;
-                    margin-top: 22px;
+                    margin: 22px 0 0;
                 }
             }
         }
@@ -133,7 +135,7 @@
         background-color: red;
     }
 
-    .button{
+    .button {
         color: $white-color !important;
 
         &:hover {
