@@ -7,6 +7,11 @@ import { AnnonceEntity } from "../../annonce/entities/annonce.entity";
 import { TimeStamp } from "../../timestamp/timestamp.entity";
 import { MessageEntity } from "../../message/entities/message.entity";
 
+export enum UserRole {
+    CLIENT = 'Client',
+    PRO = 'Decorateur',
+    ADMIN = 'Admin'
+  }
 
 @Entity("user")
 export class UserEntity extends TimeStamp{
@@ -22,8 +27,12 @@ export class UserEntity extends TimeStamp{
     @Column({unique: true, nullable: true})
     username: string;
 
-    @Column({default: "true"})
-    professional: boolean;
+    @Column({    
+        type: 'enum',
+        enum: UserRole,
+        default: UserRole.CLIENT
+        })
+        status: UserRole;
     
     @OneToOne(() => ProfileEntity, profile => profile.user, {
         cascade: true
