@@ -82,7 +82,6 @@ const Nav = () => {
                     </div>
                 </div>
             </section>
-//
         </nav>
     )
 }
