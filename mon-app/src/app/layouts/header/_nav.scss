@@ -91,12 +91,8 @@
 
     .nav-elements ul a.active {
         color: $primary-color;
-        font-weight: 500;
-        position: relative;
-    }
-
-    .nav-elements ul a.active::after {
         font-weight: 700;
+        position: relative;
     }
 
     @media (max-width: 768px) {
