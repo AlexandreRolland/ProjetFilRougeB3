@@ -106,6 +106,9 @@
             display: block;
             cursor: pointer;
         }
+        .nav-elements{
+            z-index: 9999;
+        }
 
         .nav-elements {
             position: absolute;
