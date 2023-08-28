@@ -163,9 +163,6 @@
         color: $primary-color;
     }
 
-    .button{
-        color: $white-color;
-    }
 
     .nav-elements ul a.active {
         color: $primary-color;
@@ -217,6 +214,16 @@
         width: 50px;
         height: 50px;
         background-color: red;
+    }
+
+    
+    .button{
+        color: $white-color;
+    }
+
+    
+    .button:hover{
+        color: $white-color;
     }
 
 }
