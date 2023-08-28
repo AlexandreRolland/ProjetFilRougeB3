@@ -8,7 +8,7 @@ function SignupDecoratorForm() {
         username: "",
         email: "",
         password: "",
-        professional:"true", 
+        role:"Decorateur", 
         decorateur: {} // pour les détails spécifiques du décorateur
     });
 
