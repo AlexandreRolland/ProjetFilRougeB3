@@ -176,13 +176,13 @@
     }
 
 
-    @include respond-to(small, medium) {
+    @include respond-to-small-medium {
         .nav-elements ul li:not(:last-child) {
             margin-right: 30px;
         }
     }
 
-    @include respond-to(small, medium) {
+    @include respond-to-small-medium {
         .menu-icon {
             display: block;
             cursor: pointer;
