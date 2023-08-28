@@ -34,3 +34,12 @@
       }
     }
   }
+
+  @mixin respond-to-small-medium {
+    @include respond-to(small) {
+      @content;
+    }
+    @include respond-to(medium) {
+      @content;
+    }
+  }
