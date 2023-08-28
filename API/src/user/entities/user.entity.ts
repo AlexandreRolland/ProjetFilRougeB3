@@ -32,7 +32,7 @@ export class UserEntity extends TimeStamp{
         enum: UserRole,
         default: UserRole.CLIENT
         })
-        status: UserRole;
+        role: UserRole;
     
     @OneToOne(() => ProfileEntity, profile => profile.user, {
         cascade: true
