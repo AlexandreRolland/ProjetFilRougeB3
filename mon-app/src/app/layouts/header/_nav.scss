@@ -17,21 +17,17 @@
 //     padding-bottom: 30px;
 //     padding-top: 30px;
 //     background-color: $white-color;
-
-
 //     li{
 //         a{
 //             font-size: 20px;
 //             font-weight: 600;
 //         }
-
 //         a:hover{
 //             text-decoration: underline solid $primary-color 3px;
 //             text-underline-offset: 8px;
 //             color: $black-color;
 //         }
 //     }
-
 // }
 
 .logo {
@@ -41,6 +37,8 @@
 
 .navbar {
     position: relative;
+    height: 60px;
+    background-color: #fef7e5;
 
     .header-bg {
         background-color: $white-color;
@@ -50,145 +48,60 @@
     }
 
     .header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    background-color: $white-color;
-    
-    }
-
-
-
-    .navbar {
-        height: 60px;
-        background-color: #fef7e5;
-        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        background-color: $white-color;
     }
 
     .menu-icon {
         display: none;
     }
 
-
-    .nav-elements ul {
-        display: flex;
-        justify-content: space-between;
-        list-style-type: none;
-    }
-
-    .nav-elements ul li:not(:last-child) {
-        margin-right: 60px;
-    }
-
-    .nav-elements ul a {
-        font-size: 16px;
-        font-weight: 700;
-        color: #2f234f;
-        text-decoration: none;
-    }
-
-    .nav-elements ul a.active {
-        color: $primary-color;
-        font-weight: 700;
-        position: relative;
-    }
-
-    @media (max-width: 768px) {
-        .nav-elements ul li:not(:last-child) {
-            margin-right: 30px;
-        }
-    }
-
-    @media (max-width: 600px) {
-        .menu-icon {
-            display: block;
-            cursor: pointer;
-        }
-        .nav-elements{
-            z-index: 9999;
-        }
-
-        .nav-elements {
-            position: absolute;
-            right: 0;
-            top: 100px;
-            background-color: #fef7e5;
-            width: 0px;
-            height: calc(100vh - 60px);
-            transition: all 0.3s ease-in;
-            overflow: hidden;
-        }
-
-        .nav-elements.active {
-            width: 270px;
-        }
-
-        .nav-elements ul {
+    .nav-elements {
+        ul {
             display: flex;
-            flex-direction: column;
-            padding: 0px 0 0px 15px;
+            justify-content: space-between;
+            list-style-type: none;
+
+            li {
+                &:not(:last-child) {
+                    margin-right: 60px;
+                }
+                &:hover{
+                    color: $primary-color;
+                }
+            }
+
+            a {
+                font-size: 20px;
+                font-weight: 400;
+                color: $grey-color;
+                text-decoration: none;
+
+                &.active {
+                    color: $primary-color;
+                    font-weight: 500;
+                    position: relative;
+                }
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
         }
 
-        .nav-elements ul li {
-            margin-right: unset;
-            margin-top: 22px;
-        }
-    }
-
-    .menu-icon {
-        display: none;
-    }
-
-
-    .nav-elements ul {
-        display: flex;
-        justify-content: space-between;
-        list-style-type: none;
-    }
-
-    .nav-elements ul li:not(:last-child) {
-        margin-right: 60px;
-    }
-
-    .nav-elements ul li:hover{
-        color: $primary-color;
-    }
-
-    .nav-elements ul a {
-        font-size: 20px;
-        font-weight: 400;
-        color: $grey-color;
-        text-decoration: none;
-    }
-
-    .nav-elements ul a:hover {
-        color: $primary-color;
-    }
-
-
-    .nav-elements ul a.active {
-        color: $primary-color;
-        font-weight: 500;
-        position: relative;
-    }
-
-
-    @media (max-width: 768px) {
-        .nav-elements ul li:not(:last-child) {
-            margin-right: 30px;
-        }
-    }
-
-    @media (max-width: 600px) {
-        .menu-icon {
-            display: block;
-            cursor: pointer;
+        @media (max-width: 768px) {
+            ul li:not(:last-child) {
+                margin-right: 30px;
+            }
         }
 
-        .nav-elements {
+        @media (max-width: 600px) {
             position: absolute;
+            z-index: 9999;
             right: 0;
             top: 100px;
             background-color: $white-color;
@@ -196,24 +109,23 @@
             height: calc(100vh - 60px);
             transition: all 0.3s ease-in;
             overflow: hidden;
-        }
 
-        .nav-elements.active {
-            width: 270px;
-        }
+            &.active {
+                width: 270px;
+            }
 
-        .nav-elements ul {
-            display: flex;
-            flex-direction: column;
-            padding: 0px 0 0px 15px;
-        }
+            ul {
+                display: flex;
+                flex-direction: column;
+                padding: 0px 0 0px 15px;
 
-        .nav-elements ul li {
-            margin-right: unset;
-            margin-top: 22px;
+                li {
+                    margin-right: unset;
+                    margin-top: 22px;
+                }
+            }
         }
     }
-
 
     .square {
         width: 50px;
@@ -221,14 +133,11 @@
         background-color: red;
     }
 
-    
     .button{
         color: $white-color !important;
-    }
 
-    
-    .button:hover{
-        color: $white-color !important;
+        &:hover {
+            color: $white-color !important;
+        }
     }
-
 }
