@@ -218,12 +218,12 @@
 
     
     .button{
-        color: $white-color;
+        color: $white-color !important;
     }
 
     
     .button:hover{
-        color: $white-color;
+        color: $white-color !important;
     }
 
 }
