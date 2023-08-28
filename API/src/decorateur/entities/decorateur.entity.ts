@@ -19,7 +19,7 @@ export class DecorateurEntity extends TimeStamp{
     @Column({nullable: true})
     experience: string;
 
-    @Column({nullable: true})
+    @Column({default: 0})
     solde: number;
 
     @OneToMany(() => AnnonceEntity, annonce => annonce.decorateur)
