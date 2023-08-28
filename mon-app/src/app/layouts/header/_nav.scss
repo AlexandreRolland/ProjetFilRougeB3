@@ -41,8 +41,6 @@
 
 .navbar {
     position: relative;
-    height: 60px;
-    background-color: #fef7e5;
 
     .header-bg {
         background-color: $white-color;
@@ -61,6 +59,12 @@
 
     .menu-icon {
         display: none;
+        
+        .square {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
     }
 
     .nav-elements {
@@ -68,14 +72,13 @@
             display: flex;
             justify-content: space-between;
             list-style-type: none;
+            padding: 0;
 
             li {
-                &:not(:last-child) {
-                    margin-right: 60px;
-                }
+                margin-right: 60px;
 
-                &:hover {
-                    color: $primary-color;
+                &:last-child {
+                    margin-right: 0;
                 }
 
                 a {
@@ -127,12 +130,6 @@
                 }
             }
         }
-    }
-
-    .square {
-        width: 50px;
-        height: 50px;
-        background-color: red;
     }
 
     .button {
