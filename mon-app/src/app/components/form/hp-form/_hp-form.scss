@@ -1,4 +1,4 @@
-.hp-form{
+.hp-reassurance{
     max-width: 100%;
     width: 100%;
     height:130px;
@@ -13,64 +13,4 @@
     align-items: flex-end;
     
 
-    label{
-        font-weight: 600;
-font-size: 20px;
-margin-bottom: 20px;
-    }
-
-    button{
-        padding: 20px 30px;
-    }
-
-
-    input,select{
-
-        border-radius: 5px;
-border: 2px solid #CBCBCB;
-padding: 15px;
-    }
-
-    select{
-        width: 432px;
-    }
-
-    input{
-        width: 190px;
-        margin-right: 15px;
-    }
-
-    .select-room{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
-    .select-dimensions{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-
-    .submit-btn{
-        display: flex;
-        height:100%;
-        align-items: flex-end;
-    }
-
-
-}
-
-//responsive
-
-@include respond-to(small){
-    .hp-form{
-       display: none;
-    }
-}
-
-@include respond-to(medium){
-    .hp-form{
-        display: none;
-    }
 }

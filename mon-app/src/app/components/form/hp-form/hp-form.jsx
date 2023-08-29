@@ -4,30 +4,43 @@ const HpForm = () => {
 
         <section className="container">
 
-            <form className="hp-form">
-                <div className="select-room">
-                    <label htmlFor="select-room">Sélectionnez votre pièce :</label>
-                    <select name="rooms" id="select-room">
-                        <option value="bathroom">Salle-de-bain</option>
-                        <option value="livingRoom">Salon</option>
-                        <option value="bedroom">Chambre</option>
-                        <option value="kitchen">Cuisine</option>
-                        <option value="office">Bureau</option>
-                        <option value="other">Autre</option>
-                    </select>
-                </div>
-                <div className="select-dimensions">
-                    <label>Sélectionnez votre pièce :</label>
-                    <div>
-                        <input type="text" placeholder="Longueur"/>
-                        <input type="text" placeholder="Largeur"/>
+            <div className="hp-reassurance">
+                <div className="parent">
+                    <div className="child-icone"></div>
+                    <div className="child-txt">
+                        <span className="title">Test</span>
+                        <p className="content">paragraphe de test, ceci est un test</p>
                     </div>
-
                 </div>
-                <div className="submit-btn">
-                    <button>Contacter un expert</button>
+                <div className="parent">
+                    <div className="child-icone"></div>
+                    <div className="child-txt">
+                        <span className="title">Test</span>
+                        <p className="content">paragraphe de test, ceci est un test</p>
+                    </div>
                 </div>
-            </form>
+                <div className="parent">
+                    <div className="child-icone"></div>
+                    <div className="child-txt">
+                        <span className="title">Test</span>
+                        <p className="content">paragraphe de test, ceci est un test</p>
+                    </div>
+                </div>
+                <div className="parent">
+                    <div className="child-icone"></div>
+                    <div className="child-txt">
+                        <span className="title">Test</span>
+                        <p className="content">paragraphe de test, ceci est un test</p>
+                    </div>
+                </div>
+                <div className="parent">
+                    <div className="child-icone"></div>
+                    <div className="child-txt">
+                        <span className="title">Test</span>
+                        <p className="content">paragraphe de test, ceci est un test</p>
+                    </div>
+                </div>
+            </div>
 
         </section>
     );
