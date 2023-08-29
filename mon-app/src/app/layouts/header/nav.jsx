@@ -102,7 +102,13 @@ const Nav = () => {
                                     </li>
                                 }
                                 {
-                                    user && user.role != 'Decorateur' &&
+                                    user && user.role === 'Client' &&
+                                    <li>
+                                        <NavLink to='/room_form' className="button" >Contacter un expert</NavLink>
+                                    </li>
+                                }
+                                                                {
+                                    !user &&
                                     <li>
                                         <NavLink to='/room_form' className="button" >Contacter un expert</NavLink>
                                     </li>
