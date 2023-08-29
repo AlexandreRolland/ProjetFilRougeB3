@@ -69,20 +69,26 @@ const Nav = () => {
                                     <NavLink to="/signin">Home</NavLink>
                                 </li>
                                 {
-                                    user.role === 'Client' && 
+                                    user.role === 'Decorateur' &&
                                     <li>
-                                        <NavLink to="/annonce_list">Se faire conseiller</NavLink>
+                                        <NavLink to="/annonce_list">Voir les annonces</NavLink>
+                                    </li>
+                                }
+                                {
+                                    user.role === 'Client' &&
+                                    <li>
+                                        <NavLink to="/my_annonces">Voir mes annonces</NavLink>
                                     </li>
                                 }
                                 <li>
-                                    <NavLink to="/my_annonces">Discussions</NavLink>
-                                </li>
-                                <li>
                                     <NavLink to="/signup">Blog</NavLink>
                                 </li>
-                                <li>
-                                    <NavLink to='/annonce_chat' className="button" >Contacter un expert</NavLink>
-                                </li>
+                                {
+                                    user.role != 'Decorateur' &&
+                                    <li>
+                                        <NavLink to='/annonce_chat' className="button" >Contacter un expert</NavLink>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>
