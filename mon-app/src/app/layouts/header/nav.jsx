@@ -66,7 +66,10 @@ const Nav = () => {
                         <div className={`nav-elements  ${showNavbar && 'active'}`}>
                             <ul>
                                 <li>
-                                    <NavLink to="/signin">Home</NavLink>
+                                    <NavLink to="/">Home</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/blog">Blog</NavLink>
                                 </li>
                                 {
                                     user.role === 'Decorateur' &&
@@ -75,18 +78,36 @@ const Nav = () => {
                                     </li>
                                 }
                                 {
-                                    user.role === 'Client' &&
+                                    user &&
                                     <li>
-                                        <NavLink to="/my_annonces">Voir mes annonces</NavLink>
+                                        <NavLink to="/annonce_chat">Discussions</NavLink>
                                     </li>
                                 }
                                 <li>
                                     <NavLink to="/signup">Blog</NavLink>
                                 </li>
                                 {
+                                    user.role === 'Client' &&
+                                    <li>
+                                        <NavLink to='/my_annonces'>Mon compte</NavLink>
+                                    </li>
+                                }
+                                {
+                                    user.role === 'Decorateur' &&
+                                    <li>
+                                        <NavLink to='/'>Mon compte</NavLink>
+                                    </li>
+                                }
+                                {
+                                    !user &&
+                                    <li>
+                                        <NavLink to='/my_annonces'>Mon compte</NavLink>
+                                    </li>
+                                }
+                                {
                                     user.role != 'Decorateur' &&
                                     <li>
-                                        <NavLink to='/annonce_chat' className="button" >Contacter un expert</NavLink>
+                                        <NavLink to='/room_form' className="button" >Contacter un expert</NavLink>
                                     </li>
                                 }
                             </ul>
