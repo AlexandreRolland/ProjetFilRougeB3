@@ -32,14 +32,14 @@
             width: 75%;
 
             .title{
-                @include typography($primary-color, $primary-font, 28px, 500);
+                @include typography($primary-color, $primary-font, 28px, 600);
 
                 @include respond-to(medium) {
-                    @include typography($primary-color, $primary-font, 18px, 500);
+                    @include typography($primary-color, $primary-font, 18px, 600);
                 }
             
                 @include respond-to(small) {
-                    @include typography($primary-color, $primary-font, 16px, 500);
+                    @include typography($primary-color, $primary-font, 16px, 600);
                 }
             }
 
