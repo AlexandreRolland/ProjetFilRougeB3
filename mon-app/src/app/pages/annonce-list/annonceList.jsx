@@ -10,15 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 const AnnonceList = () => {
 
-  //If user=null => redirect to login page
-  const { user } = useContext(UserContext);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!user) {
-      navigate('/signin');
-    }
-  }, [user, navigate]);
 
   //get all adverts from getAdverts() in advert.services.js and display them in the component
   const [adverts, setAdverts] = useState([]);
@@ -26,8 +17,8 @@ const AnnonceList = () => {
   useEffect(() => {
     AdvertService.getAdverts()
       .then(response => {
-        const advertsWithDecorator = response.filter(advert => advert.status === "En Attente");
-        setAdverts(advertsWithDecorator);
+        const advertsWithoutDecorator = response.filter(advert => advert.status === "En Attente");
+        setAdverts(advertsWithoutDecorator);
       })
       .catch(error => {
         console.error(error);
