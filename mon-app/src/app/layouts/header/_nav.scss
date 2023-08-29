@@ -214,6 +214,10 @@
             margin-top: 22px;
         }
 
+        .nav-elements ul li:last-child{
+            margin-top: 40px;
+        }
+
         .button{
             margin-top: 15px;
         }
@@ -235,5 +239,7 @@
     .button:hover{
         color: $white-color !important;
     }
+
+    
 
 }
