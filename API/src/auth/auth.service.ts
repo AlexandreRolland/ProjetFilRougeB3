@@ -34,7 +34,7 @@ export class AuthService {
         id: user.id,
         username: user.username,
         email: user.email,
-        professional: user.professional,
+        role: user.role,
         client: user.client,
         decorateur: user.decorateur
         // Vous pouvez ajouter d'autres informations utilisateur ici si nécessaire
