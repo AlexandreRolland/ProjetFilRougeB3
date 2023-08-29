@@ -16,18 +16,19 @@
         width: 20%;
         display: flex;
         align-items: center;
+        gap: 15px;
         .child-icone{
-            height: 100%;
-            width: 30%;
+            height: 80px;
+            width: 20%;
             border: 1px solid $primary-color;
         }
 
         .child-txt{
             height: 100%;
-            width: 70%;
+            width: 80%;
 
             .title{
-                @include typography($primary-color, $primary-font, 20px, 500);
+                @include typography($primary-color, $primary-font, 28px, 500);
 
                 @include respond-to(medium) {
                     @include typography($primary-color, $primary-font, 18px, 500);
@@ -39,14 +40,14 @@
             }
 
             .content{
-                @include typography($black-color, $primary-font, 16px, 400);
+                @include typography($black-color, $primary-font, 16px, 500);
 
                 @include respond-to(medium) {
-                    @include typography($black-color, $primary-font, 14px, 400);
+                    @include typography($black-color, $primary-font, 14px, 500);
                 }
             
                 @include respond-to(small) {
-                    @include typography($black-color, $primary-font, 14px, 400);
+                    @include typography($black-color, $primary-font, 14px, 500);
                 }
             }
         }
