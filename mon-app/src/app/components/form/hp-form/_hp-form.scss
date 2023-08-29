@@ -41,17 +41,18 @@
                 @include respond-to(small) {
                     @include typography($primary-color, $primary-font, 16px, 600);
                 }
+                
             }
 
             .content{
-                @include typography($black-color, $primary-font, 16px, 600);
+                @include typography($black-color, $primary-font, 16px, 500);
 
                 @include respond-to(medium) {
-                    @include typography($black-color, $primary-font, 14px, 600);
+                    @include typography($black-color, $primary-font, 12px, 500);
                 }
             
                 @include respond-to(small) {
-                    @include typography($black-color, $primary-font, 14px, 600);
+                    @include typography($black-color, $primary-font, 10px, 500);
                 }
             }
         }
