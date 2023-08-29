@@ -34,29 +34,16 @@
             .title{
                 @include typography($primary-color, $primary-font, 24px, 600);
 
-                @include respond-to(medium) {
-                    @include typography($primary-color, $primary-font, 18px, 600);
-                }
-            
-                @include respond-to(small) {
-                    @include typography($primary-color, $primary-font, 16px, 600);
-                }
-                
             }
 
             .content{
                 @include typography($black-color, $primary-font, 16px, 500);
-
-                @include respond-to(medium) {
-                    @include typography($black-color, $primary-font, 12px, 500);
-                }
-            
-                @include respond-to(small) {
-                    @include typography($black-color, $primary-font, 10px, 500);
-                }
             }
         }
     }
     
-//testssssssss
+  
+    @include respond-to-small-medium{
+        display: none;
+    }
 }
