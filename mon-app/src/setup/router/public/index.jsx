@@ -18,12 +18,12 @@ export const AppRoutes = () => {
             {/* test */}
             <Route path="/" element={<HomePage />} />
             <Route path="/signin" element={!user ? <SigninPage/> : <Navigate to="/" />} />
-            <Route path="/signup" element={<SignupPage/>} />
-            <Route path="/signup_decorator" element={<SignupDecoratorPage />} />
+            <Route path="/signup" element={!user ? <SignupPage/> : <Navigate to="/" />} />
+            <Route path="/signup_decorator" element={user.role != "Decorateur" ? <SignupDecoratorPage /> : <Navigate to="/" />}  />
 
-            <Route path="/room_form" element={user ? <RoomFormPage /> : <Navigate to="/signin" />} />
+            <Route path="/room_form" element={user && user.role === "Client" ? <RoomFormPage /> : <Navigate to="/signin" />} />
       <Route path="/annonce_list" element={user && user.role === "Decorateur" ? <AnnonceList /> : <Navigate to="/signin" />} />
-      <Route path="/my_annonces" element={user ? <MyAnnonceList /> : <Navigate to="/signin" />} />
+      <Route path="/my_annonces" element={user && user.role === "Client" ? <MyAnnonceList /> : <Navigate to="/signin" />} />
       <Route path="/annonce_chat" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
       <Route path="/annonce_chat/:id" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
         </Routes>
