@@ -11,6 +11,44 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+
+    .parent{
+        width: 20%;
+        .child-icone{
+            height: 100%;
+            width: 30%;
+            border: 1px solid $primary-color;
+        }
+
+        .child-txt{
+            height: 100%;
+            width: 70%;
+
+            .title{
+                @include typography($primary-color, $primary-font, 20px, 500);
+
+                @include respond-to(medium) {
+                    @include typography($primary-color, $primary-font, 18px, 500);
+                }
+            
+                @include respond-to(small) {
+                    @include typography($primary-color, $primary-font, 16px, 500);
+                }
+            }
+
+            .content{
+                @include typography($black-color, $primary-font, 16px, 400);
+
+                @include respond-to(medium) {
+                    @include typography($black-color, $primary-font, 14px, 400);
+                }
+            
+                @include respond-to(small) {
+                    @include typography($black-color, $primary-font, 14px, 400);
+                }
+            }
+        }
+    }
     
 
 }
