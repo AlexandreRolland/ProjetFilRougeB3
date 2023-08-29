@@ -86,13 +86,13 @@ const Nav = () => {
                                 {
                                     user.role === 'Client' &&
                                     <li>
-                                        <NavLink to='/my_annonces'>Mon compte</NavLink>
+                                        <NavLink to='/AREMPLACER'>Mon compte</NavLink>
                                     </li>
                                 }
                                 {
                                     user.role === 'Decorateur' &&
                                     <li>
-                                        <NavLink to='/'>Mon compte</NavLink>
+                                        <NavLink to='/AREMPLACER' className="button">Mon compte</NavLink>
                                     </li>
                                 }
                                 {
