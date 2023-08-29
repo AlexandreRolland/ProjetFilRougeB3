@@ -114,7 +114,7 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
                     }}>
                         Informations liées à l'annonce
                     </button>
-                    {(user.role === "Decorateur" || "Admin") && (
+                    {(user.role === "Decorateur") && (
                         <button onClick={markAdAsFinished}>Déclarer comme terminé</button>
                     )}
 
