@@ -72,7 +72,7 @@ const Nav = () => {
                                     <NavLink to="/blog">Blog</NavLink>
                                 </li>
                                 {
-                                    user.role === 'Decorateur' &&
+                                    user && user.role === 'Decorateur' &&
                                     <li>
                                         <NavLink to="/annonce_list">Voir les annonces</NavLink>
                                     </li>
@@ -84,13 +84,13 @@ const Nav = () => {
                                     </li>
                                 }
                                 {
-                                    user.role === 'Client' &&
+                                    user && user.role === 'Client' &&
                                     <li>
                                         <NavLink to='/AREMPLACER'>Mon compte</NavLink>
                                     </li>
                                 }
                                 {
-                                    user.role === 'Decorateur' &&
+                                    user && user.role === 'Decorateur' &&
                                     <li>
                                         <NavLink to='/AREMPLACER' className="button">Mon compte</NavLink>
                                     </li>
@@ -102,7 +102,7 @@ const Nav = () => {
                                     </li>
                                 }
                                 {
-                                    user.role != 'Decorateur' &&
+                                    user && user.role != 'Decorateur' &&
                                     <li>
                                         <NavLink to='/room_form' className="button" >Contacter un expert</NavLink>
                                     </li>
