@@ -34,8 +34,9 @@ import { Link } from 'react-router-dom'
 
 // export default Nav;
 
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import UserContext from '../../../setup/contexts/UserContext'
 // import { ReactComponent as Hamburger } from '../../assets/icons/hamburger.svg'
 
 const Nav = () => {
@@ -44,6 +45,8 @@ const Nav = () => {
     const handleShowNavbar = () => {
         setShowNavbar(!showNavbar)
     }
+
+    const { user } = useContext(UserContext)
 
     return (
         <nav className="navbar">
@@ -65,9 +68,12 @@ const Nav = () => {
                                 <li>
                                     <NavLink to="/signin">Home</NavLink>
                                 </li>
-                                <li>
-                                    <NavLink to="/annonce_list">Se faire conseiller</NavLink>
-                                </li>
+                                {
+                                    user.role === 'Client' && 
+                                    <li>
+                                        <NavLink to="/annonce_list">Se faire conseiller</NavLink>
+                                    </li>
+                                }
                                 <li>
                                     <NavLink to="/my_annonces">Discussions</NavLink>
                                 </li>
