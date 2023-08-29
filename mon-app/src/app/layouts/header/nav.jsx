@@ -83,9 +83,6 @@ const Nav = () => {
                                         <NavLink to="/annonce_chat">Discussions</NavLink>
                                     </li>
                                 }
-                                <li>
-                                    <NavLink to="/signup">Blog</NavLink>
-                                </li>
                                 {
                                     user.role === 'Client' &&
                                     <li>
@@ -101,7 +98,7 @@ const Nav = () => {
                                 {
                                     !user &&
                                     <li>
-                                        <NavLink to='/my_annonces'>Mon compte</NavLink>
+                                        <NavLink to='/signup'>S'inscrire</NavLink>
                                     </li>
                                 }
                                 {
