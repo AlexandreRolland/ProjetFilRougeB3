@@ -24,7 +24,7 @@ const Router = () => {
         initializeUser();
     }, []);
 
-    console.log(`Utilisateur : ${user}`);
+    console.log("Utilisateur :", user);
     
     return (
         <UserContext.Provider value={{ user, setUser }}>
