@@ -12,7 +12,6 @@ import { ProfileModule } from './profile/profile.module';
 import { MessageModule } from './message/message.module';
 import { MessageEntity } from './message/entities/message.entity';
 import { ArticleModule } from './article/article.module';
-import { ArticleModule } from './article/article.module';
 
 @Module({
   imports: [
