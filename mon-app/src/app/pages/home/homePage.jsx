@@ -17,7 +17,7 @@ function HomePage() {
       // C'est ici que vous appelerez votre service pour obtenir les articles
       // Simulons cela pour l'instant
       const dummyData = [
-          { title: "Article 1 test titre assez long et compliqué car long", image: "https://www.leparisien.fr/resizer/XEtkllOP69v9JTN3zmcPCA2iFlA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/WVEBLSJVIMDGHKFBH6EW6WFXMU.jpg", summary: "Résumé 1" },
+          { title: "Article 1 test titre assez long et compliqué car long il fait 3 lignes", image: "https://www.leparisien.fr/resizer/XEtkllOP69v9JTN3zmcPCA2iFlA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/lpguideshopping/WVEBLSJVIMDGHKFBH6EW6WFXMU.jpg", summary: "Résumé 1" },
           { title: "Article 2", image: "https://www.remi-batte.fr/wp-content/uploads/2020/10/RB-Fils-149.jpg", summary: "Résumé 2" },
           { title: "Article 3", image: "https://www.idkrea.com/sites/idkrea.com/files/actualite/5-mots-cles_decoration-interieure_harmonie_idkrea-rennes.jpg", summary: "Résumé 3" },
           { title: "Article 4", image: "https://maison.20minutes.fr/wp-content/uploads/2020/04/chambre-bleu-art-deco-istock.jpg", summary: "Résumé 4" },
