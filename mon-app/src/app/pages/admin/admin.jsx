@@ -6,7 +6,12 @@ function AdminPage() {
         <>
             <Nav />
             <section className="container">
-            <h1>Admin <span className="primary-color">Dashboard</span></h1>
+                <div className="admin">
+                    <h1>Admin <span className="primary-color">Dashboard</span></h1>
+                </div>
+                <div className="admin-container">
+                    <p>test</p>
+                </div>
             </section>
             <Footer />
         </>
