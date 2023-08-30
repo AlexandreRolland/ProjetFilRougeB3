@@ -52,5 +52,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 30px;
+
+        a{
+            color: $white-color;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .icone{
+            color: $white-color;
+            border: 1px solid $white-color;
+            height: 100px;
+            width: 100px;
+        }
     }
 }

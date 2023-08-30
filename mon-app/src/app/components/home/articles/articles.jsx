@@ -14,7 +14,8 @@ const Articles = ({ articles }) => {
                     </div>
                 ))}
                 <div className="article-block see-all">
-                    Voir tous les articles
+                    <span className='icone'></span>
+                    <Link>Voir tous les articles</Link>
                 </div>
             </div>
         </section>
