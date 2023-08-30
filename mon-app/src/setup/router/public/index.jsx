@@ -10,6 +10,7 @@ import AnnonceChat from '../../../app/pages/annonce-chat/AnnonceChat.jsx';
 import { useContext } from "react"
 import UserContext from '../../contexts/UserContext.js';
 import AdminPage from '../../../app/pages/admin/admin.jsx';
+import BlogPage from '../../../app/pages/blog/blog.jsx';
 
 
 export const AppRoutes = () => {
@@ -18,6 +19,7 @@ export const AppRoutes = () => {
         <Routes>
             {/* test */}
             <Route path="/" element={<HomePage />} />
+            <Route path="/blog" element={<BlogPage />} />
 
             <Route path="/signin" element={!user ? <SigninPage /> : <Navigate to="/" />} />
             <Route path="/signup" element={!user ? <SignupPage /> : <Navigate to="/" />} />
