@@ -24,7 +24,7 @@ import { ArticleModule } from './article/article.module';
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DB,
       entities: [__dirname + '/**/*.entity.{ts,js}', MessageEntity],
-      synchronize: true,
+      synchronize: false,
       autoLoadEntities: true
       
     }),
