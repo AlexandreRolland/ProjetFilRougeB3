@@ -57,18 +57,18 @@
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        gap: 40px;
-        padding-bottom: 20px;
+        gap: 100px;
+        padding-bottom: 50px;
 
         a{
             color: $white-color;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 600;
         }
 
         .icone{
             color: $white-color;
-            border: 3px solid $white-color;
+            border: 6px solid $white-color;
             height: 125px;
             width: 125px;
         }
