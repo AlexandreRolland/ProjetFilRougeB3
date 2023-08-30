@@ -6,10 +6,9 @@
     background-color: $white-color;
     border-radius: 20px;
     padding: 40px 60px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
 
     .article-block {
         display: flex;
@@ -47,11 +46,11 @@
     }
 
     .article-block.see-all:hover{
-        background-color: $primary-color;
+        background-color: $secondary-color;
     }
 
     .article-block.see-all {
-        background-color: $secondary-color;
+        background-color: $primary-color;
         /* ou une autre couleur pour le bloc "voir tous les articles" */
         display: flex;
         flex-direction: column;
@@ -62,7 +61,7 @@
 
         a{
             color: $white-color;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 600;
         }
 
