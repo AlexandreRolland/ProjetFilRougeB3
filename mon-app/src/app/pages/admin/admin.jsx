@@ -1,3 +1,6 @@
+import Nav from "../../layouts/header/nav";
+import Footer from "../../layouts/footer/footer";
+
 function AdminPage() {
     return (
         <>
