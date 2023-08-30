@@ -7,7 +7,7 @@ function BlogPage() {
             <Nav />
             <section className="container">
                 <div className="blog">
-                    <h1>Articles du<span className="primary-color">Blog</span></h1>
+                    <h1>Articles du <span className="primary-color">Blog</span></h1>
                     <div className="blog-container">
                         <p>test</p>
                     </div>
