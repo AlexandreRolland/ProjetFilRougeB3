@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from "react";
 import Nav from "../../layouts/header/nav.jsx";
 import Footer from "../../layouts/footer/footer.jsx";
 import HpForm from "../../components/form/hp-form/hp-form.jsx";
@@ -5,6 +6,7 @@ import Steps from "../../components/home/steps/steps.jsx";
 import Banner from "../../components/home/banner/banner.jsx";
 import Articles from "../../components/home/articles/articles.jsx";
 import { Link } from "react-router-dom";
+
 
 
 
