@@ -8,9 +8,9 @@ function AdminPage() {
             <section className="container">
                 <div className="admin">
                     <h1>Admin <span className="primary-color">Dashboard</span></h1>
-                </div>
-                <div className="admin-container">
-                    <p>test</p>
+                    <div className="admin-container">
+                        <p>test</p>
+                    </div>
                 </div>
             </section>
             <Footer />
