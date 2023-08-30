@@ -50,21 +50,22 @@
         background-color: $primary-color;
         /* ou une autre couleur pour le bloc "voir tous les articles" */
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 30px;
 
         a{
             color: $white-color;
-            font-size: 20px;
+            font-size: 28px;
             font-weight: 600;
         }
 
         .icone{
             color: $white-color;
-            border: 1px solid $white-color;
-            height: 100px;
-            width: 100px;
+            border: 3px solid $white-color;
+            height: 200px;
+            width: 200px;
         }
     }
 }
