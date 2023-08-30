@@ -8,20 +8,19 @@
     padding: 40px 60px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 60px;
 
     .article-block {
         display: flex;
         justify-content: center;
         align-items: flex-end;
-        width: 30%;
+        width: 100%;
         background-color: antiquewhite;
         /* pour trois articles par ligne */
         height: 300px;
         /* ou ce que vous voulez */
         background-size: cover;
         border-radius: 10px;
-        margin-bottom: 20px;
         position: relative;
         overflow: hidden;
 
