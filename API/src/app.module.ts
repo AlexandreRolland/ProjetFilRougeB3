@@ -11,6 +11,8 @@ import { AnnonceModule } from './annonce/annonce.module';
 import { ProfileModule } from './profile/profile.module';
 import { MessageModule } from './message/message.module';
 import { MessageEntity } from './message/entities/message.entity';
+import { ArticleModule } from './article/article.module';
+import { ArticleModule } from './article/article.module';
 
 @Module({
   imports: [
@@ -33,7 +35,8 @@ import { MessageEntity } from './message/entities/message.entity';
     DecorateurModule,
     AnnonceModule,
     ProfileModule,
-    MessageModule],
+    MessageModule,
+    ArticleModule],
   controllers: [AppController],
   providers: [AppService]
 })

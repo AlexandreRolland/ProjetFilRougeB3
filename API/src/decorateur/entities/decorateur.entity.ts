@@ -2,6 +2,7 @@ import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTab
 import { UserEntity } from "../../user/entities/user.entity";
 import { TimeStamp } from "../../timestamp/timestamp.entity";
 import { AnnonceEntity } from "../../annonce/entities/annonce.entity";
+import { ArticleEntity } from "src/article/entities/article.entity";
 
 
 @Entity("decorateur")
@@ -25,6 +26,9 @@ export class DecorateurEntity extends TimeStamp{
 
     @OneToMany(() => AnnonceEntity, annonce => annonce.decorateur)
     annonces: AnnonceEntity[];
+
+    @OneToMany(() => ArticleEntity, article => article.decorateur)
+    articles: ArticleEntity[];
 
 
 }
