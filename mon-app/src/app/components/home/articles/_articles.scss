@@ -46,14 +46,19 @@
         }
     }
 
+    .article-block.see-all:hover{
+        background-color: $primary-color;
+    }
+
     .article-block.see-all {
         background-color: $secondary-color;
         /* ou une autre couleur pour le bloc "voir tous les articles" */
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        gap: 30px;
+        gap: 40px;
+        padding-bottom: 20px;
 
         a{
             color: $white-color;
@@ -64,8 +69,8 @@
         .icone{
             color: $white-color;
             border: 3px solid $white-color;
-            height: 150px;
-            width: 150px;
+            height: 125px;
+            width: 125px;
         }
     }
 }
