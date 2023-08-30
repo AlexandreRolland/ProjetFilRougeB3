@@ -1,4 +1,10 @@
-.articles-hp {
+.articles-hp{
+    width: 100%;
+    height: 950px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    background-color: $white-color;
+    border-radius: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -16,7 +22,7 @@
     }
 
     .article-block.see-all {
-        background-color: #eee;
+        background-color: $primary-color;
         /* ou une autre couleur pour le bloc "voir tous les articles" */
         display: flex;
         justify-content: center;
