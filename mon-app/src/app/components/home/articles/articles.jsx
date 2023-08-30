@@ -15,7 +15,7 @@ const Articles = ({ articles }) => {
                 ))}
                 <div className="article-block see-all">
                     <span className='icone'></span>
-                    <Link>Voir tous les articles</Link>
+                    <a href='/blog/'>Voir tous les articles</a>
                 </div>
             </div>
         </section>
