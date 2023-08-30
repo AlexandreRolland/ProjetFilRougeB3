@@ -1,15 +1,18 @@
 .articles-hp{
     width: 100%;
-    height: 950px;
+    height: 800px;
     margin-top: 30px;
     margin-bottom: 100px;
     background-color: $white-color;
     border-radius: 20px;
+    padding: 40px 60px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 
     .article-block {
+        display: flex;
+        justify-content: center;
         width: 30%;
         /* pour trois articles par ligne */
         height: 300px;
