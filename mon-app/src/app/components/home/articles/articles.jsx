@@ -8,8 +8,7 @@ const Articles = ({ articles }) => {
             <div className="articles-hp">
                 {articles.slice(0, 5).map((article, index) => (
                     <div key={index} className="article-block" style={{ backgroundImage: `url(${article.image})` }}>
-                        <h2>{article.title}</h2>
-                        <p>{article.summary}</p>
+                        <h3>{article.title}</h3>
                     </div>
                 ))}
                 <div className="article-block see-all">
