@@ -19,6 +19,9 @@ function HomePage() {
       const dummyData = [
           { title: "Article 1", image: "/path/to/image1.jpg", summary: "Résumé 1" },
           { title: "Article 2", image: "/path/to/image2.jpg", summary: "Résumé 2" },
+          { title: "Article 3", image: "/path/to/image3.jpg", summary: "Résumé 3" },
+          { title: "Article 4", image: "/path/to/image4.jpg", summary: "Résumé 4" },
+          { title: "Article 5", image: "/path/to/image5.jpg", summary: "Résumé 5" },
           // ... Ajoutez autant d'articles simulés que vous le souhaitez
       ];
 
