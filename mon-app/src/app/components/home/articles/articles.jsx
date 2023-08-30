@@ -13,10 +13,10 @@ const Articles = ({ articles }) => {
                         </div>
                     </div>
                 ))}
-                <div className="article-block see-all">
+                <a href="/blog/" className="article-block see-all">
                     <span className='icone'></span>
                     <a href='/blog/'>Voir tous les articles</a>
-                </div>
+                </a>
             </div>
         </section>
     );
