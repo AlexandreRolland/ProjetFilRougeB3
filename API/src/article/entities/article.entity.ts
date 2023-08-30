@@ -10,6 +10,9 @@ export class ArticleEntity extends TimeStamp {
     title: string;
 
     @Column()
+    summary: string;
+
+    @Column()
     content: string;
 
     @Column( {nullable: true})
