@@ -1,5 +1,5 @@
-import { DecorateurEntity } from "src/decorateur/entities/decorateur.entity";
-import { TimeStamp } from "src/timestamp/timestamp.entity";
+import { DecorateurEntity } from "../../decorateur/entities/decorateur.entity";
+import { TimeStamp } from "../../timestamp/timestamp.entity";
 import { Column, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 export class ArticleEntity extends TimeStamp {
