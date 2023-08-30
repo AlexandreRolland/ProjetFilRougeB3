@@ -1,14 +1,14 @@
 .articles-hp {
-    width: 100%;
-    height: auto;
-    margin-top: 30px;
-    margin-bottom: 100px;
-    background-color: $white-color;
+    grid-gap: 50px;
+    background-color: #fff;
     border-radius: 20px;
-    padding: 40px 60px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 60px;
+    grid-template-columns: repeat(3,1fr);
+    height: auto;
+    margin-bottom: 100px;
+    margin-top: 30px;
+    padding: 60px 75px;
+    width: 100%;
 
     .article-block {
         display: flex;
