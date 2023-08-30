@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 const Articles = ({ articles }) => {
     return (
         <section className="container">
