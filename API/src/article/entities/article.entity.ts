@@ -1,9 +1,10 @@
 import { DecorateurEntity } from "../../decorateur/entities/decorateur.entity";
 import { TimeStamp } from "../../timestamp/timestamp.entity";
-import { Column, ManyToMany, ManyToOne, PrimaryGeneratedColumn, Repository } from "typeorm";
+import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn, Repository } from "typeorm";
 
+@Entity("article")
 export class ArticleEntity extends TimeStamp {
-    
+
     @PrimaryGeneratedColumn()
     id: number;
 
