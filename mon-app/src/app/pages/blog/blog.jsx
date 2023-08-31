@@ -24,8 +24,6 @@ function BlogPage() {
         <div className="blog">
             <h1>Articles du <span className="primary-color">Blog</span></h1>
             <div className="blog-container">
-                <section className="container">
-                    <h2>Consultez les <span className="primary-color">articles</span> rédigés par nos <span className="primary-color">experts</span></h2>
                     <div className="articles-hp">
                         {articles.map((article, index) => (
                             <div key={index} className="article-block" style={{ backgroundImage: `url(${article.image})` }}>
@@ -35,7 +33,6 @@ function BlogPage() {
                             </div>
                         ))}
                     </div>
-                </section>
             </div>
         </div>
       </section>
