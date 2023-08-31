@@ -16,7 +16,7 @@ export class ArticleService {
     try{
       const article = await this.articleRepository.create(createArticleDto);
       await this.articleRepository.save(article);
-      
+
       return article;
     }
     catch(error){
@@ -25,7 +25,17 @@ export class ArticleService {
   }
 
   findAll() {
-    return `This action returns all article`;
+    try{
+      return this.articleRepository.find({
+        relations: ['decorateur'],
+        order: {
+          createdAt: 'DESC',
+        },
+      })
+    }
+    catch(error){
+      throw new UnauthorizedException('Error finding article' + error)
+    }
   }
 
   findOne(id: number) {
