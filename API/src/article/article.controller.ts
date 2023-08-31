@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { ArticleService } from './article.service';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
+import { ArticleCategory } from './entities/article.entity';
 
 @Controller('article')
 export class ArticleController {
@@ -23,7 +24,7 @@ export class ArticleController {
   }
 
   @Get('/category/:category')
-  findAllByCategory(@Param('category') category: string) {
+  findAllByCategory(@Param('category') category: ArticleCategory) {
     return this.articleService.findAllByCategory(category);
   }
 
