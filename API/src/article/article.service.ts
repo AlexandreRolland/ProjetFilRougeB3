@@ -27,7 +27,6 @@ export class ArticleService {
   findAll() {
     try{
       return this.articleRepository.find({
-        relations: ['decorateur'],
         order: {
           createdAt: 'DESC',
         },

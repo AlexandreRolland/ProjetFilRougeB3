@@ -1,6 +1,11 @@
-import { DecorateurEntity } from "../../decorateur/entities/decorateur.entity";
 import { TimeStamp } from "../../timestamp/timestamp.entity";
 import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn, Repository } from "typeorm";
+
+export enum ArticleCategory {
+    NEWS = 'Actualités',
+    TIPS = 'Conseils',
+    TUTORIAL = 'Tutoriels'
+}
 
 @Entity("article")
 export class ArticleEntity extends TimeStamp {
@@ -20,6 +25,10 @@ export class ArticleEntity extends TimeStamp {
     @Column( {nullable: true})
     image: string;
 
-    @ManyToOne(() => DecorateurEntity, (decorateur) => decorateur.articles)
-    decorateur: DecorateurEntity;
+    @Column({
+        type: 'enum',
+        enum: ArticleCategory,
+        default: ArticleCategory.TIPS
+    })
+    category: ArticleCategory;
 }
