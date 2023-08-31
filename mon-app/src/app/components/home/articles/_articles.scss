@@ -16,9 +16,7 @@
         align-items: flex-end;
         width: 100%;
         background-color: antiquewhite;
-        /* pour trois articles par ligne */
         height: 350px;
-        /* ou ce que vous voulez */
         background-size: cover;
         border-radius: 10px;
         position: relative;
@@ -50,12 +48,11 @@
 
     .article-block.see-all {
         background-color: $primary-color;
-        /* ou une autre couleur pour le bloc "voir tous les articles" */
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: center;
-        gap: 50px;
+        gap: 60px;
         padding-bottom: 40px;
 
         a{
