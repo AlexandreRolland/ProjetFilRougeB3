@@ -6,16 +6,27 @@ import { useEffect, useState } from "react";
 function BlogPage() {
 
     const [articles, setArticles] = useState([]);
+    const [category, setCategory] = useState('all'); // état pour suivre la catégorie sélectionnée
 
     useEffect(() => {
-        ArticleService.getArticles()
-            .then(data => {
-                setArticles(data);
-            })
-            .catch(error => {
-                console.error("Erreur lors de la récupération des articles:", error);
-            });
-    }, []);
+        if(category === 'all') {
+            ArticleService.getArticles()
+                .then(data => {
+                    setArticles(data);
+                })
+                .catch(error => {
+                    console.error("Erreur lors de la récupération des articles:", error);
+                });
+        } else {
+            ArticleService.getArticleByCategoryName(category)
+                .then(data => {
+                    setArticles(data);
+                })
+                .catch(error => {
+                    console.error("Erreur lors de la récupération des articles:", error);
+                });
+        }
+    }, [category]);
 
     return (
         <>
@@ -23,6 +34,13 @@ function BlogPage() {
             <section className="container">
                 <div className="blog">
                     <h1>Articles du <span className="primary-color">Blog</span></h1>
+                    {/* Ajout du menu de filtrage */}
+                    <div className="filter-menu">
+                        <button onClick={() => setCategory('all')}>Tous les articles</button>
+                        <button onClick={() => setCategory('news')}>News</button>
+                        <button onClick={() => setCategory('tips')}>Tips</button>
+                        <button onClick={() => setCategory('tutorials')}>Tutorials</button>
+                    </div>
                     <div className="blog-container">
                         {articles.map((article, index) => (
                             <div key={index} className="article-block" style={{ backgroundImage: `url(${article.image})` }}>

@@ -45,6 +45,29 @@ async function getArticles() {
     }
 }
 
+async function getArticleByCategoryName(categoryName) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/article/category/${categoryName}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + TokenServices.getToken(),
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error('Une erreur est survenue lors de la récupération des détails de l\'article');
+        }
+
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
+
 async function getArticleById(articleId) {
     try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/article/${articleId}`, {
@@ -120,5 +143,6 @@ export const ArticleService = {
     getArticleById,
     deleteArticle,
     updateArticle,
+    getArticleByCategoryName
 
 };
