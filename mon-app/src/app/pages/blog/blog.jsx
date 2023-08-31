@@ -24,7 +24,7 @@ function BlogPage() {
         <div className="blog">
             <h1>Articles du <span className="primary-color">Blog</span></h1>
             <div className="blog-container">
-                    <div className="articles-hp">
+                    <div className="articles-blog">
                         {articles.map((article, index) => (
                             <div key={index} className="article-block" style={{ backgroundImage: `url(${article.image})` }}>
                                 <div className='bottom'>
