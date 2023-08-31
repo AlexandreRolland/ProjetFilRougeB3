@@ -22,7 +22,7 @@ export class ArticleController {
     return this.articleService.findOne(+id);
   }
 
-  @Get(':category')
+  @Get('/category/:category')
   findAllByCategory(@Param('category') category: string) {
     return this.articleService.findAllByCategory(category);
   }
