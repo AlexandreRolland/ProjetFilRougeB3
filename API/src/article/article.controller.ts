@@ -24,7 +24,7 @@ export class ArticleController {
   }
 
   @Get('/category/:category')
-  findAllByCategory(@Param('category') category: ArticleCategory) {
+  findAllByCategory(@Param('category') category) {
     return this.articleService.findAllByCategory(category);
   }
 
