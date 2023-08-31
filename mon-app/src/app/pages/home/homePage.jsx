@@ -28,8 +28,6 @@ function HomePage() {
     <>
       <Nav />
 
- 
-
       <section className="container">
         <section className="flex">
           <div className="container-hp-left">
