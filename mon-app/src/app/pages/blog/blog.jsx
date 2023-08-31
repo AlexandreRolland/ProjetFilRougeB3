@@ -9,15 +9,6 @@ function BlogPage() {
     const [category, setCategory] = useState('all'); // état pour suivre la catégorie sélectionnée
 
     useEffect(() => {
-        if(category === 'all') {
-            ArticleService.getArticles()
-                .then(data => {
-                    setArticles(data);
-                })
-                .catch(error => {
-                    console.error("Erreur lors de la récupération des articles:", error);
-                });
-        } else {
             ArticleService.getArticleByCategoryName(category)
                 .then(data => {
                     setArticles(data);
@@ -25,7 +16,6 @@ function BlogPage() {
                 .catch(error => {
                     console.error("Erreur lors de la récupération des articles:", error);
                 });
-        }
     }, [category]);
 
     return (
