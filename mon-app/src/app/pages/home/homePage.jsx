@@ -6,7 +6,7 @@ import Steps from "../../components/home/steps/steps.jsx";
 import Banner from "../../components/home/banner/banner.jsx";
 import Articles from "../../components/home/articles/articles.jsx";
 import { Link } from "react-router-dom";
-import ArticleService from "../../services/article.services";
+import { ArticleService } from "../../services/article.services";
 
 
 
