@@ -37,7 +37,7 @@ export class ArticleService {
     }
   }
 
-  async findAllByCategory(category: ArticleCategory) {
+  async findAllByCategory(category) {
     try{
       return await this.articleRepository.find({
         where: {
