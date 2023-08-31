@@ -37,16 +37,16 @@ export class ArticleService {
     }
   }
 
-  async findAllByCategory(category: string) {
+  async findAllByCategory(category: ArticleCategory) {
     try{
       return await this.articleRepository.find({
         where: {
-          category : ArticleCategory[category],
+          category: category,
         },
         order: {
           createdAt: 'DESC',
         },
-      })
+      })  
     }
     catch(error){
       throw new UnauthorizedException('Error finding article' + error)
