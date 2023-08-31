@@ -37,9 +37,9 @@ function BlogPage() {
                     {/* Ajout du menu de filtrage */}
                     <div className="filter-menu">
                         <button onClick={() => setCategory('all')}>Tous les articles</button>
-                        <button onClick={() => setCategory('NEWS')}>News</button>
-                        <button onClick={() => setCategory('TIPS')}>Tips</button>
-                        <button onClick={() => setCategory('TUTORIAL')}>Tutorials</button>
+                        <button onClick={() => setCategory('Actualites')}>News</button>
+                        <button onClick={() => setCategory('Conseils')}>Tips</button>
+                        <button onClick={() => setCategory('Tutoriels')}>Tutorials</button>
                     </div>
                     <div className="blog-container">
                         {articles.map((article, index) => (

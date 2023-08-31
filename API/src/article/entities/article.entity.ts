@@ -2,7 +2,7 @@ import { TimeStamp } from "../../timestamp/timestamp.entity";
 import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn, Repository } from "typeorm";
 
 export enum ArticleCategory {
-    NEWS = 'Actualités',
+    NEWS = 'Actualites',
     TIPS = 'Conseils',
     TUTORIAL = 'Tutoriels'
 }
