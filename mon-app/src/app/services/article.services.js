@@ -45,9 +45,9 @@ async function getArticles() {
     }
 }
 
-async function getArticleByCategoryName(categoryName) {
+async function getArticleByCategoryName(category) {
     try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/article/category/${categoryName}`, {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/article/category/${category}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
