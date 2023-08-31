@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 function BlogPage() {
 
      const [articles, setArticles] = useState([]);
-    const [category, setCategory] = useState([]); // état pour suivre la catégorie sélectionnée
+    const [category, setCategory] = useState('all'); // état pour suivre la catégorie sélectionnée
 
     useEffect(() => {
         if(category === 'all') {
