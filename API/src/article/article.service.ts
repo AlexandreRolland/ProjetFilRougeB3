@@ -37,10 +37,10 @@ export class ArticleService {
     }
   }
   // findAllByCategory by category wich is an enum
-  async findAllByCategory(category: string) {
+  async findAllByCategory(categoryName: string) {
     try{
       return await this.articleRepository.find({
-        where: { category: category as ArticleCategory },
+        where: { category: categoryName as ArticleCategory },
         order: {
           createdAt: 'DESC',
         },
