@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 
 function BlogPage() {
 
-     const [articles, setArticles] = useState([]);
+    const [articles, setArticles] = useState([]);
     const [category, setCategory] = useState('all'); // état pour suivre la catégorie sélectionnée
 
     useEffect(() => {
-        if(category === 'all') {
+        if (category === 'all') {
             ArticleService.getArticles()
                 .then(data => {
                     setArticles(data);
@@ -33,13 +33,15 @@ function BlogPage() {
             <Nav />
             <section className="container">
                 <div className="blog">
-                    <h1>Articles du <span className="primary-color">Blog</span></h1>
-                    {/* Ajout du menu de filtrage */}
-                    <div className="filter-menu">
-                        <button onClick={() => setCategory('all')}>Tous les articles</button>
-                        <button onClick={() => setCategory('Actualites')}>News</button>
-                        <button onClick={() => setCategory('Conseils')}>Tips</button>
-                        <button onClick={() => setCategory('Tutoriels')}>Tutorials</button>
+                    <div className="top">
+
+                        <h1>Articles du <span className="primary-color">Blog</span></h1>
+                        <div className="filter-menu">
+                            <button className={category === 'Tutoriels' ? 'active' : ''} onClick={() => setCategory('Tutoriels')}>Tutorials</button>
+                            <button className={category === 'Conseils' ? 'active' : ''} onClick={() => setCategory('Conseils')}>Tips</button>
+                            <button className={category === 'Actualites' ? 'active' : ''} onClick={() => setCategory('Actualites')}>News</button>
+                            <button className={category === 'all' ? 'active' : ''} onClick={() => setCategory('all')}>Tous les articles</button>
+                        </div>
                     </div>
                     <div className="blog-container">
                         {articles.map((article, index) => (

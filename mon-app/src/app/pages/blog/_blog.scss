@@ -3,6 +3,27 @@
     margin-top: 100px;
     width: 100%;
 
+    .top{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+    }
+
+    .filter-menu {
+        display: flex;
+        gap: 10px;
+        button {
+            background-color: $border-color; 
+            transition: background-color 0.3s ease; 
+        }
+    
+        button.active {
+            background-color: $primary-color;
+            // ... tout autre style que vous souhaitez appliquer au bouton actif
+        }
+    }
+
     .blog-container {
         grid-gap: 50px;
         background-color: #fff;
