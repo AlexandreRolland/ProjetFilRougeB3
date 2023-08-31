@@ -1,6 +1,7 @@
 import Nav from "../../layouts/header/nav";
 import Footer from "../../layouts/footer/footer";
 import { ArticleService } from "../../services/article.services";
+import { useEffect, useState } from "react";
 
 function BlogPage() {
 
