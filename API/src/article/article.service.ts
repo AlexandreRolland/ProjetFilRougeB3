@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
 import { ArticleEntity } from './entities/article.entity';
@@ -12,8 +12,16 @@ export class ArticleService {
     private articleRepository: Repository<ArticleEntity>,
 ){}
 
-  create(createArticleDto: CreateArticleDto) {
-    return 'This action adds a new article';
+  async createArticle(createArticleDto: CreateArticleDto) {
+    try{
+      const article = await this.articleRepository.create(createArticleDto);
+      await this.articleRepository.save(article);
+      
+      return article;
+    }
+    catch(error){
+      throw new UnauthorizedException('Error creating article' + error)
+    }
   }
 
   findAll() {

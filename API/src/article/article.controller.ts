@@ -9,7 +9,7 @@ export class ArticleController {
 
   @Post()
   create(@Body() createArticleDto: CreateArticleDto) {
-    return this.articleService.create(createArticleDto);
+    return this.articleService.createArticle(createArticleDto);
   }
 
   @Get()
