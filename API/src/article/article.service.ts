@@ -36,17 +36,15 @@ export class ArticleService {
       throw new UnauthorizedException('Error finding article' + error)
     }
   }
-
-  async findAllByCategory(category) {
+  // findAllByCategory by category wich is an enum
+  async findAllByCategory(category: ArticleCategory) {
     try{
       return await this.articleRepository.find({
-        where: {
-          category: category,
-        },
+        where: { category },
         order: {
           createdAt: 'DESC',
         },
-      })  
+      })
     }
     catch(error){
       throw new UnauthorizedException('Error finding article' + error)
