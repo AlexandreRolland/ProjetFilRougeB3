@@ -6,7 +6,7 @@ import Steps from "../../components/home/steps/steps.jsx";
 import Banner from "../../components/home/banner/banner.jsx";
 import Articles from "../../components/home/articles/articles.jsx";
 import { Link } from "react-router-dom";
-import AdvertService from "../../services/AdvertService";
+import ArticleService from "../../services/article.services";
 
 
 
@@ -15,7 +15,7 @@ function HomePage() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    AdvertService.getAdverts()
+    ArticleService.getArticles()
         .then(data => {
             setArticles(data);
         })
