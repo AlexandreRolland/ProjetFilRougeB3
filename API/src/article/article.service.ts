@@ -1,7 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
-import { ArticleEntity } from './entities/article.entity';
+import { ArticleCategory, ArticleEntity } from './entities/article.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
@@ -24,9 +24,9 @@ export class ArticleService {
     }
   }
 
-  findAll() {
+  async findAll() {
     try{
-      return this.articleRepository.find({
+      return await this.articleRepository.find({
         order: {
           createdAt: 'DESC',
         },
@@ -37,8 +37,30 @@ export class ArticleService {
     }
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} article`;
+  async findAllByCategory(category: string) {
+    try{
+      return await this.articleRepository.find({
+        where: {
+          category : ArticleCategory[category],
+        },
+        order: {
+          createdAt: 'DESC',
+        },
+      })
+    }
+    catch(error){
+      throw new UnauthorizedException('Error finding article' + error)
+    }
+  }
+
+
+ async findOne(id: number) {
+    try{
+      return await this.articleRepository.findOneBy({id});
+    }
+    catch(error){
+      throw new UnauthorizedException('Error finding article' + error)
+    }
   }
 
   update(id: number, updateArticleDto: UpdateArticleDto) {

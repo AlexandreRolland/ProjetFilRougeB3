@@ -22,6 +22,11 @@ export class ArticleController {
     return this.articleService.findOne(+id);
   }
 
+  @Get(':category')
+  findAllByCategory(@Param('category') category: string) {
+    return this.articleService.findAllByCategory(category);
+  }
+
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateArticleDto: UpdateArticleDto) {
     return this.articleService.update(+id, updateArticleDto);
