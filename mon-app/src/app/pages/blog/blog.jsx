@@ -45,11 +45,13 @@ function BlogPage() {
                     </div>
                     <div className="blog-container">
                         {articles.map((article, index) => (
-                            <a key={index} to={`/article/${article.id}`} className="article-block" style={{ backgroundImage: `url(${article.image})` }}>
+                             <Link key={index} to={`/article/${article.id}`}>
+                            <div className="article-block" style={{ backgroundImage: `url(${article.image})` }}>
                                 <div className='bottom'>
                                     <h3>{article.title}</h3>
                                 </div>
-                            </a>
+                            </div>
+                            </Link>
                         ))}
                     </div>
                 </div>
