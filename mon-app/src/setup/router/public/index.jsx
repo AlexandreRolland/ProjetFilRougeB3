@@ -20,6 +20,7 @@ export const AppRoutes = () => {
             {/* test */}
             <Route path="/" element={<HomePage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/article/:id" element={<SingleArticlePage />} />
 
             <Route path="/signin" element={!user ? <SigninPage /> : <Navigate to="/" />} />
             <Route path="/signup" element={!user ? <SignupPage /> : <Navigate to="/" />} />
