@@ -97,7 +97,7 @@
     }
 
     @include respond-to(small) {
-        .articles-hp {
+        .blog-container {
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             padding: 15px 20px;
 
