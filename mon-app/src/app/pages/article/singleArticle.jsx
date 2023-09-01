@@ -46,7 +46,7 @@ function SingleArticlePage() {
                         <div className='content'>
                             <div className='left'>
                                 <h1 className='h2'>{article.title}</h1>
-                                <span className='date'>{formatDate(article.createdAt)}</span>
+                                <span className='date'>Publié le : {formatDate(article.createdAt)}</span>
                                 <p className='p'>{article.content}</p>
                             </div>
                             <div className='right'>

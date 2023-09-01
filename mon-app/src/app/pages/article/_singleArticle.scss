@@ -30,6 +30,11 @@
                     margin-bottom: 5px;
                 }
 
+                .date{
+                    @include typography($border-color, $primary-font, 12px, 500);
+
+                }
+
                 .p{
                     margin-top: 30px;
                 }
