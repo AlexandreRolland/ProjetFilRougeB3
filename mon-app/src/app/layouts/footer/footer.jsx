@@ -26,6 +26,7 @@ const Footer = () => {
                     <ul>
 
                         <li><Link to="/">Accueil</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
                         {
                             user && user.role === 'Client' &&
                             <li>
@@ -38,7 +39,7 @@ const Footer = () => {
                                 <Link to='/room_form'>Contacter un expert</Link>
                             </li>
                         }
-                        <li><Link to="/blog">Blog</Link></li>
+
                         {
                             user && user.role === 'Decorateur' &&
                             <li>
