@@ -94,3 +94,27 @@ input, textarea, select {
 .primary-color {
     color: $primary-color;
 }
+
+.h1 {
+    @include typography($black-color, $primary-font, 64px, 500);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 48px, 500);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 48px, 500);
+    }
+}
+
+.h2 {
+    @include typography($black-color, $primary-font, 48px, 500);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 32px, 500);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 32px, 500);
+    }
+}

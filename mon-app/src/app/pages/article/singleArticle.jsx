@@ -33,12 +33,15 @@ function SingleArticlePage() {
                 {/* {*page single article*} */}
                 <div className="single-article">
                     <div className="top">
-                        <h1>Article du <span className="primary-color">Blog</span></h1>
+                        <span className='h1'>Article du <span className="primary-color">Blog</span></span>
                     </div>
                     <div className="single-article-container">
                         <div className="article-block">
                             <div className='bottom'>
-                                <h3>{article.title}</h3>
+                                <h1 className='h2'>{article.title}</h1>
+                                <img src={article.image} alt="" />
+                                <p className='p'>{article.content}</p>
+
                             </div>
                         </div>
                     </div>
