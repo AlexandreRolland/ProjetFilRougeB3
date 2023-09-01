@@ -26,13 +26,8 @@
             .left {
                 width: 50%;
 
-                h1 {
-                    margin-bottom: 5px;
-                }
-
                 .date{
-                    @include typography($border-color, $primary-font, 12px, 500);
-
+                    @include typography($grey-color, $primary-font, 16px, 500);
                 }
 
                 .p{
