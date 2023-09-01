@@ -3,11 +3,12 @@ import { useEffect } from 'react';
 import { ArticleService } from '../../services/article.services';
 import Nav from "../../layouts/header/nav.jsx";
 import Footer from "../../layouts/footer/footer.jsx";
+import { useState } from 'react';
 
 
 function SingleArticlePage() {
     const { id } = useParams();
-    
+
     const [article, setArticle] = useState(null);
 
     useEffect(() => {
@@ -27,7 +28,7 @@ function SingleArticlePage() {
         <>
             <Nav />
             <section className="container">
-              {/* {*page single article*} */}
+                {/* {*page single article*} */}
                 <div className="single-article">
                     <div className="top">
                         <h1>Article du <span className="primary-color">Blog</span></h1>
