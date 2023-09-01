@@ -31,7 +31,7 @@ const Footer = () => {
                         <li><Link to="/signin">Blog</Link></li>
                         {/* se déconnecter */}
                         {user &&
-                            <li onClick={handleLogout}>Se déconnecter</li>
+                            <li onClick={handleLogout}><Link>Se déconnecter</Link></li>
                         }
                     </ul>
 
