@@ -13,6 +13,7 @@
     .filter-menu {
         display: flex;
         gap: 10px;
+        flex-wrap: wrap;
         button {
             background-color: $border-color; 
             transition: background-color 0.3s ease; 
@@ -64,7 +65,6 @@
                     color: $white-color;
                     font-size: 20px;
                     font-weight: 600;
-                    //test
                 }
             }
         }
