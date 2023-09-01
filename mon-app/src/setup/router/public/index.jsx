@@ -11,6 +11,7 @@ import { useContext } from "react"
 import UserContext from '../../contexts/UserContext.js';
 import AdminPage from '../../../app/pages/admin/admin.jsx';
 import BlogPage from '../../../app/pages/blog/blog.jsx';
+import SingleArticlePage from '../../../app/pages/article/singleArticle.jsx';
 
 
 export const AppRoutes = () => {
