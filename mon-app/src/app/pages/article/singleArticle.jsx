@@ -22,6 +22,8 @@ function SingleArticlePage() {
             });
     }, [id]);
 
+    if (!article) return <p>Chargement...</p>;
+
     // Render the article details
 
     return (
