@@ -1,4 +1,4 @@
-import { Link, useNavigation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../../setup/contexts/UserContext.js";
 import { TokenServices } from "../../../app/services/token.services.js";
@@ -13,7 +13,6 @@ const Footer = () => {
 
         setUser(null); // Mettre à jour le contexte de l'utilisateur à null
 
-        navigation.navigate("/signin"); // Rediriger vers la page de connexion
     };
 
     return (
