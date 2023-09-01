@@ -5,15 +5,13 @@ import { TokenServices } from "../../../app/services/token.services.js";
 
 const Footer = () => {
 
-    const { user } = useContext(UserContext);
+    const { user, setUser } = useContext(UserContext);
     const history = useHistory();
 
     const handleLogout = () => {
         TokenServices.removeToken(); // Supprimer le token d'accès
 
-        if (setUser) {
-            setUser(null); // Mettre à jour le contexte de l'utilisateur
-        }
+        setUser(null); // Mettre à jour le contexte de l'utilisateur à null
 
         history.push("/signin"); // Rediriger vers la page de connexion
     };
