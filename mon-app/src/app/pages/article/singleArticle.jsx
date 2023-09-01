@@ -7,6 +7,8 @@ import Footer from "../../layouts/footer/footer.jsx";
 
 function SingleArticlePage() {
     const { id } = useParams();
+    
+    const [article, setArticle] = useState(null);
 
     useEffect(() => {
         ArticleService.getArticleById(id)
