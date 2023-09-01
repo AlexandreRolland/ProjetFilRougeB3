@@ -6,7 +6,6 @@ import { TokenServices } from "../../../app/services/token.services.js";
 const Footer = () => {
 
     const { user, setUser } = useContext(UserContext);
-    const navigation = useNavigation();
 
     const handleLogout = () => {
         TokenServices.removeToken(); // Supprimer le token d'accès
