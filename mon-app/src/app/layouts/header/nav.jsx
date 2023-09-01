@@ -66,7 +66,7 @@ const Nav = () => {
                                 {
                                     !user &&
                                     <li>
-                                        <NavLink to='/signup'>S'inscrire</NavLink>
+                                        <NavLink to='/signin'>Connexion</NavLink>
                                     </li>
                                 }
                                 {
