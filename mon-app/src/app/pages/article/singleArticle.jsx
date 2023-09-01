@@ -39,8 +39,14 @@ function SingleArticlePage() {
                         <h1 className='h2'>{article.title}</h1>
                         <span className='date'>{article.createdAt}</span>
                         <div className='content'>
+                            <div className='left'>
+
                             <p className='p'>{article.content}</p>
+                            </div>
+                            <div className='right'>
+
                             <img src={article.image} alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>
