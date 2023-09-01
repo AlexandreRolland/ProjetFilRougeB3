@@ -21,14 +21,24 @@ const Footer = () => {
 
                 <div className="footer">
                     <div>
-                        <Link to="/signin" className="primary-color logo">IDECO</Link>
+                        <Link to="/" className="primary-color logo">IDECO</Link>
                     </div>
                     <ul>
 
-                        <li><Link to="/signin">Accueil</Link></li>
-                        <li><Link to="/signin">Se faire conseiller</Link></li>
-                        <li><Link to="/signin">Discussions</Link></li>
-                        <li><Link to="/signin">Blog</Link></li>
+                        <li><Link to="/">Accueil</Link></li>
+                        {
+                            user && user.role === 'Client' &&
+                            <li>
+                                <NavLink to='/room_form' className="button" >Contacter un expert</NavLink>
+                            </li>
+                        }
+                        {
+                            !user &&
+                            <li>
+                                <NavLink to='/room_form' className="button" >Contacter un expert</NavLink>
+                            </li>
+                        }
+                        <li><Link to="/blog">Blog</Link></li>
                         {/* se déconnecter */}
                         {user &&
                             <li onClick={handleLogout}><Link>Se déconnecter</Link></li>
