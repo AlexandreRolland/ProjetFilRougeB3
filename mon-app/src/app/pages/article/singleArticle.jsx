@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import { ArticleService } from '../../services/article.services';
-import Nav from '../../layouts/nav/nav';
-import Footer from '../../layouts/footer/footer';
+import Nav from "../../layouts/header/nav.jsx";
+import Footer from "../../layouts/footer/footer.jsx";
 
 
 function SingleArticlePage() {
