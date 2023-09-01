@@ -11,7 +11,8 @@ function SingleArticlePage() {
     useEffect(() => {
         ArticleService.getArticleById(id)
             .then(data => {
-                // set your state with the article data
+                console.log(data);
+                setArticle(data);
             })
             .catch(error => {
                 console.error("Erreur lors de la récupération des détails de l'article:", error);
