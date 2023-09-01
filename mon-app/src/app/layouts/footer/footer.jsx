@@ -40,21 +40,21 @@ const Footer = () => {
                         }
                         <li><Link to="/blog">Blog</Link></li>
                         {
-                                    user && user.role === 'Decorateur' &&
-                                    <li>
-                                        <NavLink to="/annonce_list">Voir les annonces</NavLink>
-                                    </li>
-                                }
+                            user && user.role === 'Decorateur' &&
+                            <li>
+                                <Link to="/annonce_list">Voir les annonces</Link>
+                            </li>
+                        }
                         {/* se déconnecter */}
                         {user &&
                             <li onClick={handleLogout}><Link>Se déconnecter</Link></li>
                         }
-                                                        {
-                                    !user &&
-                                    <li>
-                                        <NavLink to='/signup'>S'inscrire</NavLink>
-                                    </li>
-                                }
+                        {
+                            !user &&
+                            <li>
+                                <Link to='/signup'>S'inscrire</Link>
+                            </li>
+                        }
                     </ul>
 
 
