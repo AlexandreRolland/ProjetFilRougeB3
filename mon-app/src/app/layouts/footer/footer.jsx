@@ -29,13 +29,13 @@ const Footer = () => {
                         {
                             user && user.role === 'Client' &&
                             <li>
-                                <Link to='/room_form' className="button" >Contacter un expert</Link>
+                                <Link to='/room_form'>Contacter un expert</Link>
                             </li>
                         }
                         {
                             !user &&
                             <li>
-                                <Link to='/room_form' className="button" >Contacter un expert</Link>
+                                <Link to='/room_form'>Contacter un expert</Link>
                             </li>
                         }
                         <li><Link to="/blog">Blog</Link></li>
