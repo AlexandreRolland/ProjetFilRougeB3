@@ -34,7 +34,7 @@ function SingleArticlePage() {
                         <h1>Article du <span className="primary-color">Blog</span></h1>
                     </div>
                     <div className="single-article-container">
-                        <div className="article-block" style={{ backgroundImage: `url(${article.image})` }}>
+                        <div className="article-block">
                             <div className='bottom'>
                                 <h3>{article.title}</h3>
                             </div>
