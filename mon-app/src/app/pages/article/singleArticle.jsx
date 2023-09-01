@@ -22,6 +22,13 @@ function SingleArticlePage() {
             });
     }, [id]);
 
+    function formatDate(isoString) {
+        const date = new Date(isoString);
+    
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('fr-FR', options);
+    }
+
     if (!article) return <p>Chargement...</p>;
 
     // Render the article details
@@ -39,7 +46,7 @@ function SingleArticlePage() {
                         <div className='content'>
                             <div className='left'>
                                 <h1 className='h2'>{article.title}</h1>
-                                <span className='date'>{article.createdAt}</span>
+                                <span className='date'>{formatDate(article.createdAt)}</span>
                                 <p className='p'>{article.content}</p>
                             </div>
                             <div className='right'>
