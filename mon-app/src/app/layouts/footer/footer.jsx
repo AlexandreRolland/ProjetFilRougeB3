@@ -1,4 +1,4 @@
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "../../../setup/contexts/UserContext.js";
 import { TokenServices } from "../../../app/services/token.services.js";
@@ -6,14 +6,14 @@ import { TokenServices } from "../../../app/services/token.services.js";
 const Footer = () => {
 
     const { user, setUser } = useContext(UserContext);
-    const history = useHistory();
+    const navigation = useNavigation();
 
     const handleLogout = () => {
         TokenServices.removeToken(); // Supprimer le token d'accès
 
         setUser(null); // Mettre à jour le contexte de l'utilisateur à null
 
-        history.push("/signin"); // Rediriger vers la page de connexion
+        navigation.navigate("/signin"); // Rediriger vers la page de connexion
     };
 
     return (
