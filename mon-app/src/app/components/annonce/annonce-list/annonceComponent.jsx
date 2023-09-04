@@ -27,9 +27,10 @@ const AnnoncesComponent = ({ annonces }) => {
               <h3>{annonce.roomType}</h3>
               <p>Surface : {annonce.roomSurface} m²</p>
               <p>Description : {annonce.description}</p>
+              <p>État : {annonce.status}</p>
             </div>
             <div className="right">
-              <p>Rémunération : {annonce.price} €</p>
+              <p>Rémunération : <span className='primary-color'>{annonce.price} €</span></p>
               <button onClick={() => handleTakeCharge(annonce.id, annonce.user.id)}>
                 Prendre en charge
               </button>
