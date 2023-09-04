@@ -21,7 +21,9 @@
 
             img{
                 max-height: 350px;
+                width: 100%;
                 background-size: cover;
+                background-position: center;
             }
 
             .content-row{
@@ -34,6 +36,7 @@
 
             .date {
                 @include typography($grey-color, $primary-font, 16px, 500);
+                margin-top: 5px;
             }
 
             .content-row {
