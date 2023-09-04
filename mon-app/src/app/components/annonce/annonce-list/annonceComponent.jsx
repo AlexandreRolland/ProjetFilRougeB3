@@ -1,15 +1,19 @@
 import React, { useContext } from 'react';
 import { AdvertService } from '../../../services/advert.services';
 import UserContext from '../../../../setup/contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const AnnoncesComponent = ({ annonces }) => {
 
   const { user } = useContext(UserContext);
 
+  const navigate = useNavigate();
+
   const handleTakeCharge = async (annonceId, clientId) => {
     try {
     const data = await AdvertService.takeCharge(user.decorateur.id, annonceId, clientId);
+    navigate('/annonce_chat');
     return data;
     } catch (error) {
       console.log(error);
