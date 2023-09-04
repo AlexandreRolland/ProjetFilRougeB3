@@ -63,7 +63,7 @@ function SingleArticlePage() {
                                 </div>
                                 <div className='content-row'>
                                     <div className='left'>
-                                        <div className="img" style={{ backgroundImage: `url(${article.image})` }}></div>
+                                        <div className="img" style={{ backgroundImage: `url(${article.image2})` }}></div>
 
                                     </div>
                                     <div className='right'>
