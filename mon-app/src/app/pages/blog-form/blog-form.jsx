@@ -39,7 +39,7 @@ function BlogFormPage() {
             <section className="container">
                 <div className="post-article">
                     <h1>Poster un <span className="primary-color">article</span></h1>
-                    <div className="post-container"></div>
+                    <div className="post-container">
                     <form onSubmit={handleSubmit}>
                         <div className="input-group">
                             <label>Titre</label>
@@ -79,6 +79,7 @@ function BlogFormPage() {
                         </div>
                         <button type="submit">Publier l'article</button>
                     </form>
+                    </div>
                 </div>
             </section>
             <Footer />
