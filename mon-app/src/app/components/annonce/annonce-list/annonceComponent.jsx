@@ -21,7 +21,7 @@ const AnnoncesComponent = ({ annonces }) => {
   return (
     <div>
       {annonces.map((annonce) => (
-        <React.Fragment key={annonce.id}>
+        <React.Fragment className="hr" key={annonce.id}>
           <div className="annonce-component">
             <div className="left">
               <h3>{annonce.roomType}</h3>
