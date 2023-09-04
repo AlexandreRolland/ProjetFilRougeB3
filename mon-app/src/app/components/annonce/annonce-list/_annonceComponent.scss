@@ -52,3 +52,23 @@ border-bottom: 1px solid $border-color;
 .annonce-component:first-child{
     padding-top: 0px;
 }
+
+//responsive
+
+@include respond-to(small){
+    .annonce-component{
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 0px;
+        border-bottom: none;
+
+        .left{
+            width: 100%;
+        }
+
+        .right{
+            width: 100%;
+        }
+    }
+}
+
