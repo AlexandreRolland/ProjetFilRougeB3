@@ -43,12 +43,12 @@ function SingleArticlePage() {
                         <span className='h1'>Article du <span className="primary-color">Blog</span></span>
                     </div>
                     <div className="single-article-container">
-                        <div className='content'>
+                        <div className='content-all'>
                             <h1 className='h2'>{article.title}</h1>
                             <span className='date'>Publié le : {formatDate(article.createdAt)}</span>
-                            <div>
+                            <div className='content'>
 
-                                <div>
+                                <div className='content-row'>
                                     <div className='left'>
                                         <h2 className='h3'>{article.subhead}</h2>
                                         <p className='p'>{article.content}</p>
@@ -59,7 +59,7 @@ function SingleArticlePage() {
                                     </div>
 
                                 </div>
-                                <div>
+                                <div className='content-row'>
                                     <div className='left'>
                                         <img src={article.image2} alt="" />
 

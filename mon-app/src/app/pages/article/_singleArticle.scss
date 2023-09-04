@@ -12,11 +12,16 @@
         border-radius: 20px;
 
 
-        .content {
+        .content-all {
             margin-top: 30px;
             margin-bottom: 30px;
             display: flex;
             gap: 30px;
+            flex-direction: column;
+
+            .content-row{
+                display: flex;
+            }
 
             .right {
                 width: 50%;
@@ -69,7 +74,7 @@
         .single-article-container {
             padding: 30px 40px;
 
-            .content {
+            .content-all {
                 flex-direction: column;
 
                 .right {
