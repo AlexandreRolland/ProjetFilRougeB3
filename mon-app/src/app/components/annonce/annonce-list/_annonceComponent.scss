@@ -37,5 +37,7 @@ margin-bottom: 15px;
 }
 
 .hr:last-child{
-    display: none;
+    hr{
+        display: none;
+    }
 }
