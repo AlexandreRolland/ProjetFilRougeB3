@@ -57,7 +57,6 @@ function SingleArticlePage() {
                                     </div>
                                     <div className='right'>
                                         <div className='img' style={{ backgroundImage: `url(${article.image})` }}></div>
-                                        <img src={article.image} alt="" />
                                     </div>
 
                                 </div>
