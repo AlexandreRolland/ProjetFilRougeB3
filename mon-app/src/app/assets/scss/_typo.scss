@@ -120,7 +120,7 @@ input, textarea, select {
 }
 
 .h3{
-    @include typography($black-color, $primary-font, 20px, 500);
+    @include typography($black-color, $primary-font, 25px, 500);
 
     @include respond-to(medium) {
         @include typography($black-color, $primary-font, 18px, 500);
