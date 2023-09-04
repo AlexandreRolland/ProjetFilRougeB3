@@ -26,8 +26,13 @@
                 background-position: center;
             }
 
+            .content{
+                display: flex;
+                flex-direction: column;
+                gap: 75px;
+            }
+
             .content-row{
-                margin-bottom: 30px;
 
                 .h3{
                     margin-bottom: 10px;
