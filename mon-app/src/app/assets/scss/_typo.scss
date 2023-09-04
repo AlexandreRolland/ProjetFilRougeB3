@@ -118,3 +118,15 @@ input, textarea, select {
         @include typography($black-color, $primary-font, 32px, 500);
     }
 }
+
+.h3{
+    @include typography($black-color, $primary-font, 20px, 500);
+
+    @include respond-to(medium) {
+        @include typography($black-color, $primary-font, 18px, 500);
+    }
+
+    @include respond-to(small) {
+        @include typography($black-color, $primary-font, 16px, 500);
+    }
+}

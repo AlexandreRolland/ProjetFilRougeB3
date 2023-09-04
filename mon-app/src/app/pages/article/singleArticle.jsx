@@ -47,26 +47,29 @@ function SingleArticlePage() {
                             <h1 className='h2'>{article.title}</h1>
                             <span className='date'>Publié le : {formatDate(article.createdAt)}</span>
                             <div>
-                                <div className='left'>
-                                    <h2 className='h3'>{article.subhead}</h2>
-                                    <p className='p'>{article.content}</p>
-                                </div>
-                                <div className='right'>
 
-                                    <img src={article.image} alt="" />
-                                </div>
+                                <div>
+                                    <div className='left'>
+                                        <h2 className='h3'>{article.subhead}</h2>
+                                        <p className='p'>{article.content}</p>
+                                    </div>
+                                    <div className='right'>
 
-                            </div>
-                            <div>
-                                <div className='left'>
-                                    <img src={article.image2} alt="" />
+                                        <img src={article.image} alt="" />
+                                    </div>
 
                                 </div>
-                                <div className='right'>
-                                    <h2 className='h3'>{article.subhead2}</h2>
-                                    <p className='p'>{article.content2}</p>
-                                </div>
+                                <div>
+                                    <div className='left'>
+                                        <img src={article.image2} alt="" />
 
+                                    </div>
+                                    <div className='right'>
+                                        <h2 className='h3'>{article.subhead2}</h2>
+                                        <p className='p'>{article.content2}</p>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
