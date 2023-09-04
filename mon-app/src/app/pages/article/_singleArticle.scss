@@ -19,8 +19,9 @@
             gap: 30px;
             flex-direction: column;
 
-            img{
+            .img{
                 max-height: 350px;
+                height: auto;
                 width: 100%;
                 background-size: cover;
                 background-position: center;

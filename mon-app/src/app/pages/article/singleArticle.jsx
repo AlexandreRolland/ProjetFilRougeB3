@@ -56,14 +56,14 @@ function SingleArticlePage() {
                                         <p className='p'>{article.content}</p>
                                     </div>
                                     <div className='right'>
-
+                                        <div className='img' style={{ backgroundImage: `url(${article.image})` }}></div>
                                         <img src={article.image} alt="" />
                                     </div>
 
                                 </div>
                                 <div className='content-row'>
                                     <div className='left'>
-                                        <img src={article.image2} alt="" />
+                                        <div className="img" style={{ backgroundImage: `url(${article.image})` }}></div>
 
                                     </div>
                                     <div className='right'>
