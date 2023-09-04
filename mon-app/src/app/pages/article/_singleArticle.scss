@@ -19,6 +19,11 @@
             gap: 30px;
             flex-direction: column;
 
+            img{
+                max-height: 350px;
+                background-size: cover;
+            }
+
             .content-row{
                 margin-bottom: 30px;
 
