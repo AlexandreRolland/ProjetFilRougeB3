@@ -16,8 +16,11 @@
             margin-top: 30px;
             margin-bottom: 30px;
             display: flex;
-            gap: 30px;
             flex-direction: column;
+
+            .title{
+                margin-bottom: 50px;
+            }
 
             .img{
                 height: 350px;
@@ -29,7 +32,7 @@
             .content{
                 display: flex;
                 flex-direction: column;
-                gap: 75px;
+                gap: 50px;
             }
 
             .content-row{
