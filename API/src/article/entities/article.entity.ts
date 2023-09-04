@@ -16,14 +16,23 @@ export class ArticleEntity extends TimeStamp {
     @Column()
     title: string;
 
-    @Column()
-    summary: string;
+    @Column( { nullable: true })
+    subhead: string;
 
     @Column()
     content: string;
 
-    @Column( {nullable: true})
+    @Column({ nullable: true })
     image: string;
+
+    @Column( { nullable: true })
+    subhead2: string;
+
+    @Column({ nullable: true })
+    content2: string;
+
+    @Column({ nullable: true })
+    image2: string;
 
     @Column({
         type: 'enum',
