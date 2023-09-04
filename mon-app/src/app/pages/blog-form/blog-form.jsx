@@ -38,7 +38,7 @@ function BlogFormPage() {
             <Nav />
             <section className="container">
                 <div className="post-article">
-                    <h1>Poster un article</h1>
+                    <h1>Poster un <span className="primary-color">article</span></h1>
                     <div className="post-container"></div>
                     <form onSubmit={handleSubmit}>
                         <div className="input-group">
