@@ -46,7 +46,6 @@ const AnnonceChat = () => {
             <div className="fullPage" key={reloadKey}>
                 <Nav />
                 <div className="container">
-                    <h1>Chat</h1>
                     <div className="annonce-chat">
                         <div className="left">
                             <AnnonceChatComponent
