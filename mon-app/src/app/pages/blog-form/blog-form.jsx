@@ -6,9 +6,13 @@ import { ArticleService } from "../../services/article.services";
 function BlogFormPage() {
     const [formData, setFormData] = useState({
         title: "",
-        summary: "",
+        category: "Conseils",
+        subhead: "",
         content: "",
-        image: ""
+        image: "",
+        subhead2: "",
+        content2: "",
+        image2: ""
     });
 
     const handleChange = (event) => {
@@ -41,16 +45,36 @@ function BlogFormPage() {
                             <input type="text" name="title" value={formData.title} onChange={handleChange} required />
                         </div>
                         <div className="input-group">
-                            <label>Résumé</label>
-                            <textarea name="summary" value={formData.summary} onChange={handleChange} required></textarea>
+                            <label>Catégorie</label>
+                            <select name="category" value={formData.category} onChange={handleChange} required>
+                                <option value="Actualites">Actualités</option>
+                                <option value="Conseils">Conseils</option>
+                                <option value="Tutoriels">Tutoriels</option>
+                            </select>
                         </div>
                         <div className="input-group">
-                            <label>Contenu</label>
-                            <textarea name="content" value={formData.content} onChange={handleChange} required></textarea>
+                            <label>Sous-titre 1 (facultatif)</label>
+                            <input type="text" name="subhead" value={formData.subhead} onChange={handleChange} />
                         </div>
                         <div className="input-group">
-                            <label>URL de l'image</label>
-                            <input type="url" name="image" value={formData.image} onChange={handleChange} required />
+                            <label>Contenu 1</label>
+                            <textarea name="content" value={formData.content} onChange={handleChange} required />
+                        </div>
+                        <div className="input-group">
+                            <label>URL de l'image 1 (facultatif)</label>
+                            <input type="text" name="image" value={formData.image} onChange={handleChange} />
+                        </div>
+                        <div className="input-group">
+                            <label>Sous-titre 2 (facultatif)</label>
+                            <input type="text" name="subhead2" value={formData.subhead2} onChange={handleChange} />
+                        </div>
+                        <div className="input-group">
+                            <label>Contenu 2 (facultatif)</label>
+                            <textarea name="content2" value={formData.content2} onChange={handleChange} />
+                        </div>
+                        <div className="input-group">
+                            <label>URL de l'image 2 (facultatif)</label>
+                            <input type="text" name="image2" value={formData.image2} onChange={handleChange} />
                         </div>
                         <button type="submit">Publier l'article</button>
                     </form>
