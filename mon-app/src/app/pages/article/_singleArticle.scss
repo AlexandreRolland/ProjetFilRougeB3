@@ -19,25 +19,43 @@
             gap: 30px;
             flex-direction: column;
 
-            .content-row{
+            .date {
+                @include typography($grey-color, $primary-font, 16px, 500);
+            }
+
+            .p {
+                margin-top: 30px;
+            }
+
+            .content-row {
                 display: flex;
             }
 
             .right {
                 width: 50%;
                 height: auto;
+
+                .h3 {
+                    padding-right: 15px;
+                }
+
+                p {
+                    padding-right: 15px;
+                }
             }
 
             .left {
                 width: 50%;
 
-                .date{
-                    @include typography($grey-color, $primary-font, 16px, 500);
+                .h3 {
+                    padding-left: 15px;
                 }
 
-                .p{
-                    margin-top: 30px;
+                p {
+                    padding-left: 15px;
                 }
+
+
             }
 
         }
