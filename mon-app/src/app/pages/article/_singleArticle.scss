@@ -100,6 +100,8 @@
         .single-article-container {
             padding: 30px 40px;
 
+            
+
             .content {
                 flex-direction: column;
 
@@ -110,6 +112,16 @@
                 .left {
                     width: 100%;
                 }
+            }
+
+            .content-row{
+                display: flex;
+    flex-direction: column;
+    gap: 20px;
+            }
+
+            .content-row:last-child{
+                flex-direction: column-reverse;
             }
         }
     }

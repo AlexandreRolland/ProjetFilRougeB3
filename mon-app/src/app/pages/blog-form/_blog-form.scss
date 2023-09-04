@@ -75,15 +75,7 @@
         .post-container {
             padding: 60px 30px;
 
-            .content-row{
-                display: flex;
-    flex-direction: column;
-    gap: 20px;
-            }
 
-            .content-row:last-child{
-                flex-direction: column-reverse;
-            }
         }
     }
 }
