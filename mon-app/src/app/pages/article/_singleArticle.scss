@@ -19,12 +19,16 @@
             gap: 30px;
             flex-direction: column;
 
-            .date {
-                @include typography($grey-color, $primary-font, 16px, 500);
+            .content-row{
+                margin-bottom: 30px;
+
+                .h3{
+                    margin-bottom: 10px;
+                }
             }
 
-            .p {
-                margin-top: 30px;
+            .date {
+                @include typography($grey-color, $primary-font, 16px, 500);
             }
 
             .content-row {

@@ -44,8 +44,10 @@ function SingleArticlePage() {
                     </div>
                     <div className="single-article-container">
                         <div className='content-all'>
+                            <div>
                             <h1 className='h2'>{article.title}</h1>
                             <span className='date'>Publié le : {formatDate(article.createdAt)}</span>
+                            </div>
                             <div className='content'>
 
                                 <div className='content-row'>
