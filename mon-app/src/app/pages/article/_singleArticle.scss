@@ -100,17 +100,31 @@
         .single-article-container {
             padding: 30px 40px;
 
-            
-
             .content {
                 flex-direction: column;
 
                 .right {
                     width: 100%;
+
+                    p{
+                        padding-left: 0px;
+                    }
+
+                    .h3{
+                        padding-left: 0px;
+                    }
                 }
 
                 .left {
                     width: 100%;
+
+                    p{
+                        padding-right: 0px;
+                    }
+
+                    .h3{
+                        padding-right: 0px;
+                    }
                 }
             }
 
