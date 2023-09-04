@@ -35,8 +35,9 @@ const AnnoncesComponent = ({ annonces }) => {
                 Prendre en charge
               </button>
             </div>
+            <hr />
           </div>
-          <hr />
+          
         </React.Fragment>
       ))}
     </div>
