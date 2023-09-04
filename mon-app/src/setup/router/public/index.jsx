@@ -12,6 +12,7 @@ import UserContext from '../../contexts/UserContext.js';
 import AdminPage from '../../../app/pages/admin/admin.jsx';
 import BlogPage from '../../../app/pages/blog/blog.jsx';
 import SingleArticlePage from '../../../app/pages/article/singleArticle.jsx';
+import BlogFormPage from '../../../app/pages/blog-form/blog-form.jsx';
 
 
 export const AppRoutes = () => {
@@ -34,6 +35,7 @@ export const AppRoutes = () => {
             <Route path="/annonce_chat/:id" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
 
             <Route path="/admin_dashboard" element={<AdminPage />} />
+            <Route path="/room_form" element={<BlogFormPage />} />
 
         </Routes>
     );
