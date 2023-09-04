@@ -22,7 +22,7 @@ export class ArticleEntity extends TimeStamp {
     @Column()
     content: string;
 
-    @Column({ nullable: true })
+    @Column()
     image: string;
 
     @Column( { nullable: true })

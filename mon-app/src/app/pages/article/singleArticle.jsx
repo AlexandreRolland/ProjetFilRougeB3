@@ -24,7 +24,7 @@ function SingleArticlePage() {
 
     function formatDate(isoString) {
         const date = new Date(isoString);
-    
+
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return date.toLocaleDateString('fr-FR', options);
     }
@@ -44,14 +44,29 @@ function SingleArticlePage() {
                     </div>
                     <div className="single-article-container">
                         <div className='content'>
-                            <div className='left'>
-                                <h1 className='h2'>{article.title}</h1>
-                                <span className='date'>Publié le : {formatDate(article.createdAt)}</span>
-                                <p className='p'>{article.content}</p>
-                            </div>
-                            <div className='right'>
+                            <h1 className='h2'>{article.title}</h1>
+                            <span className='date'>Publié le : {formatDate(article.createdAt)}</span>
+                            <div>
+                                <div className='left'>
+                                    <h2 className='h3'>{article.subhead}</h2>
+                                    <p className='p'>{article.content}</p>
+                                </div>
+                                <div className='right'>
 
-                                <img src={article.image} alt="" />
+                                    <img src={article.image} alt="" />
+                                </div>
+
+                            </div>
+                            <div>
+                                <div className='left'>
+                                    <img src={article.image2} alt="" />
+
+                                </div>
+                                <div className='right'>
+                                    <h2 className='h3'>{article.subhead2}</h2>
+                                    <p className='p'>{article.content2}</p>
+                                </div>
+
                             </div>
                         </div>
                     </div>
