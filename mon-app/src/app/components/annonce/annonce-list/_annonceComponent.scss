@@ -3,7 +3,7 @@ display: flex;
 width: 100%;
 padding-top: 20px;
 padding-bottom: 20px;
-border-bottom: 1px solid $border-color;
+border-bottom: 2px solid $border-color;
 
 
 .left{
@@ -16,6 +16,7 @@ border-bottom: 1px solid $border-color;
 
     h3{
         text-transform: capitalize;
+        color: $primary-color;
     }
 }
 
@@ -59,8 +60,11 @@ border-bottom: 1px solid $border-color;
     .annonce-component{
         flex-direction: column;
         gap: 15px;
-        padding-bottom: 0px;
-        border-bottom: none;
+
+        button{
+            font-size: 16px;
+        }
+
 
         .left{
             width: 100%;
