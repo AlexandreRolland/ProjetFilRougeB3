@@ -35,7 +35,7 @@ export const AppRoutes = () => {
             <Route path="/annonce_chat/:id" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
 
             <Route path="/admin_dashboard" element={<AdminPage />} />
-            <Route path="/room_form" element={<BlogFormPage />} />
+            <Route path="/blog_form" element={<BlogFormPage />} />
 
         </Routes>
     );
