@@ -61,8 +61,8 @@ function BlogFormPage() {
                             <textarea name="content" value={formData.content} onChange={handleChange} required />
                         </div>
                         <div className="input-group">
-                            <label>URL de l'image 1 (facultatif)</label>
-                            <input type="text" name="image" value={formData.image} onChange={handleChange} />
+                            <label>URL de l'image 1</label>
+                            <input type="text" name="image" value={formData.image} onChange={handleChange} required />
                         </div>
                         <div className="input-group">
                             <label>Sous-titre 2 (facultatif)</label>
