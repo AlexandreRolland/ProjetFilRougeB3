@@ -27,7 +27,7 @@ const AnnoncesComponent = ({ annonces }) => {
               <h3>{annonce.roomType}</h3>
               <p>Surface : {annonce.roomSurface} m²</p>
               <p>Description : {annonce.description}</p>
-              <p>État : {annonce.status}</p>
+              <p>Client : {annonce.annonce.user.username}</p>
             </div>
             <div className="right">
               <p>Rémunération : <span className='primary-color'>{annonce.price} €</span></p>
