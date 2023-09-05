@@ -28,9 +28,9 @@ function AdminPage() {
                 <div className="admin">
                     <h1>Admin <span className="primary-color">Dashboard</span></h1>
                     <div className="admin-controls">
-                        <button onClick={() => setActiveComponent('user')}>Utilisateurs</button>
-                        <button onClick={() => setActiveComponent('annonce')}>Annonces</button>
-                        <button onClick={() => setActiveComponent('blog')}>Blog</button>
+                        <button className={activeComponent === 'user' ? 'button-active' : 'button-inactive'} onClick={() => setActiveComponent('user')}>Utilisateurs</button>
+                        <button className={activeComponent === 'annonce' ? 'button-active' : 'button-inactive'} onClick={() => setActiveComponent('annonce')}>Annonces</button>
+                        <button className={activeComponent === 'blog' ? 'button-active' : 'button-inactive'} onClick={() => setActiveComponent('blog')}>Blog</button>
                     </div>
                     <div className="admin-container">
                         {renderComponent()}
