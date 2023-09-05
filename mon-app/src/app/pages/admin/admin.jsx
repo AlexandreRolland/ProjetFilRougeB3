@@ -3,7 +3,7 @@ import Nav from "../../layouts/header/nav";
 import Footer from "../../layouts/footer/footer";
 import AnnonceAdminComponent from '../../components/admin/annonce/annonceAdminComponent';
 import BlogAdminComponent from '../../components/admin/blog/blogAdminComponent';
-//testffff
+//testffffrr
 function AdminPage() {
     const [activeComponent, setActiveComponent] = useState('user');
 
