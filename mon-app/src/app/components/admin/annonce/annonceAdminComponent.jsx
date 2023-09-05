@@ -48,8 +48,9 @@ const AnnonceAdminComponent = () => {
     }
 
     return (
-        <div className="hr">
-            <div className="admin-annonce-actions">
+        <div className="admin-annonce">
+             <h2>Gestion des <span className='primary-color'>Annonces</span></h2>
+            <div className="filter-menu">
                 <input 
                     type="text" 
                     placeholder="Rechercher par description..." 
