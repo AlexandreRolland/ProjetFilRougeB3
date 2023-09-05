@@ -1,7 +1,7 @@
 const BlogAdminComponent = () => {
     return (
         <div>
-            <h1>Blog</h1>
+            <h2>Gestion du Blog</h2>
         </div>
     );
 }

@@ -3,6 +3,17 @@
     margin-top: 100px;
     width: 100%;
 
+    .admin-controle{
+
+        .button-active {
+            background-color: $primary-color;
+        }
+        
+        .button-inactive {
+            background-color: $border-color;
+        }
+    }
+
 
     .admin-container{
         width: 100%;
@@ -13,6 +24,7 @@
         background-color: $white-color;
         border-radius: 20px;
     }
+
 
 
 }
