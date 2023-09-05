@@ -32,16 +32,26 @@
 
     .admin-article{
         display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #eee;
+        margin-bottom: 20px;
 
         .left{
-            width: 70%;
+            width: auto;
             padding-right: 20px;
         }
 
         .right{
             display: flex;
             align-items: center;
-            width: 30%;
+            width: auto;
         }
+    }
+
+    .admin-articles:last-child{
+        border-bottom: none;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
     }
 }
