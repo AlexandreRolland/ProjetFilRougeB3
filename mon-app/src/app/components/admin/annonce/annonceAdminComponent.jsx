@@ -59,14 +59,14 @@ const AnnonceAdminComponent = () => {
                 />
                 
                 <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
-                    <option value="Tous">Tous</option>
+                    <option value="Tous">État (tous)</option>
                     <option value="En Attente">En Attente</option>
                     <option value="En Cours">En Cours</option>
                     <option value="Terminé">Terminé</option>
                 </select>
                 
                 <button onClick={toggleSortOrder}>
-                    Trier par date {sortOrder === 'asc' ? 'croissante' : 'décroissante'}
+                    Tri : {sortOrder === 'asc' ? 'croissante' : 'décroissante'}
                 </button>
             </div>
 
@@ -76,12 +76,15 @@ const AnnonceAdminComponent = () => {
                         <div className="left">
                             <h3>{annonce.roomType}</h3>
                             <p>Surface : {annonce.roomSurface} m²</p>
-                            <p>Description : {annonce.description}</p>
                             <p>Client : {annonce.user.username}</p>
-                        </div>
-                        <div className="right">
                             <p>Status: {annonce.status}</p>
                             <p>Dernière mise à jour: {new Date(annonce.updatedAt).toLocaleString()}</p>
+                        </div>
+                        <div className="center">
+                            <p>Description : {annonce.description}</p>
+                        </div>
+                        <div className="right">
+                            <button>Modifier l'annonce</button>
                         </div>
                         <hr />
                     </div>
