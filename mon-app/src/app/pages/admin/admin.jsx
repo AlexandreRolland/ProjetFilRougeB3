@@ -6,7 +6,7 @@ import AnnonceAdminComponent from '../../components/admin/annonce/annonceAdminCo
 import BlogAdminComponent from '../../components/admin/blog/blogAdminComponent';
 
 function AdminPage() {
-    const [activeComponent, setActiveComponent] = useState(null);
+    const [activeComponent, setActiveComponent] = useState('user');
 
     const renderComponent = () => {
         switch (activeComponent) {
