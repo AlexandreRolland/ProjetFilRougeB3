@@ -57,6 +57,7 @@ const BlogAdminComponent = () => {
                         </div>
                         <div className='right'>
                             <button>Modifier l'article</button>
+                            <button className='delete'>Supprimer l'annonce</button>
                         </div>
                     </div>
                 ))}

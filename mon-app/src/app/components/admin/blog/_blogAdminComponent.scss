@@ -49,6 +49,14 @@
             display: flex;
             align-items: center;
             width: auto;
+
+            .delete{
+                background-color: rgb(241, 37, 37);
+            }
+
+            .delete:hover{
+                background-color: rgb(233, 110, 110);
+            }
         }
     }
 
