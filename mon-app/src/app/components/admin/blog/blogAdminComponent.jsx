@@ -30,7 +30,7 @@ const BlogAdminComponent = () => {
     }, [category, searchTerm, sorted]);
 
     return (
-        <div>
+        <div className="admin-blog"> 
             <h2>Gestion du Blog</h2>
             <div className="filter-menu">
                 <input type="text" placeholder="Rechercher..." onChange={e => setSearchTerm(e.target.value)} />
@@ -47,7 +47,7 @@ const BlogAdminComponent = () => {
                     <div key={index} className="admin-article">
                         <h3>{article.title}</h3>
                         <p>Catégorie: {article.category}</p>
-                        <p>Date de publication: {new Date(article.publishDate).toLocaleDateString()}</p>
+                        <p>Dernière modification : {new Date(article.updatedAt).toLocaleDateString()}</p>
                         <button>Modifier l'article</button>
                     </div>
                 ))}
