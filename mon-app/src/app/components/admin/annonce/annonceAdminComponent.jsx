@@ -48,37 +48,46 @@ const AnnonceAdminComponent = () => {
     }
 
     return (
-        <div className="admin-annonce-section">
-            <input 
-                type="text" 
-                placeholder="Rechercher par description..." 
-                value={searchTerm}
-                onChange={e => setSearchTerm(e.target.value)}
-            />
-            
-            <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
-                <option value="Tous">Tous</option>
-                <option value="En Attente">En Attente</option>
-                <option value="En Cours">En Cours</option>
-                <option value="Terminé">Terminé</option>
-            </select>
-            
-            <button onClick={toggleSortOrder}>
-                Trier par date {sortOrder === 'asc' ? 'croissante' : 'décroissante'}
-            </button>
-
-            <div className="annonces-list">
-                {filteredAnnonces.slice(0, displayedCount).map(annonce => (
-                    <div className="annonce-item" key={annonce.id}>
-                        <h3>{annonce.title}</h3>
-                        <p>Description: {annonce.description}</p>
-                        <p>Status: {annonce.status}</p>
-                        <p>Dernière mise à jour: {new Date(annonce.updatedAt).toLocaleString()}</p>
-                    </div>
-                ))}
+        <div className="hr">
+            <div className="admin-annonce-actions">
+                <input 
+                    type="text" 
+                    placeholder="Rechercher par description..." 
+                    value={searchTerm}
+                    onChange={e => setSearchTerm(e.target.value)}
+                />
+                
+                <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
+                    <option value="Tous">Tous</option>
+                    <option value="En Attente">En Attente</option>
+                    <option value="En Cours">En Cours</option>
+                    <option value="Terminé">Terminé</option>
+                </select>
+                
+                <button onClick={toggleSortOrder}>
+                    Trier par date {sortOrder === 'asc' ? 'croissante' : 'décroissante'}
+                </button>
             </div>
 
-            {showMoreButton && <button onClick={handleShowMore}>Afficher plus</button>}
+            {filteredAnnonces.slice(0, displayedCount).map(annonce => (
+                <React.Fragment key={annonce.id}>
+                    <div className="annonce-component">
+                        <div className="left">
+                            <h3>{annonce.roomType}</h3>
+                            <p>Surface : {annonce.roomSurface} m²</p>
+                            <p>Description : {annonce.description}</p>
+                            <p>Client : {annonce.user.username}</p>
+                        </div>
+                        <div className="right">
+                            <p>Status: {annonce.status}</p>
+                            <p>Dernière mise à jour: {new Date(annonce.updatedAt).toLocaleString()}</p>
+                        </div>
+                        <hr />
+                    </div>
+                </React.Fragment>
+            ))}
+
+            {showMoreButton && <button onClick={handleShowMore} className="load-more">Afficher plus</button>}
         </div>
     );
 };
