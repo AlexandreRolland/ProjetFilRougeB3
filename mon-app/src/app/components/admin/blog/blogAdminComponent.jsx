@@ -31,7 +31,7 @@ const BlogAdminComponent = () => {
 
     return (
         <div className="admin-blog">
-            <h2>Gestion du Blog</h2>
+            <h2>Gestion du <span className='primary-color'>Blog</span></h2>
             <div className="filter-menu">
                 <input type="text" placeholder="Rechercher..." onChange={e => setSearchTerm(e.target.value)} />
                 <select onChange={e => setCategory(e.target.value)}>
