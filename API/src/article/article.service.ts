@@ -65,7 +65,12 @@ export class ArticleService {
     return `This action updates a #${id} article`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} article`;
-  }
+ async remove(id: number) {
+    try{
+      return await this.articleRepository.delete({id});
+    }
+    catch(error){
+      throw new UnauthorizedException('Error deleting article' + error)
+    }
+ }
 }
