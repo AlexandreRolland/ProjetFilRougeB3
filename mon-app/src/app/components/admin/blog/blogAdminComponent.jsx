@@ -5,9 +5,7 @@ const BlogAdminComponent = () => {
     const [articles, setArticles] = useState([]);
     const [category, setCategory] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
-    const [sorted, setSorted] = useState(false);
-
-    const [sortOrder, setSortOrder] = useState('desc'); // état pour suivre l'ordre de tri
+    const [sortOrder, setSortOrder] = useState('desc');
 
     useEffect(() => {
         const fetchArticles = async () => {
@@ -18,10 +16,8 @@ const BlogAdminComponent = () => {
                     fetchedArticles = fetchedArticles.filter(article => article.title.toLowerCase().includes(searchTerm.toLowerCase()));
                 }
 
-                if (sorted) {
-                    fetchedArticles.sort((a, b) => sortOrder === 'asc' ? new Date(a.publishDate) - new Date(b.publishDate) : new Date(b.publishDate) - new Date(a.publishDate));
-                }
-
+                fetchedArticles.sort((a, b) => sortOrder === 'asc' ? new Date(a.publishDate) - new Date(b.publishDate) : new Date(b.publishDate) - new Date(a.publishDate));
+                
                 setArticles(fetchedArticles);
             } catch (error) {
                 console.error("Erreur lors de la récupération des articles:", error);
@@ -29,7 +25,7 @@ const BlogAdminComponent = () => {
         };
 
         fetchArticles();
-    }, [category, searchTerm, sorted, sortOrder]);
+    }, [category, searchTerm, sortOrder]);
 
     const toggleSortOrder = () => {
         setSortOrder(prevOrder => prevOrder === 'asc' ? 'desc' : 'asc');
@@ -46,10 +42,7 @@ const BlogAdminComponent = () => {
                     <option value="Conseils">Tips</option>
                     <option value="Actualites">News</option>
                 </select>
-                <button onClick={() => {
-                    setSorted(prevState => !prevState);
-                    toggleSortOrder();
-                }}>
+                <button onClick={toggleSortOrder}>
                     Trier par date ({sortOrder === 'asc' ? 'Ascendant' : 'Descendant'})
                 </button>
             </div>
