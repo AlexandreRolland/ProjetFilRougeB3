@@ -89,8 +89,8 @@ const AnnonceAdminComponent = () => {
                     </div>
                 </React.Fragment>
             ))}
-
-            {showMoreButton && <button onClick={handleShowMore} className="load-more">Afficher plus</button>}
+            
+            {showMoreButton && <div className='ShowMore'><button onClick={handleShowMore} className="load-more">Afficher plus</button></div>}
         </div>
     );
 };
