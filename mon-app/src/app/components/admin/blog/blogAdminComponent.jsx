@@ -32,6 +32,16 @@ const BlogAdminComponent = () => {
         setSortOrder(prevOrder => prevOrder === 'asc' ? 'desc' : 'asc');
     }
 
+    const handleDeleteArticle = async (articleId) => {
+        try {
+            await ArticleService.deleteArticle(articleId);
+            const updatedArticles = articles.filter(article => article.id !== articleId);
+            setArticles(updatedArticles);
+        } catch (error) {
+            console.error("Erreur lors de la suppression de l'article:", error);
+        }
+    };
+
     return (
         <div className="admin-blog">
             <h2>Gestion du <span className='primary-color'>Blog</span></h2>
@@ -57,7 +67,7 @@ const BlogAdminComponent = () => {
                         </div>
                         <div className='right'>
                             <button>Modifier l'article</button>
-                            <button className='delete'>Supprimer l'annonce</button>
+                            <button className='delete' onClick={() => handleDeleteArticle(article.id)}>Supprimer l'annonce</button>
                         </div>
                     </div>
                 ))}
