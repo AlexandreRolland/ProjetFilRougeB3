@@ -86,7 +86,6 @@ const AnnonceAdminComponent = () => {
                         <div className="right">
                             <button>Modifier l'annonce</button>
                         </div>
-                        <hr />
                     </div>
                 </React.Fragment>
             ))}
