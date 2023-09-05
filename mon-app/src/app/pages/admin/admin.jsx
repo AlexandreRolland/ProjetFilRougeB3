@@ -4,7 +4,7 @@ import Footer from "../../layouts/footer/footer";
 import UserAdminComponent from '../../components/admin/user/userAdminComponent';
 import AnnonceAdminComponent from '../../components/admin/annonce/annonceAdminComponent';
 import BlogAdminComponent from '../../components/admin/blog/blogAdminComponent';
-//test
+//testffff
 function AdminPage() {
     const [activeComponent, setActiveComponent] = useState('user');
 
