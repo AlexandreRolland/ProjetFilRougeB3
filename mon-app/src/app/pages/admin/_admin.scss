@@ -11,7 +11,9 @@
     }
 
     .admin-controls{
-
+        display: flex;
+        gap: 10px;
+        
         .button-active {
             background-color: $primary-color;
         }
