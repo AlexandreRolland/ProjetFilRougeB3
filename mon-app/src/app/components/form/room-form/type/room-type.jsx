@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RoomType = ({ roomType, onRoomChange }) => {
-    const rooms = ["salon", "chambre", "cuisine", "salledebain", "bureau", "autre"]; 
+    const rooms = ["Salon", "Chambre", "Cuisine", "Salle De Bain", "Bureau", "Autre"]; 
 
     return (
         <div className="roomType">
