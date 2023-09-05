@@ -75,13 +75,13 @@ const AnnonceAdminComponent = () => {
                 <React.Fragment key={annonce.id}>
                     <div className="admin-annonces">
                         <div className="left">
-                            <h3>Client : {annonce.user.username}</h3>
+                            <h3>{annonce.user.username}</h3>
                             <p>Status: {annonce.status}</p>
                             <p>Créé le: {new Date(annonce.createdAt).toLocaleString()}</p>
                             <p>Dernière mise à jour: {new Date(annonce.updatedAt).toLocaleString()}</p>
                         </div>
                         <div className="center">
-                            <p>Pièce : {annonce.roomType}</p>
+                            <h3>{annonce.roomType}</h3>
                         <p>Surface : {annonce.roomSurface} m²</p>
                             <p>Description : {annonce.description}</p>
                         </div>
