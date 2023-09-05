@@ -38,6 +38,9 @@
         margin-bottom: 20px;
 
         .left{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
             width: auto;
             padding-right: 20px;
         }
