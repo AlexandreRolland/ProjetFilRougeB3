@@ -31,7 +31,7 @@ const AnnonceAdminComponent = () => {
     let filteredAnnonces = annonces;
 
     if (searchTerm) {
-        filteredAnnonces = annonces.filter(annonce => annonce.description.toLowerCase().includes(searchTerm.toLowerCase()));
+        filteredAnnonces = annonces.filter(annonce => annonce.user.username.toLowerCase().includes(searchTerm.toLowerCase()));
     }
 
     if (statusFilter !== 'Tous') {
