@@ -72,7 +72,7 @@ const AnnonceAdminComponent = () => {
 
             {filteredAnnonces.slice(0, displayedCount).map(annonce => (
                 <React.Fragment key={annonce.id}>
-                    <div className="annonce-component">
+                    <div className="admin-annonces">
                         <div className="left">
                             <h3>{annonce.roomType}</h3>
                             <p>Surface : {annonce.roomSurface} m²</p>
