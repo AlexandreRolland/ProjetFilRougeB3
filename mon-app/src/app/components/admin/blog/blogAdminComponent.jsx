@@ -16,7 +16,8 @@ const BlogAdminComponent = () => {
                     fetchedArticles = fetchedArticles.filter(article => article.title.toLowerCase().includes(searchTerm.toLowerCase()));
                 }
 
-                fetchedArticles.sort((a, b) => sortOrder === 'asc' ? new Date(a.publishDate) - new Date(b.publishDate) : new Date(b.publishDate) - new Date(a.publishDate));
+                // Tri des articles en fonction de 'updatedAt'
+                fetchedArticles.sort((a, b) => sortOrder === 'asc' ? new Date(a.updatedAt) - new Date(b.updatedAt) : new Date(b.updatedAt) - new Date(a.updatedAt));
                 
                 setArticles(fetchedArticles);
             } catch (error) {
@@ -43,7 +44,7 @@ const BlogAdminComponent = () => {
                     <option value="Actualites">News</option>
                 </select>
                 <button onClick={toggleSortOrder}>
-                    Trier par date ({sortOrder === 'asc' ? 'Ascendant' : 'Descendant'})
+                    Trier par date de modification ({sortOrder === 'asc' ? 'Ascendant' : 'Descendant'})
                 </button>
             </div>
             <div className="admin-articles">
