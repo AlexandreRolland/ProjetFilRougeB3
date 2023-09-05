@@ -11,7 +11,7 @@ const BlogAdminComponent = () => {
         const fetchArticles = async () => {
             try {
                 let fetchedArticles = category === 'all' ? await ArticleService.getArticles() : await ArticleService.getArticleByCategoryName(category);
-                
+
                 if (searchTerm) {
                     fetchedArticles = fetchedArticles.filter(article => article.title.toLowerCase().includes(searchTerm.toLowerCase()));
                 }
@@ -30,7 +30,7 @@ const BlogAdminComponent = () => {
     }, [category, searchTerm, sorted]);
 
     return (
-        <div className="admin-blog"> 
+        <div className="admin-blog">
             <h2>Gestion du Blog</h2>
             <div className="filter-menu">
                 <input type="text" placeholder="Rechercher..." onChange={e => setSearchTerm(e.target.value)} />
@@ -45,10 +45,14 @@ const BlogAdminComponent = () => {
             <div className="admin-articles">
                 {articles.map((article, index) => (
                     <div key={index} className="admin-article">
-                        <h3>{article.title}</h3>
-                        <p>Catégorie: {article.category}</p>
-                        <p>Dernière modification : {new Date(article.updatedAt).toLocaleDateString()}</p>
-                        <button>Modifier l'article</button>
+                        <div className='left'>
+                            <h3>{article.title}</h3>
+                            <p>Catégorie: {article.category}</p>
+                            <p>Dernière modification : {new Date(article.updatedAt).toLocaleDateString()}</p>
+                        </div>
+                        <div className='right'>
+                            <button>Modifier l'article</button>
+                        </div>
                     </div>
                 ))}
             </div>

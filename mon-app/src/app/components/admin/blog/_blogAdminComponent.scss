@@ -1,32 +1,47 @@
-.admin-blog{
+.admin-blog {
     margin-top: 20px;
     width: 100%;
-    
 
-    button{
+
+    button {
         font-size: 16px;
     }
 
-.filter-menu{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap-reverse;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 2px solid $border-color;
+    .filter-menu {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap-reverse;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid $border-color;
 
-    input{
-        width: 60%;
+        input {
+            width: 60%;
+        }
+
+        select {
+            width: 20%;
+        }
+
+        button {
+            width: 15%;
+        }
+
     }
 
-    select{
-        width: 20%;
-    }
+    .admin-articles{
+        display: flex;
 
-    button{
-        width: 15%;
-    }
+        .left{
+            width: 70%;
+            padding-right: 20px;
+        }
 
-}
+        .right{
+            display: flex;
+            align-items: center;
+            width: 30%;
+        }
+    }
 }
