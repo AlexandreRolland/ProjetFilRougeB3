@@ -7,17 +7,19 @@ const BlogAdminComponent = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [sorted, setSorted] = useState(false);
 
+    const [sortOrder, setSortOrder] = useState('desc'); // état pour suivre l'ordre de tri
+
     useEffect(() => {
         const fetchArticles = async () => {
             try {
                 let fetchedArticles = category === 'all' ? await ArticleService.getArticles() : await ArticleService.getArticleByCategoryName(category);
-
+                
                 if (searchTerm) {
                     fetchedArticles = fetchedArticles.filter(article => article.title.toLowerCase().includes(searchTerm.toLowerCase()));
                 }
 
                 if (sorted) {
-                    fetchedArticles.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+                    fetchedArticles.sort((a, b) => sortOrder === 'asc' ? new Date(a.publishDate) - new Date(b.publishDate) : new Date(b.publishDate) - new Date(a.publishDate));
                 }
 
                 setArticles(fetchedArticles);
@@ -27,7 +29,11 @@ const BlogAdminComponent = () => {
         };
 
         fetchArticles();
-    }, [category, searchTerm, sorted]);
+    }, [category, searchTerm, sorted, sortOrder]);
+
+    const toggleSortOrder = () => {
+        setSortOrder(prevOrder => prevOrder === 'asc' ? 'desc' : 'asc');
+    }
 
     return (
         <div className="admin-blog">
@@ -40,7 +46,12 @@ const BlogAdminComponent = () => {
                     <option value="Conseils">Tips</option>
                     <option value="Actualites">News</option>
                 </select>
-                <button onClick={() => setSorted(prevState => !prevState)}>Trier par date</button>
+                <button onClick={() => {
+                    setSorted(prevState => !prevState);
+                    toggleSortOrder();
+                }}>
+                    Trier par date ({sortOrder === 'asc' ? 'Ascendant' : 'Descendant'})
+                </button>
             </div>
             <div className="admin-articles">
                 {articles.map((article, index) => (
