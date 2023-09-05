@@ -1,7 +1,7 @@
-import { AnnonceStatus } from "../entities/annonce.entity";
+import { AnnonceRoomType, AnnonceStatus } from "../entities/annonce.entity";
 
 export class CreateAnnonceDto {
-    roomType: string;
+    roomType: AnnonceRoomType;
     roomSurface: number;
     photos?: string;
     description: string;

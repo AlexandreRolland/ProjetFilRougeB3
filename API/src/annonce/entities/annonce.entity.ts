@@ -10,6 +10,16 @@ export enum AnnonceStatus {
     FINISHED = 'Terminé'
   }
 
+export enum AnnonceRoomType {
+    CHAMBRE = 'chambre',
+    CUISINE = 'cuisine',
+    SALLE_DE_BAIN = 'salledebain',
+    SALON = 'salon',
+    BUREAU = 'bureau',
+    AUTRE = 'autre'
+}
+
+
 
 @Entity("annonce")
 export class AnnonceEntity extends TimeStamp{
@@ -23,8 +33,12 @@ export class AnnonceEntity extends TimeStamp{
     })
     status: AnnonceStatus;
 
-    @Column()
-    roomType: string;
+    @Column({
+    type: 'enum',
+    enum: AnnonceRoomType,
+    default: AnnonceRoomType.AUTRE
+    })
+    roomType: AnnonceRoomType;
 
     @Column()
     roomSurface: number;
