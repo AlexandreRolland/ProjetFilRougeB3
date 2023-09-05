@@ -3,6 +3,13 @@
     margin-top: 100px;
     width: 100%;
 
+    .top{
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+    }
+
     .admin-controls{
 
         .button-active {
