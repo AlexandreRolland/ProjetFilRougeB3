@@ -44,7 +44,7 @@ const BlogAdminComponent = () => {
                     <option value="Actualites">News</option>
                 </select>
                 <button onClick={toggleSortOrder}>
-                    Trier par date de modification ({sortOrder === 'asc' ? 'Ascendant' : 'Descendant'})
+                    Trie : {sortOrder === 'asc' ? 'Ascendant' : 'Descendant'}
                 </button>
             </div>
             <div className="admin-articles">
