@@ -50,8 +50,14 @@
             justify-content: center;
             width: auto;
 
+            gap: 10px;
+
             .delete{
-                background-color: red;
+                background-color: rgb(241, 37, 37);
+            }
+
+            .delete:hover{
+                background-color: rgb(236, 77, 77);
             }
         }
     }
