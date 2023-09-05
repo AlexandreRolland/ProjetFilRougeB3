@@ -13,7 +13,7 @@ export enum AnnonceStatus {
 export enum AnnonceRoomType {
     CHAMBRE = 'Chambre',
     CUISINE = 'Cuisine',
-    SALLE_DE_BAIN = 'Salle De Bain',
+    SALLE_DE_BAIN = 'SalleDeBain',
     SALON = 'Salon',
     BUREAU = 'Bureau',
     AUTRE = 'Autre'
