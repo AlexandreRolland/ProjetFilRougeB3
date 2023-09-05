@@ -46,8 +46,13 @@
 
         .right{
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
             width: auto;
+
+            .delete{
+                background-color: red;
+            }
         }
     }
 

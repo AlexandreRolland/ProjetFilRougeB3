@@ -85,6 +85,7 @@ const AnnonceAdminComponent = () => {
                         </div>
                         <div className="right">
                             <button>Modifier l'annonce</button>
+                            <button className='delete'>Supprimer l'annonce</button>
                         </div>
                     </div>
                 </React.Fragment>
