@@ -102,15 +102,19 @@ async function deleteArticle(articleId) {
         });
 
         if (!response.ok) {
-            throw new Error('Une erreur est survenue lors de la suppression de l\'article');
+            // Essayez d'analyser la réponse en JSON, sinon renvoyez le texte brut de la réponse
+            const responseData = await response.json().catch(() => response.text());
+            throw new Error(responseData);
         }
 
+        // Si vous attendez toujours une réponse JSON après une suppression réussie
         return response.json();
     } catch (error) {
         console.error(error);
         throw error;
     }
 }
+
 
 async function updateArticle(articleId, updatedArticle) {
     try {

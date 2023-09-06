@@ -47,8 +47,18 @@
 
         .right{
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
             width: auto;
+            gap: 10px;
+
+            .delete{
+                background-color: rgb(241, 37, 37);
+            }
+
+            .delete:hover{
+                background-color: rgb(233, 110, 110);
+            }
         }
     }
 
