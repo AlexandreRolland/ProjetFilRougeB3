@@ -42,6 +42,15 @@ export class AuthService {
     }
   }
 
+  async updatePassword(id: number, password: string) {
+    const user = await this.userService.findOneById(id);
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const userUpdate = { ...user, password: hashedPassword };
+    await this.userService.update(id, userUpdate);
+
+    return userUpdate;
+  }
+
   async validateUser(signinAuthDto : SigninAuthDto) {
     const user = await this.userService.findOneByEmail(signinAuthDto.email);
 

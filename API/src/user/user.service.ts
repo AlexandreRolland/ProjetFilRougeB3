@@ -46,6 +46,15 @@ export class UserService {
     .getOne();
   }
 
+async findOneById(id: number) {
+  try{
+    return await this.userRepository.findOneBy({id});
+  }
+  catch(error){
+    throw new Error('Error while finding user');
+  }
+}
+
     
   async update(id: number, updateUserDto: UpdateUserDto) {
 
@@ -64,12 +73,13 @@ export class UserService {
 
   async remove(id: number) {
     try{
-      const user = await this.userRepository.findOneBy({id});
-      await this.userRepository.remove(user);
+      return await this.userRepository.softDelete({id});
     }
     catch(error){
       throw new Error('Error while deleting user');
     }
   }
+
+
 
 }

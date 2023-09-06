@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Put, ParseIntPipe } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { SignupAuthDto } from './dto/signup-auth.dto';
 import { SigninAuthDto } from './dto/signin-auth.dto';
@@ -16,4 +16,13 @@ export class AuthController {
   signin(@Body() signinAuthDto: SigninAuthDto) {
     return this.authService.signin(signinAuthDto);
   }
+
+  @Patch('update-password/:id')
+  updatePassword(
+    @Param('id', ParseIntPipe) id: number,
+    @Body('password') password: string
+  ) {
+    return this.authService.updatePassword(id, password);
+  }
+
 }

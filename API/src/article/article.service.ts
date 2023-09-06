@@ -74,7 +74,7 @@ export class ArticleService {
 
  async remove(id: number) {
     try{
-      return await this.articleRepository.delete({id});
+      return await this.articleRepository.softDelete({id});
     }
     catch(error){
       throw new UnauthorizedException('Error deleting article' + error)

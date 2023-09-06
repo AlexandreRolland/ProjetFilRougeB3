@@ -73,9 +73,11 @@ const UserAdminComponent = () => {
                     <div key={index} className="admin-user">
                         <div className='left'>
                             <h3>{user.username}</h3>
-                            <p>Id : {user.id}</p>
                             <p>Email : {user.email}</p>
                             <p>Role : {user.role}</p>
+                            <p>Id : {user.id}</p>
+                            <p>Modifié le : {new Date(user.updatedAt).toLocaleDateString()}</p>
+                            <p>Crée le : {new Date(user.createdAt).toLocaleDateString()}</p>
                         </div>
                         <div className='right'>
                             <button onClick={() => handleEditUser(user.id)}>Modifier l'utilisateur</button>

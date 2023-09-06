@@ -15,6 +15,7 @@ import SingleArticlePage from '../../../app/pages/article/singleArticle.jsx';
 import BlogFormPage from '../../../app/pages/blog-form/blog-form.jsx';
 import BlogUpdateFormPage from '../../../app/pages/blog-form/blop-update/blog-form-update.jsx';
 import UpdateRoomForm from '../../../app/pages/room-form/update-room-form/update-room-form.jsx';
+import UserUpdateFormPage from '../../../app/pages/user-form/user-form.jsx';
 
 
 export const AppRoutes = () => {
@@ -40,6 +41,7 @@ export const AppRoutes = () => {
             <Route path="/room_form/:id" element={<UpdateRoomForm/>} />
             <Route path="/blog_form" element={<BlogFormPage />} />
             <Route path="/blog_form/:id" element={<BlogUpdateFormPage />} />
+            <Route path="/user_form/:id" element={<UserUpdateFormPage />} />
 
         </Routes>
     );
