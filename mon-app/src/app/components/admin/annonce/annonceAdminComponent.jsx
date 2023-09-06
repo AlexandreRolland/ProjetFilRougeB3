@@ -77,6 +77,7 @@ const AnnonceAdminComponent = () => {
                         <div className="left">
                             <h3>{annonce.user.username}</h3>
                             <p>Status: {annonce.status}</p>
+                            <p>Id : {annonce.id}</p>
                             <p>Créé le: {new Date(annonce.createdAt).toLocaleString()}</p>
                             <p>Dernière mise à jour: {new Date(annonce.updatedAt).toLocaleString()}</p>
                         </div>
