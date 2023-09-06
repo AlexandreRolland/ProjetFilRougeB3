@@ -14,6 +14,7 @@ import BlogPage from '../../../app/pages/blog/blog.jsx';
 import SingleArticlePage from '../../../app/pages/article/singleArticle.jsx';
 import BlogFormPage from '../../../app/pages/blog-form/blog-form.jsx';
 import BlogUpdateFormPage from '../../../app/pages/blog-form/blop-update/blog-form-update.jsx';
+import UpdateRoomForm from '../../../app/pages/room-form/update-room-form/update-room-form.jsx';
 
 
 export const AppRoutes = () => {
@@ -36,6 +37,7 @@ export const AppRoutes = () => {
             <Route path="/annonce_chat/:id" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
 
             <Route path="/admin_dashboard" element={<AdminPage />} />
+            <Route path="/room_form/:id" element={<UpdateRoomForm/>} />
             <Route path="/blog_form" element={<BlogFormPage />} />
             <Route path="/blog_form/:id" element={<BlogUpdateFormPage />} />
 

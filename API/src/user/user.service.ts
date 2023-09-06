@@ -62,7 +62,14 @@ export class UserService {
 
   }
 
-  sofDelete(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: number) {
+    try{
+      const user = await this.userRepository.findOneBy({id});
+      await this.userRepository.remove(user);
+    }
+    catch(error){
+      throw new Error('Error while deleting user');
+    }
   }
+
 }

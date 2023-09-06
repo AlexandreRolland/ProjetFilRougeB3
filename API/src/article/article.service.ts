@@ -61,8 +61,15 @@ export class ArticleService {
     }
   }
 
-  update(id: number, updateArticleDto: UpdateArticleDto) {
-    return `This action updates a #${id} article`;
+  async update(id: number, updateArticleDto: UpdateArticleDto) {
+    try{
+      await this.articleRepository.update(id, updateArticleDto);
+      const article = await this.findOne(id);
+      return article;
+    }
+    catch(error){
+      throw new UnauthorizedException('Error updating article' + error)
+    }
   }
 
  async remove(id: number) {

@@ -2,9 +2,13 @@ import React, { useState, useEffect } from "react";
 import Nav from "../../../layouts/header/nav";
 import Footer from "../../../layouts/footer/footer";
 import { ArticleService } from "../../../services/article.services";
-//test
+import { useParams } from 'react-router-dom';
 
-function BlogUpdateFormPage({ match }) {
+function BlogUpdateFormPage() {
+
+    const { id } = useParams();
+
+
     const [formData, setFormData] = useState({
         title: "",
         category: "",
@@ -19,7 +23,7 @@ function BlogUpdateFormPage({ match }) {
     useEffect(() => {
         const fetchArticleData = async () => {
             try {
-                const article = await ArticleService.getArticleById(match.params.id);
+                const article = await ArticleService.getArticleById(id);
                 setFormData(article);
             } catch (error) {
                 console.error("Erreur lors de la récupération de l'article:", error);
@@ -27,7 +31,7 @@ function BlogUpdateFormPage({ match }) {
         }
 
         fetchArticleData();
-    }, [match.params.id]);
+    }, [id]);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -39,8 +43,9 @@ function BlogUpdateFormPage({ match }) {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log("Form submitted" + formData);
         try {
-            await ArticleService.updateArticle(match.params.id, formData);
+            await ArticleService.updateArticle(id, formData);
             alert('Article mis à jour avec succès !');
         } catch (error) {
             console.error("Erreur lors de la mise à jour de l'article:", error);

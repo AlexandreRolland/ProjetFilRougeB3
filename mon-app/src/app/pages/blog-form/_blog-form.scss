@@ -2,6 +2,12 @@
     margin-top: 100px;
     width: 100%;
 
+    .form-group{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
     .post-container{
         background-color: #fff;
         height: auto;

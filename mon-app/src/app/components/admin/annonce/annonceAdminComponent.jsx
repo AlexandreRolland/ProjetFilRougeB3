@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AdvertService } from '../../../services/advert.services';
+import { useNavigate } from 'react-router-dom';
+
 //test
 
 const AnnonceAdminComponent = () => {
@@ -9,6 +11,7 @@ const AnnonceAdminComponent = () => {
     const [statusFilter, setStatusFilter] = useState('Tous');
     const [displayedCount, setDisplayedCount] = useState(5);
     const [showMoreButton, setShowMoreButton] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchAnnonces() {
@@ -47,6 +50,20 @@ const AnnonceAdminComponent = () => {
             setShowMoreButton(false);
         }
     }
+
+    const handleDeleteAnnonce = async (advertId) => {
+        try {
+            await AdvertService.deleteAdvert(advertId);
+            const updatedAnnonce = annonces.filter(annonces => annonces.id !== advertId);
+            setAnnonces(updatedAnnonce);
+        } catch (error) {
+            console.error("Erreur lors de la suppression de l'annonce:", error);
+        }
+    };
+
+    const handleEditAnnonce = (advertId) => {
+        navigate(`/room_form/${advertId}`);
+    };
 
     return (
         <div className="admin-annonce">
@@ -87,8 +104,8 @@ const AnnonceAdminComponent = () => {
                             <p>Description : {annonce.description}</p>
                         </div>
                         <div className="right">
-                            <button>Modifier l'annonce</button>
-                            <button className='delete'>Supprimer l'annonce</button>
+                        <button onClick={() => handleEditAnnonce(annonce.id)}>Modifier l'annonce</button>
+                            <button className='delete' onClick={() => handleDeleteAnnonce(annonce.id)}>Supprimer l'annonce</button>
                         </div>
                     </div>
                 </React.Fragment>

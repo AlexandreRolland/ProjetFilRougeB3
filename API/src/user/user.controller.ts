@@ -33,7 +33,8 @@ export class UserController {
   }
 
   @Delete(':id')
-  sofDelete(@Param('id', ParseIntPipe) id: number) {
-    return this.userService.sofDelete(id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.userService.remove(id);
   }
+
 }

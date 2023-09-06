@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { ArticleService } from '../../../services/article.services';
+import { useNavigate } from 'react-router-dom';
 
 const BlogAdminComponent = () => {
     const [articles, setArticles] = useState([]);
     const [category, setCategory] = useState('all');
     const [searchTerm, setSearchTerm] = useState('');
     const [sortOrder, setSortOrder] = useState('desc');
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchArticles = async () => {
@@ -42,6 +44,10 @@ const BlogAdminComponent = () => {
         }
     };
 
+    const handleEditArticle = (articleId) => {
+        navigate(`/blog_form/${articleId}`);
+    };
+
     return (
         <div className="admin-blog">
             <h2>Gestion du <span className='primary-color'>Blog</span></h2>
@@ -68,7 +74,7 @@ const BlogAdminComponent = () => {
                             <p>Créé le : {new Date(article.createdAt).toLocaleDateString()}</p>
                         </div>
                         <div className='right'>
-                            <button>Modifier l'article</button>
+                        <button onClick={() => handleEditArticle(article.id)}>Modifier l'article</button>
                             <button className='delete' onClick={() => handleDeleteArticle(article.id)}>Supprimer l'annonce</button>
                         </div>
                     </div>
