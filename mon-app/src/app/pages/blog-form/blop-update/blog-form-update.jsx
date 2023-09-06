@@ -7,7 +7,7 @@ import { ArticleService } from "../../../services/article.services";
 function BlogUpdateFormPage({ match }) {
     const [formData, setFormData] = useState({
         title: "",
-        category: "Conseils",
+        category: "",
         subhead: "",
         content: "",
         image: "",
@@ -17,15 +17,16 @@ function BlogUpdateFormPage({ match }) {
     });
 
     useEffect(() => {
-        async function fetchArticle() {
+        const fetchArticleData = async () => {
             try {
-                const articleData = await ArticleService.getArticleById(match.params.id);
-                setFormData(articleData);
+                const article = await ArticleService.getArticleById(match.params.id);
+                setFormData(article);
             } catch (error) {
                 console.error("Erreur lors de la récupération de l'article:", error);
             }
         }
-        fetchArticle();
+
+        fetchArticleData();
     }, [match.params.id]);
 
     const handleChange = (event) => {
