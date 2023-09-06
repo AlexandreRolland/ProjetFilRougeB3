@@ -62,8 +62,10 @@ const BlogAdminComponent = () => {
                     <div key={index} className="admin-article">
                         <div className='left'>
                             <h3>{article.title}</h3>
-                            <p>Catégorie: {article.category}</p>
+                            <p>Id : {article.id}</p>
+                            <p>Catégorie : {article.category}</p>
                             <p>Dernière modification : {new Date(article.updatedAt).toLocaleDateString()}</p>
+                            <p>Créé le : {new Date(article.createdAt).toLocaleDateString()}</p>
                         </div>
                         <div className='right'>
                             <button>Modifier l'article</button>

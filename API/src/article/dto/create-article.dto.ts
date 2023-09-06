@@ -1,6 +1,8 @@
+import { ArticleCategory } from "../entities/article.entity";
+
 export class CreateArticleDto {
     title: string;
-    category: string;
+    category: ArticleCategory;
     subhead?: string;
     content: string;
     image: string;

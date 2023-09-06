@@ -13,6 +13,7 @@ import AdminPage from '../../../app/pages/admin/admin.jsx';
 import BlogPage from '../../../app/pages/blog/blog.jsx';
 import SingleArticlePage from '../../../app/pages/article/singleArticle.jsx';
 import BlogFormPage from '../../../app/pages/blog-form/blog-form.jsx';
+import BlogUpdateFormPage from '../../../app/pages/blog-form/blop-update/blog-form-update.jsx';
 
 
 export const AppRoutes = () => {
@@ -36,6 +37,7 @@ export const AppRoutes = () => {
 
             <Route path="/admin_dashboard" element={<AdminPage />} />
             <Route path="/blog_form" element={<BlogFormPage />} />
+            <Route path="/blog_form/:id" element={<BlogUpdateFormPage />} />
 
         </Routes>
     );
