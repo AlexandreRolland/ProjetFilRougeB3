@@ -46,7 +46,7 @@ const Nav = () => {
                                     </li>
                                 }
                                 {
-                                    user &&
+                                    user && user.role !== "Admin" &&
                                     <li>
                                         <NavLink to="/annonce_chat">Discussions</NavLink>
                                     </li>
@@ -84,7 +84,7 @@ const Nav = () => {
                                 {
                                     user && user.role === 'Admin' &&
                                     <li>
-                                        <NavLink to='/blog_form' className="button" >Ajouter un article</NavLink>
+                                        <NavLink to='/blog_form' >Ajouter un article</NavLink>
                                     </li>
                                 }
                                 {
