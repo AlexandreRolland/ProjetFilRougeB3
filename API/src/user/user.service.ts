@@ -49,10 +49,10 @@ export class UserService {
 async findOneById(id: number) {
   try{
     return await this.userRepository.createQueryBuilder('user')
+    .where('user.id = :id', { id })
     .leftJoinAndSelect('user.annonces', 'annonces')
     .leftJoinAndSelect('user.client', 'client')
     .leftJoinAndSelect('user.decorateur', 'decorateur')
-    .where('user.id = :id', { id })
     .getOne();
   }
   catch(error){
