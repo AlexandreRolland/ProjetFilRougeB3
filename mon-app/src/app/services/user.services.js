@@ -95,6 +95,26 @@ async function updateUserPassword(userId, newPassword) {
     }
 }
 
+async function updateDecorateur(decorateurId, decorateur) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/decorateur/${decorateurId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+            body: JSON.stringify(decorateur),
+        });
+        if (!response.ok) {
+            throw new Error('Une erreur est survenue lors de la modification du décorateur');
+        }
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 
 export const UserServices = {
     getAllUsers,
@@ -102,4 +122,5 @@ export const UserServices = {
     updateUser,
     updateUserPassword,
     removeOneUser,
+    updateDecorateur
 };
