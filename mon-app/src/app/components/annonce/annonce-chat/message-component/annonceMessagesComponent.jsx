@@ -95,27 +95,13 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
     };
 
     const markAdAsFinished = async () => {
-        let adUpdated = false;
         try {
             const updatedAd = { status: "Terminé" };
+            const AddSolde =  { solde: user.decorateur.solde + adDetails.price}
             await AdvertService.updateAdvert(annonceId, updatedAd);
-            adUpdated = true;  // Marquer la première opération comme réussie
-    
-            const AddSolde =  { solde: user.decorateur.solde + adDetails.price};
             await UserServices.updateUser(user.id, AddSolde);
-    
             alert('Annonce marquée comme terminée avec succès');
         } catch (error) {
-            if (adUpdated) {  // Si la mise à jour de l'annonce a réussi, mais la mise à jour de l'utilisateur a échoué
-                try {
-                    // Annuler la mise à jour de l'annonce (compensation)
-                    await AdvertService.updateAdvert(annonceId, { status: "Ancien statut" });  // Remplacez "Ancien statut" par le statut original ou une manière de récupérer le statut original
-                } catch (compensationError) {
-                    // Gérer l'échec de la compensation
-                    alert('Une erreur est survenue lors de la mise à jour, et la tentative de restauration a également échoué.');
-                    return;
-                }
-            }
             alert('Une erreur est survenue lors de la mise à jour de l\'annonce');
         }
     };
