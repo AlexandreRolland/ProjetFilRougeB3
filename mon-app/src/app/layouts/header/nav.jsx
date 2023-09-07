@@ -81,6 +81,19 @@ const Nav = () => {
                                         <NavLink to='/room_form' className="button" >Contacter un expert</NavLink>
                                     </li>
                                 }
+                                {
+                                    user && user.role === 'Admin' &&
+                                    <li>
+                                        <NavLink to='/blog_form' className="button" >Ajouter un article</NavLink>
+                                    </li>
+                                }
+                                {
+                                    user && user.role === 'Admin' &&
+                                    <li>
+                                        <NavLink to='/admin_dashboard' className="button" >Gestion Admin</NavLink>
+                                    </li>
+                                }
+
                             </ul>
                         </div>
                     </div>

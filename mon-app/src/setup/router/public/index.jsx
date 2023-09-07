@@ -37,11 +37,11 @@ export const AppRoutes = () => {
             <Route path="/annonce_chat" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
             <Route path="/annonce_chat/:id" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
 
-            <Route path="/admin_dashboard" element={<AdminPage />} />
-            <Route path="/room_form/:id" element={<UpdateRoomForm/>} />
-            <Route path="/blog_form" element={<BlogFormPage />} />
-            <Route path="/blog_form/:id" element={<BlogUpdateFormPage />} />
-            <Route path="/user_form/:id" element={<UserUpdateFormPage />} />
+            <Route path="/admin_dashboard" element={user && user.role ==="Admin" ? <AdminPage /> : <Navigate to="/" />} />
+            <Route path="/room_form/:id" element={user && user.role ==="Admin" ? <UpdateRoomForm/> : <Navigate to="/" />} />
+            <Route path="/blog_form" element={user && user.role ==="Admin" ? <BlogFormPage /> : <Navigate to="/" />} />
+            <Route path="/blog_form/:id" element={user && user.role ==="Admin" ? <BlogUpdateFormPage /> : <Navigate to="/" />} />
+            <Route path="/user_form/:id" element={user && user.role ==="Admin" ? <UserUpdateFormPage /> : <Navigate to="/" />} />
 
         </Routes>
     );
