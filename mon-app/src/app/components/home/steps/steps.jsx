@@ -29,7 +29,7 @@ const Steps = () => {
                     </div>    
                 </div>
 
-                <Link to="" className="button">Contacter un expert</Link>
+                <Link to="/room_form" className="button">Contacter un expert</Link>
             </div>
 
         </div>
