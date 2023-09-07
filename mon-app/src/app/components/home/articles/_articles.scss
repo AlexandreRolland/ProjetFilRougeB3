@@ -62,10 +62,9 @@
         }
 
         .icone{
-            color: $white-color;
-            border: 6px solid $white-color;
             height: 125px;
             width: 125px;
+            background-image: url(../../../../../public/icones/plus.png);
         }
     }
 }
