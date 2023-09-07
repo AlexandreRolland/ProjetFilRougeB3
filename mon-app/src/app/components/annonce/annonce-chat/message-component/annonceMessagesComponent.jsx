@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext, useRef, useCallback } from 'react';
 import { AdvertService } from '../../../../services/advert.services';
+import { UserServices } from '../../../../services/user.services';
 import UserContext from '../../../../../setup/contexts/UserContext';
 
 const AnnonceMessagesComponent = ({ annonceId }) => {
@@ -96,7 +97,9 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
     const markAdAsFinished = async () => {
         try {
             const updatedAd = { status: "Terminé" };
+            const AddSolde =  { solde: user.decorateur.solde + adDetails.price}
             await AdvertService.updateAdvert(annonceId, updatedAd);
+            await UserServices.updateUser(user.id, AddSolde);
             alert('Annonce marquée comme terminée avec succès');
         } catch (error) {
             alert('Une erreur est survenue lors de la mise à jour de l\'annonce');

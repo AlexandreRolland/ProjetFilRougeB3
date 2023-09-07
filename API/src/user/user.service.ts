@@ -48,7 +48,12 @@ export class UserService {
 
 async findOneById(id: number) {
   try{
-    return await this.userRepository.findOneBy({id});
+    return await this.userRepository.createQueryBuilder('user')
+    .leftJoinAndSelect('user.annonces', 'annonces')
+    .leftJoinAndSelect('user.client', 'client')
+    .leftJoinAndSelect('user.decorateur', 'decorateur')
+    .where('user.id = :id', { id })
+    .getOne();
   }
   catch(error){
     throw new Error('Error while finding user');
