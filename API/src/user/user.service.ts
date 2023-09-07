@@ -34,6 +34,8 @@ export class UserService {
   async findOne(id: number) {
     return await this.userRepository.createQueryBuilder('user')
     .leftJoinAndSelect('user.annonces', 'annonces')
+    .leftJoinAndSelect('user.client', 'client')
+    .leftJoinAndSelect('user.decorateur', 'decorateur')
     .where('user.id = :id', { id })
     .getOne();
   }
