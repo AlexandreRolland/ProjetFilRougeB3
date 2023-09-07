@@ -98,8 +98,9 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
         try {
             const updatedAd = { status: "Terminé" };
             const AddSolde =  { solde: user.decorateur.solde + adDetails.price}
+            const DecorateurId = user.decorateur.id;
             await AdvertService.updateAdvert(annonceId, updatedAd);
-            await UserServices.updateDecorateur(user.decorateur.id, AddSolde);
+            await UserServices.updateDecorateur(DecorateurId, AddSolde);
             alert('Annonce marquée comme terminée avec succès');
         } catch (error) {
             alert('Une erreur est survenue lors de la mise à jour de l\'annonce');
