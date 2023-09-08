@@ -94,9 +94,6 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
         scrollToBottom();
     };
 
-
-    //test
-
     const markAdAsFinished = async () => {
         try {
             const updatedAd = { status: "Terminé" };
@@ -104,17 +101,24 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
             const soldeDecorateur = parseFloat(user.decorateur.solde);
             const adPrice = parseFloat(adDetails.price);
     
+            console.log("Solde Décorateur avant mise à jour:", soldeDecorateur);
+            console.log("Prix de l'annonce:", adPrice);
+        
             const newSolde = soldeDecorateur + adPrice;
+            console.log("Nouveau solde après ajout:", newSolde);
+    
             const DecorateurId = user.decorateur.id;
             const AddSolde = { solde: newSolde };
-    
+        
             await AdvertService.updateAdvert(annonceId, updatedAd);
             await UserServices.updateDecorateur(DecorateurId, AddSolde);
             alert('Annonce marquée comme terminée avec succès');
         } catch (error) {
+            console.error("Erreur lors de la mise à jour:", error);  // Affiche l'erreur complète pour plus de détails
             alert('Une erreur est survenue lors de la mise à jour de l\'annonce');
         }
     };
+    
     
 
     return (

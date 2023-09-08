@@ -76,7 +76,7 @@ function SigninForm() {
                         </form>
                     </div>
                     <h3>Vous êtes un décorateur professionel ?</h3>
-                    <Link to="/signup-decorator">inscrivez vous ici</Link>
+                    <Link to="/signup_decorator">inscrivez vous ici</Link>
                 </div>
             </div>
         </section>
