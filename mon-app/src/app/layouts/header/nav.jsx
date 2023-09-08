@@ -34,7 +34,7 @@ const Nav = () => {
                         <div className={`nav-elements  ${showNavbar && 'active'}`}>
                             <ul>
                                 <li>
-                                    <NavLink to="/">Accueil</NavLink>
+                                    <a href="/">Accueil</a>
                                 </li>
                                 <li>
                                     <NavLink to="/blog">Blog</NavLink>

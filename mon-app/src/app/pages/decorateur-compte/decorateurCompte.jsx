@@ -2,11 +2,26 @@ import Footer from "../../layouts/footer/footer";
 import Nav from "../../layouts/header/nav";
 import React, { useContext } from 'react';
 import UserContext from '../../../setup/contexts/UserContext';
+import MyDecoAnnonceComponent from "../../components/annonce/deco-annonce-list/myDecoAnnonceComponent";
+import { UserServices } from "../../services/user.services";
 
 const DecorateurCompte = () => {
   const { user } = useContext(UserContext);
+  const DecorateurId = user.decorateur.id;
+
+  const UpdateSolde = async () => {
+    try {
+        const resetSolde = {solde: 0};
+        const response = await UserServices.updateDecorateur(DecorateurId, resetSolde);
+        console.log(response);
+        window.location.reload();
+    } catch (error) {
+        console.error(error);
+    }
+};
 
   return (
+
     <div className="fullPage">
       <Nav />
       
@@ -25,10 +40,14 @@ const DecorateurCompte = () => {
             </div>
             <div className="solde">
                 <h2>Mon solde : {user.decorateur.solde} €</h2>
-                <button>Récupérer mon solde</button>
+                <button onClick={UpdateSolde}>Récupérer mon solde</button>
             </div>
             </div>            
           </div>
+          <h2 className="h1">Mes <span className="primary-color">annonces</span></h2>
+            <div className="my-annonces-container">
+                <MyDecoAnnonceComponent />
+            </div>
         </div>
       </section>
       <Footer />

@@ -25,7 +25,7 @@ const Footer = () => {
                     </div>
                     <ul>
 
-                        <li><Link to="/">Accueil</Link></li>
+                        <li><a href="/">Accueil</a></li>
                         <li><Link to="/blog">Blog</Link></li>
                         {
                             user && user.role === 'Client' &&
