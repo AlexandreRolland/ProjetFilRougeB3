@@ -100,11 +100,14 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
     const markAdAsFinished = async () => {
         try {
             const updatedAd = { status: "Terminé" };
-            const soldeDecorateur =  user.decorateur.solde;
-            const adPrice =  adDetails.price;
-            const newSolde =  soldeDecorateur + adPrice;
-            const DecorateurId =  user.decorateur.id;
+            
+            const soldeDecorateur = parseFloat(user.decorateur.solde);
+            const adPrice = parseFloat(adDetails.price);
+    
+            const newSolde = soldeDecorateur + adPrice;
+            const DecorateurId = user.decorateur.id;
             const AddSolde = { solde: newSolde };
+    
             await AdvertService.updateAdvert(annonceId, updatedAd);
             await UserServices.updateDecorateur(DecorateurId, AddSolde);
             alert('Annonce marquée comme terminée avec succès');
@@ -112,6 +115,7 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
             alert('Une erreur est survenue lors de la mise à jour de l\'annonce');
         }
     };
+    
 
     return (
         <div className='annonce-messages-component'>
