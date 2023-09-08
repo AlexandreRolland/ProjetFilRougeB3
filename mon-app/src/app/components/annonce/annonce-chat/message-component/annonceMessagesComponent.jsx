@@ -95,7 +95,7 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
     };
 
     const updatedAd = { status: "Terminé" };
-    const soldeDecorateur =  UserServices.decorateur.solde;
+    const soldeDecorateur =  user.decorateur.solde;
     const adPrice =  adDetails.price;
     const newSolde =  soldeDecorateur + adPrice;
     const DecorateurId =  user.decorateur.id;
