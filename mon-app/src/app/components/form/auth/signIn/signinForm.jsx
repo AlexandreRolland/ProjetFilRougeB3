@@ -1,16 +1,15 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link, useNavigate } from 'react-router-dom'; // utilisez useHistory pour react-router-dom v5 ou inférieure
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthServices } from "../../../../services/auth.service";
 import { TokenServices } from "../../../../services/token.services";
 import UserContext from "../../../../../setup/contexts/UserContext";
-
 
 function SigninForm() {
     const [credentials, setCredentials] = useState({
         email: "",
         password: "",
-        
     });
+    const [error, setError] = useState(null); // Ajout d'un état pour gérer les erreurs
 
     const handleChange = (e) => {
         setCredentials({
@@ -20,7 +19,7 @@ function SigninForm() {
     }
 
     const { user, setUser } = useContext(UserContext);
-    const navigate = useNavigate(); // utilisez useHistory pour react-router-dom v5 ou inférieure
+    const navigate = useNavigate();
 
     useEffect(() => {
         console.log(user);
@@ -28,25 +27,28 @@ function SigninForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { access_token, user: userData } = await AuthServices.signIn(credentials)
+        try {
+            const { access_token, user: userData } = await AuthServices.signIn(credentials);
+            
+            if (!access_token || !userData) {
+                throw new Error('Identifiants incorrects.');
+            }
 
-        // Mettre à jour l'état global de l'utilisateur
-        setUser(userData);
-        
-        // Stocker le jeton
-        TokenServices.setToken(access_token);
-        
-        // Rediriger l'utilisateur vers la page d'accueil
-        navigate('/');
+            setUser(userData);
+            TokenServices.setToken(access_token);
+            navigate('/');
+        } catch (err) {
+            setError(err.message || 'Erreur lors de la connexion. Veuillez réessayer.');
+        }
     }
 
-    
-    return  (
+    return (
         <section className="container">
             <div className="authPage">
                 <div className="center">
                     <div className="authForm">
                         <h2>Connexion</h2>
+                        {error && <p className="error">{error}</p>} {/* Afficher le message d'erreur si présent */}
                         <form onSubmit={handleSubmit}>
                             <label htmlFor="email">
                                 <input 
@@ -75,7 +77,7 @@ function SigninForm() {
                             <Link to="/signup">S'inscrire</Link>
                         </form>
                     </div>
-                    <h3>Vous êtes un décorateur professionel ?</h3>
+                    <h3>Vous êtes un décorateur professionnel ?</h3>
                     <Link to="/signup_decorator">inscrivez vous ici</Link>
                 </div>
             </div>

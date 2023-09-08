@@ -19,7 +19,7 @@ export class UserService {
       return await this.userRepository.save(createUserDto);
     } catch (error) {
       console.log(error);
-      throw new Error('Error while creating user');
+      return { success: false, message: "Compte déjà existant"}
     }
   }
 
