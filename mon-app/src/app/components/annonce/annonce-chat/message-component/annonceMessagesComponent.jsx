@@ -116,14 +116,13 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
         try {
             const updatedAd = { status: "Terminé" };
             const DecorateurId = user.decorateur.id;
-            
-            const soldeDecorateur = {solde};
+        
             const adPrice = parseFloat(adDetails.price);
     
-            console.log("Solde Décorateur avant mise à jour:", soldeDecorateur);
+            console.log("Solde Décorateur avant mise à jour:", solde);
             console.log("Prix de l'annonce:", adPrice);
         
-            const newSolde = soldeDecorateur + adPrice;
+            const newSolde = solde + adPrice;
             console.log("Nouveau solde après ajout:", newSolde);
     
             
