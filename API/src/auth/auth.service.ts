@@ -37,10 +37,10 @@ export class AuthService {
         role: user.role,
         client: user.client,
         decorateur: user.decorateur
-        // Vous pouvez ajouter d'autres informations utilisateur ici si nécessaire
     }
     }
   }
+  
 
   async updatePassword(id: number, password: string) {
     const user = await this.userService.findOneById(id);

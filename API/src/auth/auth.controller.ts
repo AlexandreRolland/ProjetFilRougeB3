@@ -16,6 +16,7 @@ export class AuthController {
   signin(@Body() signinAuthDto: SigninAuthDto) {
     return this.authService.signin(signinAuthDto);
   }
+  
 
   @Patch('update-password/:id')
   updatePassword(

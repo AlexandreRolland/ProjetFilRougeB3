@@ -115,6 +115,25 @@ async function updateDecorateur(decorateurId, decorateur) {
     }
 }
 
+async function getDecorateurById(decorateurId) {
+    try {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/decorateur/${decorateurId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Une erreur est survenue lors de la récupération du décorateur');
+        }
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 
 export const UserServices = {
     getAllUsers,
@@ -122,5 +141,6 @@ export const UserServices = {
     updateUser,
     updateUserPassword,
     removeOneUser,
-    updateDecorateur
+    updateDecorateur,
+    getDecorateurById,
 };
