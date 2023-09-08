@@ -94,16 +94,17 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
         scrollToBottom();
     };
 
-    const updatedAd = { status: "Terminé" };
-    const soldeDecorateur =  user.decorateur.solde;
-    const adPrice =  adDetails.price;
-    const newSolde =  soldeDecorateur + adPrice;
-    const DecorateurId =  user.decorateur.id;
-    const AddSolde = { solde: newSolde };
+
     
 
     const markAdAsFinished = async () => {
         try {
+            const updatedAd = { status: "Terminé" };
+            const soldeDecorateur =  user.decorateur.solde;
+            const adPrice =  adDetails.price;
+            const newSolde =  soldeDecorateur + adPrice;
+            const DecorateurId =  user.decorateur.id;
+            const AddSolde = { solde: newSolde };
             await AdvertService.updateAdvert(annonceId, updatedAd);
             await UserServices.updateDecorateur(DecorateurId, AddSolde);
             alert('Annonce marquée comme terminée avec succès');
