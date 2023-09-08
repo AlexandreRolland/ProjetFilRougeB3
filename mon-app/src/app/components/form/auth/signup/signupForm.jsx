@@ -59,7 +59,7 @@ function SignupForm() {
                         )}
                     </div>
                     <h3>Vous êtes un décorateur professionnel ?</h3>
-                    <Link>inscrivez vous ici</Link>
+                    <Link to="/signup_decorator">inscrivez vous ici</Link>
                 </div>
             </div>
         </section>
