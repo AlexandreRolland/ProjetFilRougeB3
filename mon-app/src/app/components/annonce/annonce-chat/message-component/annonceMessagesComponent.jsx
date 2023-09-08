@@ -12,6 +12,8 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
     const [adDetails, setAdDetails] = useState(null);
     const [adStatus, setAdStatus] = useState('');
     const messagesEndRef = useRef(null);
+    const [solde, setSold] = useState(0);
+    const DecorateurId = user.decorateur.id;
 
 
     const handleScroll = (event) => {
@@ -94,11 +96,28 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
         scrollToBottom();
     };
 
+    useEffect(() => {
+        const getSolde = async () => {
+            try {
+                const response = await UserServices.getDecorateurById(DecorateurId);
+                if(response && response.solde) {
+                    setSold(response.solde);  // Mise à jour de l'état local avec le solde récupéré
+                }
+                console.log(response);
+            } catch (error) {
+                console.error(error);
+            }
+          };
+    
+            getSolde();
+    }, [DecorateurId]);
+
     const markAdAsFinished = async () => {
         try {
             const updatedAd = { status: "Terminé" };
+            const DecorateurId = user.decorateur.id;
             
-            const soldeDecorateur = parseFloat(user.decorateur.solde);
+            const soldeDecorateur = {solde};
             const adPrice = parseFloat(adDetails.price);
     
             console.log("Solde Décorateur avant mise à jour:", soldeDecorateur);
@@ -107,7 +126,7 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
             const newSolde = soldeDecorateur + adPrice;
             console.log("Nouveau solde après ajout:", newSolde);
     
-            const DecorateurId = user.decorateur.id;
+            
             const AddSolde = { solde: newSolde };
         
             await AdvertService.updateAdvert(annonceId, updatedAd);
