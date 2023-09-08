@@ -16,6 +16,7 @@ import BlogFormPage from '../../../app/pages/blog-form/blog-form.jsx';
 import BlogUpdateFormPage from '../../../app/pages/blog-form/blop-update/blog-form-update.jsx';
 import UpdateRoomForm from '../../../app/pages/room-form/update-room-form/update-room-form.jsx';
 import UserUpdateFormPage from '../../../app/pages/user-form/user-form.jsx';
+import DecorateurCompte from '../../../app/pages/decorateur-compte/decorateurCompte.jsx';
 
 
 export const AppRoutes = () => {
@@ -29,10 +30,11 @@ export const AppRoutes = () => {
 
             <Route path="/signin" element={!user ? <SigninPage /> : <Navigate to="/" />} />
             <Route path="/signup" element={!user ? <SignupPage /> : <Navigate to="/" />} />
-            
             <Route path="/signup_decorator" element={!user ? <SignupDecoratorPage /> : <Navigate to="/" />} />
+            
             <Route path="/room_form" element={user && user.role === "Client" ? <RoomFormPage /> : <Navigate to="/signin" />} />
             <Route path="/annonce_list" element={user && user.role === "Decorateur" ? <AnnonceList /> : <Navigate to="/signin" />} />
+            <Route path="/my_account_pro" element={user && user.role === "Decorateur" ? <DecorateurCompte /> : <Navigate to="/signin" />} />
             <Route path="/my_annonces" element={user && user.role === "Client" ? <MyAnnonceList /> : <Navigate to="/signin" />} />
             <Route path="/annonce_chat" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />
             <Route path="/annonce_chat/:id" element={user ? <AnnonceChat /> : <Navigate to="/signin" />} />

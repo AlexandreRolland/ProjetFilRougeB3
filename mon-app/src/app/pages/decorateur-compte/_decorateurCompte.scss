@@ -1,0 +1,25 @@
+.mon-compte{
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+h2{
+    padding-bottom: 20px;
+}
+
+.solde{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h3{
+        font-size: 2em;
+    }
+
+    button{
+        margin-top: 10px;
+        width: 300px;
+    }
+}
+}

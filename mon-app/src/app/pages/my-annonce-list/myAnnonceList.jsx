@@ -27,7 +27,15 @@ const MyAnnonceList = () => {
       
       <section className="container">
         <div className="my-annonces-list">
-          <h1>Mes <span className="primary-color">annonces</span></h1>
+          <h1>Mon <span className="primary-color">compte</span></h1>
+          <div className="my-annonces-container">
+            <div className="infos">
+            <h3><strong>Nom d'utilisateur : </strong>{user.username}</h3>
+            <h3><strong>Email :</strong> {user.email}</h3>
+            <h3><strong>Role :</strong> {user.role}</h3>
+            </div>            
+          </div>
+          <h2 className="h1">Mes <span className="primary-color">annonces</span></h2>
           <div className="my-annonces-container">
             <MyAnnonceComponent annonces={myAdverts} />
           </div>

@@ -37,8 +37,9 @@
       width:25%;
       height: auto;
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-end;
       align-items: flex-end;
+      gap: 15px;
   
       p{
         margin-bottom: 15px;

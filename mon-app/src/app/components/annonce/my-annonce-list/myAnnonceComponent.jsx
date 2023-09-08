@@ -18,17 +18,6 @@ const MyAnnonceComponent = () => {
     fetchMyAnnonces();
   }, [user.id]);
 
-  const handleDelete = async (advertId) => {
-    try {
-      await AdvertService.deleteAdvert(advertId);
-      // Refresh the list of adverts after deletion
-      const fetchedAnnonces = await AdvertService.getAdvertsByUserId(user.id);
-      setMyAnnonces(fetchedAnnonces);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const handleEdit = (annonce) => {
     setEditingId(annonce.id);
     setEditedDescription(annonce.description);
@@ -58,7 +47,7 @@ const MyAnnonceComponent = () => {
       {myAnnonces.length === 0 ? (
         <div className="my-annonce-component">
           <div className="left">
-            <p>Vous n'avez pas d'annonce en cours.</p>
+            <p>Chargement / Vous n'avez pas d'annonce en cours.</p>
           </div>
           <div className="right">
             <Link to="/room_form" className="button">Contacter un expert</Link>
@@ -69,12 +58,13 @@ const MyAnnonceComponent = () => {
           <>
           <div className="my-annonce-component" key={annonce.id}>
             <div className="left">
-              <h3>{annonce.roomType}</h3>
-              <p>Surface : {annonce.roomSurface} m²</p>
+              <h3><strong>{annonce.roomType}</strong></h3>
+              <p><strong>Statut :</strong> {annonce.status}</p>
+              <p><strong>Surface :</strong> {annonce.roomSurface} m²</p>
               <div className="description">
                 {editingId === annonce.id ?
                   <>
-                    <p>Description :</p>
+                    <p><strong>Description :</strong></p>
                     <form onSubmit={(e) => handleSubmit(e, annonce.id)}>
                       <input
                         name="description"
@@ -84,7 +74,7 @@ const MyAnnonceComponent = () => {
                     </form>
                   </>
                   :
-                  <p>Description : {annonce.description}</p>
+                  <p><strong>Description :</strong> {annonce.description}</p>
                 }
               </div>
             </div>
@@ -97,7 +87,6 @@ const MyAnnonceComponent = () => {
                 :
                 <>
                   <button onClick={() => handleEdit(annonce)}>Modifier</button>
-                  <button onClick={() => handleDelete(annonce.id)}>Supprimer</button>
                 </>
               }
             </div>
