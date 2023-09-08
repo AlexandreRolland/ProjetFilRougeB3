@@ -56,43 +56,45 @@ const MyAnnonceComponent = () => {
       ) : (
         myAnnonces.map((annonce) => (
           <>
-          <div className="my-annonce-component" key={annonce.id}>
-            <div className="left">
-              <h3><strong>{annonce.roomType}</strong></h3>
-              <p><strong>Statut :</strong> {annonce.status}</p>
-              <p><strong>Surface :</strong> {annonce.roomSurface} m²</p>
-              <div className="description">
+            <div className="my-annonce-component" key={annonce.id}>
+              <div className="left">
+                <h3><strong>{annonce.roomType}</strong></h3>
+                <p><strong>Statut :</strong> {annonce.status}</p>
+                <p><strong>Surface :</strong> {annonce.roomSurface} m²</p>
+                <div className="description">
+                  {editingId === annonce.id ?
+                    <>
+                      <p><strong>Description :</strong></p>
+                      <form onSubmit={(e) => handleSubmit(e, annonce.id)}>
+                        <input
+                          name="description"
+                          value={editedDescription}
+                          onChange={handleInputChange}
+                        />
+                      </form>
+                    </>
+                    :
+                    <p><strong>Description :</strong> {annonce.description}</p>
+                  }
+                </div>
+              </div>
+              <div className="right">
                 {editingId === annonce.id ?
                   <>
-                    <p><strong>Description :</strong></p>
-                    <form onSubmit={(e) => handleSubmit(e, annonce.id)}>
-                      <input
-                        name="description"
-                        value={editedDescription}
-                        onChange={handleInputChange}
-                      />
-                    </form>
+                    <button type="button" onClick={handleCancelEdit}>Annuler</button>
+                    <button type="submit" onClick={(e) => handleSubmit(e, annonce.id)}>Valider</button>
                   </>
                   :
-                  <p><strong>Description :</strong> {annonce.description}</p>
+                  <>
+                    <a href={`http://localhost:3000/annonce_chat/${annonce.id}`} className="button">
+                      Accéder au chat
+                    </a>
+                    <button onClick={() => handleEdit(annonce)}>Modifier</button>
+                  </>
                 }
               </div>
+
             </div>
-            <div className="right">
-              {editingId === annonce.id ?
-                <>
-                  <button type="button" onClick={handleCancelEdit}>Annuler</button>
-                  <button type="submit" onClick={(e) => handleSubmit(e, annonce.id)}>Valider</button>
-                </>
-                :
-                <>
-                  <button onClick={() => handleEdit(annonce)}>Modifier</button>
-                </>
-              }
-            </div>
-            
-          </div>
-          <hr />
           </>
         ))
       )}

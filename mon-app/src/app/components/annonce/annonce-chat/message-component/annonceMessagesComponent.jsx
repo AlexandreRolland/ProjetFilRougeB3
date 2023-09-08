@@ -13,7 +13,7 @@ const AnnonceMessagesComponent = ({ annonceId }) => {
     const [adStatus, setAdStatus] = useState('');
     const messagesEndRef = useRef(null);
     const [solde, setSold] = useState(0);
-    const DecorateurId = user.decorateur.id;
+    const DecorateurId = user.decorateur?.id;
 
 
     const handleScroll = (event) => {

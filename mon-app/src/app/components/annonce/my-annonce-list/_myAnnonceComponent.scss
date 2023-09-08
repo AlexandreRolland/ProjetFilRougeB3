@@ -4,6 +4,7 @@
     margin-top: 30px;
     padding-bottom: 30px;
     border-bottom: 2px solid $border-color;
+    justify-content: space-between;
 
   
     p{
@@ -11,7 +12,7 @@
     }
   
     .left{
-      width:75%;
+      width:auto;
       height: auto;
       display: flex;
       flex-direction: column;
@@ -36,7 +37,7 @@
     }
   
     .right{
-      width:25%;
+      width:auto;
       height: auto;
       display: flex;
       justify-content: flex-end;
