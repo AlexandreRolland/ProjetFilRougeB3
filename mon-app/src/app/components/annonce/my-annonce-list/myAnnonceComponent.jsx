@@ -86,7 +86,7 @@ const MyAnnonceComponent = () => {
                   </>
                   :
                   <>
-                    <a href={`http://localhost:3000/annonce_chat/${annonce.id}`} className="button">
+                    <a href={`/annonce_chat/${annonce.id}`} className="button">
                       Accéder au chat
                     </a>
                     <button onClick={() => handleEdit(annonce)}>Modifier</button>
