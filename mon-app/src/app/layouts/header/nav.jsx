@@ -25,7 +25,7 @@ const Nav = () => {
 
 
                         <div className="logo">
-                            <a to="/" className="primary-color logo">IDECO</a>
+                            <a href="/" className="primary-color logo">IDECO</a>
                         </div>
                         <div className="menu-icon" onClick={handleShowNavbar}>
                             {/* <Hamburger /> */}
