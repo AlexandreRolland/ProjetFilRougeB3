@@ -1,11 +1,7 @@
-
-import { Link } from 'react-router-dom'
-
-
 import { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import UserContext from '../../../setup/contexts/UserContext'
-// import { ReactComponent as Hamburger } from '../../assets/icons/hamburger.svg'
+
 
 const Nav = () => {
     const [showNavbar, setShowNavbar] = useState(false)
@@ -28,8 +24,7 @@ const Nav = () => {
                             <a href="/" className="primary-color logo">IDECO</a>
                         </div>
                         <div className="menu-icon" onClick={handleShowNavbar}>
-                            {/* <Hamburger /> */}
-                            <div className="square"></div>
+                            <div className="burger"></div>
                         </div>
                         <div className={`nav-elements  ${showNavbar && 'active'}`}>
                             <ul>
