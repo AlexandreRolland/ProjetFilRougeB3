@@ -15,7 +15,6 @@
   ],
   "env": {
     "POSTGRES_PORT": "5432",
-    "JWT_SECRET": "secret",
     "CLIENT_URL": "https://projet-fil-rouge-b3.vercel.app"
   }
 }
