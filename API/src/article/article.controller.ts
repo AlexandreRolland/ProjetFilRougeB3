@@ -3,9 +3,9 @@ import { ArticleService } from './article.service';
 import { CreateArticleDto } from './dto/create-article.dto';
 import { UpdateArticleDto } from './dto/update-article.dto';
 import { ArticleCategory } from './entities/article.entity';
-import { JwtAuthGuard } from 'src/auth/guard/jwt-passport.guard';
-import { RolesGuard } from 'src/auth/guard/roles.guard';
-import { Roles } from 'src/auth/guard/roles.decorator';
+import { RolesGuard } from '../auth/guard/roles.guard';
+import { Roles } from '../auth/guard/roles.decorator';
+import { JwtAuthGuard } from '../auth/guard/jwt-passport.guard';
 
 @Controller('article')
 export class ArticleController {
