@@ -36,7 +36,7 @@ export class ArticleService {
       throw new UnauthorizedException('Error finding article' + error)
     }
   }
-  // findAllByCategory by category wich is an enum
+
   async findAllByCategory(categoryName: string) {
     try{
       return await this.articleRepository.find({
