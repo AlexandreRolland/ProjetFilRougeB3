@@ -4,7 +4,7 @@ import { ArticleController } from './article.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ArticleEntity } from './entities/article.entity';
 import { APP_GUARD } from '@nestjs/core';
-import { RolesGuard } from 'src/auth/guard/roles.guard';
+import { RolesGuard } from '../auth/guard/roles.guard';
 
 @Module({
   imports: [TypeOrmModule.forFeature([ArticleEntity])],
