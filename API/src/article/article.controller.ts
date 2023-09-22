@@ -11,8 +11,8 @@ import { JwtAuthGuard } from '../auth/guard/jwt-passport.guard';
 export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('Admin')
+  // @UseGuards(JwtAuthGuard, RolesGuard)
+  // @Roles('Admin')
   @Post()
   create(@Body() createArticleDto: CreateArticleDto) {
     return this.articleService.createArticle(createArticleDto);
